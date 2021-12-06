@@ -10,7 +10,7 @@ profile:
   address: > 
     <p>nix#2718</p>   
     <p>e</p> 
-    <p>calrifona CA</p>
+    <p>california CA</p>
 
 news: false  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -23,8 +23,12 @@ $$\exp(x)=\sum_{n=0}^\infty \frac{x^n}{n!}$$
 
 [here are some math things ive done if you want to look at them i guess](./math)
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/cats.jpg' | relative_url }}" alt="" title=""/>
-    </div><br>
-</div>
+personal favorites:
+
+[The Alpha Method (Generalized Exponential Response Formula)](./alphamethod)
+
+[Shortcuts for Finding Eigenvalues and Eigenvectors](./eigentricks)
+
+[Solving Systems of First Order DE's like a boss](./firstordersystemsquick)
+
+[Matrix Exponential Formulas for 2x2 Matrices](./ezmatrixexp)
