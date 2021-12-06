@@ -157,7 +157,7 @@ In general, if $$A$$ is a $$2\times2$$ matrix with eigenvalues $$\lambda_1,\lamb
 
 A proof of this "theorem" is included at the end.
 
-This does not generalize well to higher dimensions. However, if $$A$$ is $$n\times n$$ and has a nondefective eigenvalue $$\lambda_1$$ repeated $$n-1$$ times, then the columns of $$A-\lambda_1I$$ will be scalar multiples of the other eigenvalue. So there's that, I guess.
+This does not generalize well to higher dimensions. However, if $$A$$ is $$n\times n$$ and has a nondefective eigenvalue $$\lambda_1$$ repeated $$n-1$$ times, then the columns of $$A-\lambda_1I$$ will be scalar multiples of the other eigenvalue. So there's that, I guess. :man_shrugging:
 
 ### Example of Applying the E.C.T.
 
