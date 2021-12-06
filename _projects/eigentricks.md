@@ -1,11 +1,31 @@
 ---
-layout: page
+layout: distill
 title: Shortcuts for Finding Eigenvalues and Eigenvectors
 date: 2021-11-25 0
 description: Bodacious
 comments: true
 importance: 1
 category: linear algebra
+authors:  
+  - name: Grant Fisher
+    url: ""
+    affiliations:
+      name: None
+toc:
+  - name: The Characteristic Polynomial
+  - name: Eigenvalues
+    subsections:
+      - name: Example
+      - name: Shifted Eigenvalues
+  - name: Eigenvectors
+    subsections:
+      - name: A Quick Trick
+      - name: Our example continued
+  - name: The Eigenvector Columns Theorem
+    subsections:
+      - name: Example of Applying the E.C.T.
+      - name: Proof of the The Eigenvector Columns Theorem
+  - name: By Inspection
 ---
 
 # The Characteristic Polynomial
@@ -83,7 +103,7 @@ $$B=\begin{pmatrix}0&0&0\\1&1&1\\1&1&1\end{pmatrix}$$ is a rank one $$3\times3$$
 
 # Eigenvectors
 
-## A quick trick
+## A Quick Trick
 
 Before we continue on our journey with the matrix above, I present to you a convinient trick for getting eigenvectors from any $$2\times2$$ matrix.
 
@@ -153,7 +173,7 @@ $$A-1I=\begin{pmatrix}-2&2\\4&-4\end{pmatrix}$$
 
 The columns are scalar multiples of $$(1,-2)$$, so the eigenvector for $$\lambda=-5$$ is $$(1,-2)$$. Donezo Washington.
 
-# By inspection
+# By Inspection
 
 Often, eigenvectors or eigenvalues can present themselves quite "obviously" by inspection (if you know where to look, that is). Take the example
 
@@ -181,7 +201,7 @@ The trace and determinant are both $$6$$, meaning we need three numbers which ad
 
 At least *most* of the time, mathematics profesors tend to use matrices with nice eigenvalues and eigenvectors. Before jumping straight into the hell that the characteristic polynomial can be, try looking it over and seeing if you can spot any eigenvectors.
 
-### Proof of the The Eigenvector Columns Theorem:
+### Proof of the The Eigenvector Columns Theorem
 
 To get a general idea, we start with any $$2\times2$$ diagonalizable matrix $$A$$. By definition we can decompose it into the form $$A=PDP^{-1}$$. The entries of the diagonal matrix $$D$$ will be the eigenvalues $$\lambda_1,\lambda_2$$, and the columns of $$P$$ will be the corresponding eigenvectors $$\textbf{v}_1,\textbf{v}_2$$.
 
