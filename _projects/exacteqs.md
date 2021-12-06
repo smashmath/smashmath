@@ -15,11 +15,14 @@ toc:
   - name: How to Solve Exact Equations Quickly
     subsections:
       - name: Example
+      - name: Why does this work
   - name: An Intuitive Approach To Solving Exact Equations
   - name: Integrating Factors
 ---
 
 Originally published Sept. 9, 2021. Heavily revised Dec. 6, 2021.
+
+Quick note: it is generally incorrect to say that a solution to an exact equation is simply $$\psi(x,y)$$. The actual solution would be $$\psi(x,y)=C$$. However, for brevity, the $$=C$$  will be implied.
 
 # How to Solve Exact Equations Quickly
 
@@ -42,6 +45,40 @@ Putting those both together (ignoring the second $$x^2y^2$$) we get the solution
 $$\psi(x,y)=x^2y^2+2x^2+e^x+3y+\sin(y)=C$$
 
 Done.
+
+### Why does this work?
+
+The reasoning is a bit mundane, but based on the information provided by the following section. But the general idea is that if $$\psi(x,y)$$ is supposed to be a solution to $$M(x,y)+N(x,y)y'=0$$, then
+
+$$\psi_x=M,\quad \psi_y=N$$
+
+If we integrate both sides
+
+$$\psi=\int M\,dx+h_1(y),\quad \psi=\int N\,dy+h_2(x)$$
+
+So integrating $$M$$ and $$N$$ is a "direct" way to get the solution $$\psi(x,y)$$. However, doing just one of these will not give us everything.
+
+For example, integrating $$M$$ will not give us any terms of $$\psi$$ which are purely functions of $$y$$, not counting constants (as they will be lost completely in the process of taking the partial derivative with respect to $$x$$). But integrating $$N$$ with respect to $$y$$ *will* give us all of those pure nonconstant functions of $$y$$, which *weren't* completely lost taking the partial derivative with repsect to $$y$$.
+
+So between the two integrations, we will get every term of $$\psi$$. Of course, there are almost always duplicates in the results of the integration, but counting them twice would be incorrect. Taking a general example to get an idea, suppose that, neglecting any constants/functions of integration, we get the explicit results
+
+$$\int M\,dx=f(x,y)+g_1(x),\quad\int N\,dy=f(x,y)+g_2(y)$$
+
+for known functions $$f,g_1,g_2$$. Then
+
+$$\psi(x,y)=f(x,y)+g_1(x)+h_1(y)=f(x,y)+g_2(y)+h_2(x)$$
+
+where $$h_1,h_2$$ are *unknown*. Comparing terms, it's clear that $$h_1(y)=g_2(y)$$ and $$h_2(x)=g_1(x)$$. Thus, if we take the left solution,
+
+$$\psi(x,y)=f(x,y)+g_1(x)+g_2(y)$$
+
+Observe that we get an equivalent expression if we take the right solution of $$f(x,y)+g_2(y)+g_1(x)$$.
+
+So although it may initially *seem* like we are just adding the results of integration together, that is *not* what we are doing.
+
+$$\psi(x,y)\neq\bigg(f(x,y)+g_1(x)\bigg)+\bigg(f(x,y)+g_2(y)\bigg)$$
+
+The solution has $$f$$ in it, not $$2f$$. So the end result is that the solution will be a *combination*/union (not an sum) of the two integration results, where we only write repeated terms *once*.
 
 # An Intuitive Approach To Solving Exact Equations
 
