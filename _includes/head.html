@@ -6,10 +6,10 @@
 {% if site.title == "blank" %}
   {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}
 {% else %}
-  <!--{{ site.title }} UNCOMMENT IF IT STOPS WORKING-->
+  {{ site.title }}
 {% endif %}
 {% if page.title != "blank" and page.url != "/" %}
-  {{ page.title }} <!--| {{ page.title }}  UNCOMMENT THIS TOO-->
+  | {{ page.title }}
 {% endif %}
 </title>
 <meta name="description" content="{{ site.description }}">
