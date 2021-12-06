@@ -119,7 +119,7 @@ The columns of these matrices will give you a fundamental set of solutions. So i
 
 In summary, using $$e^{At}$$ for these cases not only removes the need to find eigenvectors, but also finds you *the* fundamental matrix. And *the* fundamental matrix turns solving initial value problems into calculating a simple matrix product.
 
-Now, if you do not find yourself in any of these cases, then just find the eigenvectors. The "Eigenvector Columns Theorem" discussed in the [other post](../eigentricks/){:target="_blank"} makes this  relatively trivial once you find the eigenvalues.
+Now, if you do not find yourself in any of these cases, then just find the eigenvectors. The ["Eigenvector Columns Theorem"](https://smashmath.github.io/math/eigentricks/#the-eigenvector-columns-theorem) discussed in the [other post](../eigentricks/){:target="_blank"} makes this  relatively trivial once you find the eigenvalues.
 
 ---
 
