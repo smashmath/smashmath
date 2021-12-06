@@ -1,12 +1,11 @@
 ---
 layout: page
-title: projects
-permalink: /projects/
-description: A growing collection of your cool projects.
+title: my math stuff
+permalink: /math/
+description: i wrote these
 nav: true
-nav_order: 2
-display_categories: [work, fun]
-horizontal: false
+display_categories: [differential equations, systems of differential equations,linear algebra, calculus, works in progress]
+horizontal: true
 ---
 
 <!-- pages/projects.md -->
