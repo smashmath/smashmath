@@ -115,7 +115,7 @@ e^{At}=e^{\lambda t}\bigg(I+t(A-\lambda I)\bigg)
 
 Examples of using each formula will be included at the end.
 
-Since I derived and used these formulas so much, and I know why they work, I usually just use them when I see that I can. In my opinion, it's a true baller move to casually use a matrix exponential rather than find eigenvectors. :sunglasses:
+The columns of these matrices will give you a fundamental set of solutions. So if you are able to just see what the entries will be, it's possible to write down the answers without any scratch work. This applies most to the complex and defective cases. Also, in my opinion, it's a true baller move to casually use a matrix exponential rather than find eigenvectors. :sunglasses:
 
 In summary, using $$e^{At}$$ for these cases not only removes the need to find eigenvectors, but also finds you *the* fundamental matrix. And *the* fundamental matrix turns solving initial value problems into calculating a simple matrix product.
 
