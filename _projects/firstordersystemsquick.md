@@ -225,6 +225,10 @@ $$\textbf{x}=\frac{e^{t}}{9}\left(9\cos(9t)\begin{pmatrix}\cos(1)\\\sin(1)\end{p
 $$\textbf{x}=\frac{e^{t}}{3}\begin{pmatrix}3\cos(1)\cos(9t)+(\cos(1)-2\sin(1))\sin(9t)\\
 3\sin(1)\cos(9t)+(5\cos(1)-\sin(1))\sin(9t)\end{pmatrix}$$
 
+Brief remark: If you want to use this to check if the solution you got through the normal method (let's call it $$\textbf{x}_1(t)$$) is correct, then check if
+
+$$e^{At}\textbf{x}_1(0)=\textbf{x}_1(t)$$
+
 Now, I don't know about you, but I think this is much easier than finding the eigenvector by solving for the null space of
 
 $$\begin{pmatrix}
