@@ -21,14 +21,14 @@ i like linear algebra, differential equations, and long walks on the beach. :sun
 
 $$\exp(x)=\sum_{n=0}^\infty \frac{x^n}{n!}$$
 
-[here are some math things ive done if you want to look at them i guess](./math)
+[here are some math things ive done if you want to look at them i guess](./math){:target="_blank"}
 
 personal favorites:
 
-[The Alpha Method (Generalized Exponential Response Formula)](./alphamethod)
+[The Alpha Method (Generalized Exponential Response Formula)](./math/alphamethod){:target="_blank"}
 
-[Shortcuts for Finding Eigenvalues and Eigenvectors](./eigentricks)
+[Shortcuts for Finding Eigenvalues and Eigenvectors](./math/eigentricks){:target="_blank"}
 
-[Solving Systems of First Order DE's like a boss](./firstordersystemsquick)
+[Solving Systems of First Order DE's like a boss](./math/firstordersystemsquick){:target="_blank"}
 
-[Matrix Exponential Formulas for 2x2 Matrices](./ezmatrixexp)
+[Matrix Exponential Formulas for 2x2 Matrices](./math/ezmatrixexp){:target="_blank"}
