@@ -28,7 +28,7 @@ Quick note: it is generally incorrect to say that a solution to an exact equatio
 
 The method is pretty simple and straightforward, so it doesn't take long to explain.
 
-Given an exact equation $$M(x,y)+N(x,y)y'=0$$, the solution $$\psi(x,y)$$ can be obtained by integrating $$M$$ with respect to $$x$$ and $$N$$ with respect to $$y$$. Simply leave out duplicate terms in your answer.
+Given an exact equation $$M(x,y)+N(x,y)y'=0$$, the solution $$\psi(x,y)$$ can be obtained by integrating $$M$$ with respect to $$x$$ and $$N$$ with respect to $$y$$. Write every term that appears in each solution exactly once. That is.leave out duplicate terms in your answer.
 
 #### Example
 
