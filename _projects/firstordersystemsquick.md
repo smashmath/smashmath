@@ -1,16 +1,36 @@
 ---
-layout: page
+layout: distill
 title: Solving Systems of First Order DE's like a boss
 date: 2021-12-02 0
 description: some ballin' tips and tricks
 comments: true
 importance: 1
 category: systems of differential equations
+authors:  
+  - name: Grant Fisher
+    url: ""
+    affiliations:
+      name: None
+toc:
+  - name: 2x2s
+    subsections:
+      - name: General Observations
+      - name: Finding Eigenvalues
+      - name: How to solve them quickly
+      - name: The Formulas
+  - name: 3x3s
+  - name: 2x2 Examples
+    subsections:
+      - name: Zero Trace
+      - name: Singular
+      - name: Complex
+      - name: Defective
+  - name: Off by a scalar matrix example
 ---
 
-I recommend reading/skimming [this post](../eigentricks/) first on ways to very quickly identify the characteristic polynomial, eigenvalues, and eigenvectors.
+I recommend reading/skimming [this post](../eigentricks/){:target="_blank"} first on ways to very quickly identify the characteristic polynomial, eigenvalues, and eigenvectors.
 
-We are going to be discussing how to solve systems of differential equations with constant coefficients like an absolutely bodacious baller.
+We are going to be discussing how to solve systems of differential equations with constant coefficients like a bodacious baller.
 
 \begin{equation} \label{prob}
 \textbf{x}'=A\textbf{x},\quad \textbf{x}(0)=\textbf{x}_0
@@ -22,26 +42,30 @@ We will assume the matrices we discuss are all real (and not the zero matrix).
 
 ---
 
-## $$2\times2$$s
+# 2x2s
 
 $$\begin{equation}
 \bf{x}'=\begin{pmatrix}a&b\\c&d\end{pmatrix}x
 \end{equation}$$
 
-The first step for *any* of these problems is to find the eigenvalues. Without them, there's almost nothing we can do. As mentioned before, I have [a post](../eigentricks/) on ways to greatly speed up this process. Regardless, to find the eigenvalues we start by calculating the trace and the determinant.
+The first step for *any* of these problems is to find the eigenvalues. Without them, there's almost nothing we can do. As mentioned before, I have [a post](../eigentricks/){:target="_blank"} on ways to greatly speed up this process. Regardless, to find the eigenvalues we start by calculating the trace and the determinant.
 
 Reminder that the trace is the sum of the diagonal entries $$\operatorname{tr}(A)=a+d$$ and the determinant of a $$2\times2$$ matrix is $$\det(A)=ad-bc$$. We will also use the fact that the trace is the sum of the eigenvalues, and the determinant is the product.
+
+### General Observations
 
 Before we go and find the eigenvalues specifically, here are some things we can say about the behavior of the solutions just by inspection of the matrix's trace and determinant:
 
 1. If $$\det(A)<0$$, then the origin will be a saddle point (and the eigenvalues are real)
 2. If $$\operatorname{tr}(A)>0$$, then the system is unstable
-3. If $$\det(A)=0$$, then the sign of $$\operatorname{tr}(A)$$ will determine if the system is stable (positive = unstable, negative = stable). Additionally, the eigenvalues will be $$\lambda=0,\operatorname{tr}(A)$$.
-4. If $$\operatorname{tr}(A)=0$$, then the eigenvalues differ by a sign and the sign of $$\det(A)$$ will determine if the system is stable (positive = stable center, negative = saddle). Also, regardless of the determinant *it will always be possible to easily solve the problem with one of the formulas which will be presented shortly*.
+3. If $$\det(A)=0$$, then the sign of $$\operatorname{tr}(A)$$ will determine if the system is stable (positive or zero = unstable, negative = stable). There will be infinitely many critical (equilibrium) points. Additionally, the eigenvalues will be $$\lambda=0,\operatorname{tr}(A)$$.
+4. If $$\operatorname{tr}(A)=0$$, then the eigenvalues differ by a sign and the sign of $$\det(A)$$ will determine if the system is stable: positive = stable center, negative = saddle, zero = improperly unstable (I made up that name. I don't know if there's a proper term for it). Also, regardless of the determinant, **it will always be possible to easily solve the problem with one of the formulas which will be presented shortly**.
 5. If $$\det(A)>0$$, then the sign of the trace is the sign of the real parts of the eigenvalues (thus, if the trace is positive then the origin is a source, and if the trace is negative then the origin is a sink).
 6. If the matrix is symmetric, the eigenvalues are real and not defective. If the diagonal entries are zero but $$\det(A)>0$$, the origin is a stable center (the eigenvalues are purely imaginary).
 
 These are some pretty important things we can say before we even examine the characteristic polynomial. Not all of these are necessary conditions, however. For example, the trace can be negative and the system can still be unstable. These facts are all based on how the signs/values of $$b$$ and $$c$$ affect the roots of the quadratic $$x^2-bx+c$$, as the trace and determinant will be those coefficients in the characteristic polynomial.
+
+### Finding Eigenvalues
 
 If you can think of two numbers that add up to the trace and multiply to the determinant, then those will be the eigenvalues. If you cannot, then use the fact that the characteristic polynomial is
 
@@ -51,7 +75,7 @@ If you can think of two numbers that add up to the trace and multiply to the det
 
 You don't have to waste your time doing $$\det(A-\lambda I)$$ every time.
 
----
+### How to solve them quickly
 
 Now there are many different potential subcases of the three main cases of eigenvalues: real, complex, and defective. For certain common cases, there are some ballin' tricks you can use to solve them *really* quickly: Matrix exponentials! Often, $$e^{At}$$ can be very easy to calculate once you know the eigenvalues. If you need to solve an initial value problem, then matrix exponentials will be by far the fastest way to solve them. This is because the solution to the initial value problem \eqref{prob} will be
 
@@ -59,9 +83,11 @@ Now there are many different potential subcases of the three main cases of eigen
 \textbf{x}'=A\textbf{x},\quad \textbf{x}(0)=\textbf{x}_0\implies \textbf{x}=e^{At}\textbf{x}_0
 \end{equation}
 
+## The Formulas
+
 **Check if your matrix satisfies any of the following cases before you get down and dirty with eigenvectors:**
 
-I will copy the most useful formulas from my post about $$2\times2$$ [matrix exponential formulas](../ezmatrixexp/):
+I will copy the most useful formulas from my post about $$2\times2$$ [matrix exponential formulas](../ezmatrixexp/){:target="_blank"}:
 
 If $$A$$ has a real determinant, $$\operatorname{tr}(A)=0$$, and $$\det(A)<0$$, then an eigenvalue of $$A$$ is $$\lambda=\sqrt{-\det(A)}$$, and
 
@@ -93,13 +119,13 @@ Since I derived and used these formulas so much, and I know why they work, I usu
 
 In summary, using $$e^{At}$$ for these cases not only removes the need to find eigenvectors, but also finds you *the* fundamental matrix. And *the* fundamental matrix turns solving initial value problems into calculating a simple matrix product.
 
-Now, if you do not find yourself in any of these cases, then just find the eigenvectors. The "Eigenvector Columns Theorem" discussed in the [other post](../eigentricks/) makes this  relatively trivial once you find the eigenvalues.
+Now, if you do not find yourself in any of these cases, then just find the eigenvectors. The "Eigenvector Columns Theorem" discussed in the [other post](../eigentricks/){:target="_blank"} makes this  relatively trivial once you find the eigenvalues.
 
 ---
 
-## $$3\times3$$s
+# 3x3s
 
-With $$3\times3$$s, I recommend using some of the tricks in my [eigen-tricks post](../eigentricks/). The first trick is also using the trace being the sum of the eigenvalues, and the determinant being the product, as this works for any sized square matrix. If the matrix has nice entries and you can find a combination of 3 nice eigenvalues which satisfy the trace and determinant, it is almost surely the case that that combination will be correct. You can always calculate $$A-\lambda I$$ for any of them, and if the result is singular then you know you are correct. If not, or you can't guess, then I'd move on to the characteristic polynomial
+With $$3\times3$$s, I recommend using some of the tricks in my [eigen-tricks post](../eigentricks/){:target="_blank"}. The first trick is also using the trace being the sum of the eigenvalues, and the determinant being the product, as this works for any sized square matrix. If the matrix has nice entries and you can find a combination of 3 nice eigenvalues which satisfy the trace and determinant, it is almost surely the case that that combination will be correct. You can always calculate $$A-\lambda I$$ for any of them, and if the result is singular then you know you are correct. If not, or you can't guess, then I'd move on to the characteristic polynomial
 
 \begin{equation}
 \lambda^3-\operatorname{tr}(A)\lambda^2+(C_{11}+C_{22}+C_{33})\lambda-\det(A)=0
@@ -123,11 +149,13 @@ Therefore, if the matrix exponential of $$A-kI$$ is very easy to compute, you ca
 
 ---
 
-## $$2\times2$$ examples
+# Examples
+
+## 2x2 examples
 
 As you read these examples, keep in mind that as you become more experienced with using these formulas, the number of steps and amount of scratch work required becomes *much* shorter than what is written here. When I said you can do these *absurdly* quick, I genuinely mean that you can just write down the matrix exponential without scratch work a lot of the time.
 
-##### 1.
+##### Zero Trace
 
 $$\textbf{x}'=\begin{pmatrix}7&-13\\1&-7\end{pmatrix}\textbf{x},\quad \textbf{x}(0)=\begin{pmatrix}\pi\\e\end{pmatrix}$$
 
@@ -149,7 +177,7 @@ And that's it!
 
 ---
 
-##### 2.
+##### Singular
 
 $$\textbf{x}'=\begin{pmatrix}-1&1\\1&-1\end{pmatrix}\textbf{x},\quad \textbf{x}(0)=\begin{pmatrix}\ln(2)\\1\end{pmatrix}$$
 
@@ -172,7 +200,7 @@ Done.
 
 ---
 
-##### 3.
+##### Complex
 
 $$\textbf{x}'=\begin{pmatrix}4&-6\\15&-2\end{pmatrix}\textbf{x},\quad \textbf{x}(0)=\begin{pmatrix}\cos(1)\\\sin(1)\end{pmatrix}$$
 
@@ -208,7 +236,7 @@ You have to do exactly *none* of that with this matrix exponential method. Work 
 
 ---
 
-##### 4.
+##### Defective
 
 $$\textbf{x}'=\begin{pmatrix}4&-9\\1&-2\end{pmatrix}\textbf{x},\quad \textbf{x}(0)=\begin{pmatrix}e^{-17}\\\tan(1)\end{pmatrix}$$
 
@@ -223,6 +251,8 @@ $$\textbf{x}=e^{t}\left(\begin{pmatrix}e^{-17}\\\tan(1)\end{pmatrix}+t\begin{pma
 $$\textbf{x}=e^{t}\begin{pmatrix}e^{-17}+(3e^{-17}-9\tan(1))t\\\tan(1)+(e^{-17}-3\tan(1))t\end{pmatrix}$$
 
 That's literally it. No eigenvector. No solving $$(A-\lambda I)\eta=\xi$$. This is it. We're done. Q.E.D. motherf̶̡̡̬̻̥̖̤̣͌̉l̴̛̻̊́͝ṳ̶̧͙̠͈̦̫̭̞̗̘́̾̒͘̕͝͠b̷̧͚̲͎̣̞͕̼͙͕̈̎̔̈́̈̐̓́b̵̞͎̗͓̪͓̬̺̥̟͇̱̀̒͌̓͆̏̆̄͝͠e̵̡͇̩͔̭͎̾̓̂͂̐͘͜r̴̺͂̋̀͗̈́̐͝s̶̢̫͖͎͔̪̪̰̅̽̍̚͝
+
+---
 
 ### Off by a scalar matrix example
 
