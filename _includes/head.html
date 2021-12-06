@@ -6,9 +6,9 @@
 {% if site.title == "blank" %}
   {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}
 {% else %}
-  {{ site.title }}
+  {{ site.title }} | {{ page.title }}
 {% endif %}
-{% if page.title != "blank" and page.url != "/" %}
+{% if page.title == "blank" and page.url != "/" %}
   | {{ page.title }}
 {% endif %}
 </title>
