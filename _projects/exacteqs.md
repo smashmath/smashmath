@@ -1,12 +1,51 @@
 ---
-layout: page
-title: Exact Equations Intuitively(?)
+layout: distill
+title: Exact Equations Done Quick
 date: 2021-09-09 0
-description: i hope
+description: speedrun WR
 comments: true
 importance: 5
 category: differential equations
+authors:  
+  - name: Grant Fisher
+    url: ""
+    affiliations:
+      name: None
+toc:
+  - name: How to Solve Exact Equations Quickly
+    subsections:
+      - name: Example
+  - name: An Intuitive Approach To Solving Exact Equations
+  - name: Integrating Factors
 ---
+
+Originally published Sept. 9, 2021. Heavily revised Dec. 6, 2021.
+
+# How to Solve Exact Equations Quickly
+
+The method is pretty simple and straightforward, so it doesn't take long to explain.
+
+Given an exact equation $$M(x,y)+N(x,y)y'=0$$, the solution $$\psi(x,y)$$ can be obtained by integrating $$M$$ with respect to $$x$$ and $$N$$ with respect to $$y$$. Simply leave out duplicate terms in your answer.
+
+#### Example
+
+It can be shown that the following equation is exact
+
+$$(2xy^2+4x+e^x)+(3+\cos(y)+2x^2y)y'=0$$
+
+Integrating $$M$$ with respect to $$x$$ gives $$x^2y^2+2x^2+e^x$$
+
+Integrating $$N$$ with respect to $$y$$ gives $$3y+\sin(y)+x^2y^2$$.
+
+Putting those both together (ignoring the second $$x^2y^2$$) we get the solution
+
+$$\psi(x,y)=x^2y^2+2x^2+e^x+3y+\sin(y)=C$$
+
+Done.
+
+# An Intuitive Approach To Solving Exact Equations
+
+This is an attempt at a more intuitive derivation for the way that is usually taught in a differential equations course.
 
 We seek to find the solution to the differential equation
 
@@ -74,7 +113,7 @@ or
 3. Solve for $$h'(x)$$ and integrate
 4. Profit
 
-Integrating Factors
+## Integrating Factors
 -
 
 If $$M_y\neq N_x$$, then it is not exact. But we can make it so (most of the time)! 
