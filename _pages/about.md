@@ -12,16 +12,18 @@ profile:
     <p>e</p> 
     <p>california CA</p>
 
-news: false  # includes a list of news items
+news: true  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
-social: false  # includes social icons at the bottom of the page
+social: true  # includes social icons at the bottom of the page
 ---
-
-i like linear algebra, differential equations, and long walks on the beach. :sunglasses:
 
 $$\exp(x)=\sum_{n=0}^\infty \frac{x^n}{n!}$$
 
-[here are some math things ive done if you want to look at them i guess](./math){:target="_blank"}
+local boy does math. "is okay at it" says friends and family.
+
+[here are some math posts ive written if you want to look at them i guess](./math){:target="_blank"}
+
+---
 
 personal favorites:
 
@@ -32,3 +34,5 @@ personal favorites:
 [Solving Systems of First Order DE's like a boss](./math/firstordersystemsquick){:target="_blank"}
 
 [Matrix Exponential Formulas for 2x2 Matrices](./math/ezmatrixexp){:target="_blank"}
+
+---
