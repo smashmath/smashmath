@@ -3,9 +3,9 @@
 # -----------------------------------------------------------------------------
 
 title: smashmath # the website title (if blank, full name will be used instead)
-first_name: smash math
+first_name:
 middle_name: 
-last_name: 
+last_name:
 email: smashmathe@gmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   i do math sometimes
