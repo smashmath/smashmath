@@ -54,7 +54,7 @@ Reminder that the trace is the sum of the diagonal entries $$\operatorname{tr}(A
 
 ### General Observations
 
-Before we go and find the eigenvalues specifically, here are some things we can say about the behavior of the solutions just by inspection of the matrix's trace and determinant:
+Before we go and find the eigenvalues specifically, here are some things we can say about the behavior of the solutions just by inspection of a $$2\times2$$ matrix's trace and determinant:
 
 1. If $$\det(A)<0$$, then the origin will be a saddle point (and the eigenvalues are real)
 2. If $$\operatorname{tr}(A)>0$$, then the system is unstable
