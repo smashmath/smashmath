@@ -1,12 +1,37 @@
 ---
-layout: page
+layout: distill
 title: Tricks for Remembering Laplace Transforms
 date: 2021-05-22 0
 description: for students and people who forgot
 comments: true
 importance: 1
 category: differential equations
+authors:  
+  - name: Grant Fisher
+    url: ""
+    affiliations:
+      name: None
+toc:
+  - name: Intro
+  - name: The Transforms to Memorize
+    subsections:
+      - name: The First Set
+      - name: Polynomials
+      - name: Exponentials
+      - name: Hyperbolic Trig
+  - name: Discontinuous Functions
+    subsections:
+      - name: The Dirac Delta Impulse Function
+      - name: The Heaviside Step Function
+  - name: The Convolution Integral
+  - name: The Ladder
+    subsections:
+      - name: Differentiation in Physical Space
+      - name: Differentiation in Frequency Space
+      - name: Example of Using the Ladder
 ---
+
+# Intro
 
 I'm hoping some of my rambling sticks in your brain and helps you remember these rules. Or maybe you just see more of the connections between the formulas and think that's neat.
 
@@ -38,6 +63,8 @@ Also I'm going to assume that all the functions $$f(t)$$ satisfy the required co
 
 ---
 
+## The Transforms to Memorize
+
 In my opinion, these are all the things you really need to get pretty much every Laplace Transform you'll probably use.
 
 $$\begin{align} \label{cis}
@@ -68,8 +95,7 @@ And finally, there is the "Ladder", as my former professor calls it. This will b
 
 First though, I will give some brief justifications for some of the first couple formulas.
 
-The First Set
---
+### The First Set
 
 $$\laplace{c_1f_1(t)+c_2f_2(t)}=c_1\laplace{f_1(t)}+c_2\laplace{f_2(t)}$$
 
@@ -99,12 +125,9 @@ $$F'(s)=\laplace{-tf(t)}$$
 
 So tl;dr differentiation under the integral sign.
 
-I will discuss the step and impulse functions later.
+I will discuss the step and impulse functions [later](#discontinuous-functions).
 
----
-
-Polynomials
---
+### Polynomials
 
 I'm doing these first because it's from one of these transforms that we will get most of the others. By plugging in $$n=0$$ into \eqref{poly} (or alternatively just evaluating \eqref{def} with $$f(t)=1$$) we get
 
@@ -118,8 +141,7 @@ $$\begin{equation}
 \laplace{c_0+c_1t+\ldots+c_nt^n}=c_0\frac{1}{s}+c_1\frac{1}{s^2}+\ldots+c_n\frac{n!}{s^{n+1}}
 \end{equation}$$
 
-Exponentials
---
+### Exponentials
 
 These are arguably the most important. Fortunately, they are also the Laplace Transforms which are easiest to evaluate, assuming you know how to use [Euler's Formula](../eulersformula/){:target="_blank"} to [skip integration by parts](../eulersformulabyparts/){:target="_blank"}.
 
@@ -158,8 +180,7 @@ $$\begin{equation} \label{triga}
 \laplace{e^{at}\sin(bt)}=\frac{b}{(s-a)^2+b^2}
 \end{equation}$$
 
-Hyperbolic Trig
----
+### Hyperbolic Trig
 
 **Fun fact:** We can write $$\sin(t)$$, $$\cos(t)$$, $$\sinh(t)$$, and $$\cosh(t)$$ in terms of simple exponentials like $$e^t$$.
 
@@ -179,11 +200,12 @@ $$\begin{equation}
 
 Just flip the plus to a minus and you're done. And really, that's usually how it works out in the Calculus between the two sets of trig functions, because they are barely different.
 
-Discontinuous Functions
--
-
-The Dirac Delta Impulse Function $$\delta(t)$$
 ---
+
+## Discontinuous Functions
+
+### The Dirac Delta Impulse Function
+$$\delta(t)$$
 
 This one's easy. Basically, you can get away with thinking of the Dirac Delta function as being defined to have a Laplace Transform of $$1$$.
 
@@ -194,19 +216,21 @@ $$\begin{equation}
 \end{equation}$$
 
 <details>
-  <summary>[1]</summary>
-    This is a gross oversimplification that you probably don't have to worry about.<br>
-    Also a really bad impluse pun.
+  <summary style="color:white;">[1]</summary>
+    <p>This is a gross oversimplification that you probably don't have to worry about.</p>
+    <p>Also a really bad impluse pun.</p>
 </details>
----
+
+<br>
+
 And interestingly enough, we get a sort of reverse exponential shift with \eqref{dirac}.
 
 $$\laplace{\delta(t-c)}=e^{-cs}\laplace{\delta(t)}$$
 
 Shifting the delta function in physical space is multiplying by $$e^{-cs}$$ in *frequency* space. I justify this by observing that it's basically a step function transformation: $$\delta(t-c)=u(t-c)\delta(t-c)$$, which we are going to be speaking about in the next section...
 
-The Heaviside Step Function $$u(t)$$
----
+### The Heaviside Step Function
+$$u(t)$$
 
 This one is a bit trickier mostly because the way texts often write it is confusing and hard to apply, in my opinion. It's also the one that I feel is most easily forgettable. Technically, the rule is
 
@@ -218,16 +242,17 @@ but that's only easy to apply for inverse Laplace Transforms. Otherwise, you hav
 
 If it helps, I think of it as changing the lower bound on the Laplace Transform integral, because that's exactly what it is. Doing a probably-not-$$u$$-substitution of $$v=t-c\implies t=v+c$$ has the effect of being a regular Laplace Transform of the function shited by $$c$$ and multiplied by an extra $$e^{-ct}$$, corresponding to how shifting an exponential is just scaling it. \eqref{badstep} is just the case where the *shifted* function is $$f(t)$$, so the only difference is being scaled by the exponential term $$e^{-ct}$$. I assume they do this because the math works out the nicest, but it's an awful rule to use to *evaluate* Laplace Transforms.
 
-The Convolution Integral
---
+---
 
-The proof, that $$\laplace{f*g}=F(s)G(s)$$ is not something I want to go into here, but this fact can be incredibly useful for taking inverse Laplce Transforms, as we will see in the ladder.
+## The Convolution Integral
+
+The proof that $$\laplace{f*g}=F(s)G(s)$$ is not something I want to go into here, but this fact can be incredibly useful for taking inverse Laplce Transforms, as we will see in [the ladder](#the-ladder).
 
 The way I remember the Convolution Integral is through the Cauchy product of two infinite series$$^{[2]}$$.
 
 <details>
-  <summary>[2]</summary>
-    This is a lie. It's actually the other way around. I apologize for attempting to deceive you.
+  <summary style="color:white;">[2]</summary>
+    <p>This is a lie. It's actually the other way around. I apologize for attempting to deceive you.</p>
 </details>
 
 $$\begin{equation*}
@@ -255,17 +280,17 @@ $$\begin{equation}
 f*g=\int_0^tf(\tau)g(t-\tau)d\tau=\int_0^tg(\tau)f(t-\tau)d\tau
 \end{equation}$$
 
-"The Ladder"
-=
+---
+
+## The Ladder
 
 Here we discuss the effects of differentiation in physical and frequency space. Physical space being basically the $$t$$ domain and frequency space being the $$s$$ domain. These are helpful but uneccessary if you only need the basics. If it interests you, and you like big brain moves, however, read on.
 
-Differentiation in Physical Space
----
+### Differentiation in Physical Space
 
 The rule most people (who know what a Laplace Transform is) are familiar with is \eqref{prime}, in which differentiation in physical space corresponds *basically* to multiplying by $$s$$ in frequency space.
 
-And as you repeat this process, you get this descending list of initial values as a polynomial in $$s$$.
+As you repeat this process, you get this descending list of initial values as a polynomial in $$s$$.
 
 $$\begin{align*}
 \laplace{f''(t)}&=s\laplace{f'(t)}-f''(0)\\
@@ -292,8 +317,7 @@ $$\begin{equation}
 
 So in summary: differentiation in physical space is basically multiplying by the independent variable in frequency space. This relationship also works in reverse, so that integrating in physical space is dividing by the independent variable in frequency space.
 
-Differentiation in Frequency Space
----
+### Differentiation in Frequency Space
 
 There's an interesting symmetry in here. When you take the inverse laplace transform of a derivative in frequency space, $$F'(s)$$, that's multiplying by the (negative) independent variable in physical space.
 
@@ -325,8 +349,7 @@ For example,
 
 $$\laplace{\frac{\sin t}{t}}=\frac{\pi}{2}-\tan^{-1}s $$
 
-Example of Using the Ladder
-----
+### Example of Using the Ladder
 
 For an example of applying this, do *not* waste your time doing partial fractions on
 
