@@ -1,12 +1,22 @@
 ---
-layout: page
+layout: distill
 title: Constructing Systems of Nonlinear First-Order Differential Equations to Model Population Dynamics
 date: 2020-11-30 0
 description: Build a system with desired behavior.
 comments: true
 importance: 3
 category: systems of differential equations
+authors:  
+  - name: Grant Fisher
+    url: ""
+    affiliations:
+      name: None
+toc:
+  - name: The Formula
+  - name: Example
 ---
+
+# The Formula
 
 The nonlinear system of differential equations,
 
@@ -26,10 +36,12 @@ If you have specific eigenvectors and eigenvalues in mind rather than a matrix, 
 
 $$\begin{equation}
 \begin{bmatrix}F_{x1}&F_{y1}\\G_{x1}&G_{y1}\end{bmatrix}
-=\begin{bmatrix}\vert & \vert \\v_1&v_2\\\vert & \vert \\\end{bmatrix}
+=\bigg[\textbf{v}_1\quad \textbf{v}_2\bigg]
 \begin{bmatrix}\lambda_1&0\\0&\lambda_2\end{bmatrix}
-\begin{bmatrix}\vert & \vert \\v_1&v_2\\\vert & \vert \\\end{bmatrix}^{-1}
+\bigg[\textbf{v}_1\quad \textbf{v}_2\bigg]^{-1}
 \end{equation}$$
+
+## Example
 
 Let's take an example.
 
