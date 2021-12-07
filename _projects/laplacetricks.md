@@ -4,7 +4,7 @@ title: Tricks for Remembering Laplace Transforms
 date: 2021-05-22 0
 description: for students and people who forgot
 comments: true
-importance: 1
+importance: 2
 category: differential equations
 authors:  
   - name: Grant Fisher
