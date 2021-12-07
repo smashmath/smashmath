@@ -4,7 +4,7 @@ title: Variation of Parameters Using Linear Algebra
 date: 2021-06-24 0
 description: linear is best frend :)
 comments: true
-importance: 3
+importance: 4
 category: differential equations
 ---
 
