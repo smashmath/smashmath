@@ -36,7 +36,7 @@ We are going to be discussing how to solve systems of differential equations wit
 \textbf{x}'=A\textbf{x},\quad \textbf{x}(0)=\textbf{x}_0
 \end{equation}
 
-Specifically, there are ways to make solving the $$2\times2$$ case *absurdly* quick. As well as some ways to make $$3\times3$$'s less awful, and some special cases of larger matrices.
+Specifically, there are ways to make solving the $$2\times2$$ case *absurdly* quick. Especially with complex or defective eigenvalues. There will also be some ways to make $$3\times3$$'s less awful, and some tricks for some special cases of larger matrices.
 
 We will assume the matrices we discuss are all real (and not the zero matrix).
 
@@ -116,6 +116,8 @@ e^{At}=e^{\lambda t}\bigg(I+t(A-\lambda I)\bigg)
 Examples of using each formula will be included at the end.
 
 The columns of these matrices will give you a fundamental set of solutions. So if you are able to just see what the entries will be, it's possible to write down the answers without any scratch work. This applies most to the complex and defective cases. Also, in my opinion, it's a true baller move to casually use a matrix exponential rather than find eigenvectors. :sunglasses:
+
+Knowing *where* these formulas come from makes them *so* much easier to apply. For that reason, I highly recommend reading the derivation of these [matrix exponential formulas](../ezmatrixexp/){:target="_blank"}.
 
 In summary, using $$e^{At}$$ for these cases not only removes the need to find eigenvectors, but also finds you *the* fundamental matrix. And *the* fundamental matrix turns solving initial value problems into calculating a simple matrix product.
 
