@@ -56,7 +56,7 @@ Reminder that the trace is the sum of the diagonal entries $$\operatorname{tr}(A
 
 Before we go and find the eigenvalues specifically, here are some things we can say about the behavior of the solutions just by inspection of a $$2\times2$$ matrix's trace and determinant:
 
-1. If $$\det(A)<0$$, then the origin will be a saddle point (and the eigenvalues are real)
+1. If $$\det(A)<0$$, then the origin will be a saddle point (and the eigenvalues are real and distinct)
 2. If $$\operatorname{tr}(A)>0$$, then the system is unstable
 3. If $$\det(A)=0$$, then the sign of $$\operatorname{tr}(A)$$ will determine if the system is stable (positive or zero = unstable, negative = stable). There will be infinitely many critical (equilibrium) points. Additionally, the eigenvalues will be $$\lambda=0,\operatorname{tr}(A)$$.
 4. If $$\operatorname{tr}(A)=0$$, then the eigenvalues differ by a sign and the sign of $$\det(A)$$ will determine if the system is stable: positive = stable center, negative = saddle, zero = improperly unstable (I made up that name. I don't know if there's a proper term for it). Also, regardless of the determinant, **it will always be possible to easily solve the problem with one of the formulas which will be presented shortly**.
