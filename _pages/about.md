@@ -33,6 +33,4 @@ personal favorites:
 
 [Solving Systems of First Order DE's like a boss](./math/firstordersystemsquick){:target="_blank"}
 
-[Matrix Exponential Formulas for 2x2 Matrices](./math/ezmatrixexp){:target="_blank"}
-
 ---
