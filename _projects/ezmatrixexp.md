@@ -1,11 +1,27 @@
 ---
-layout: page
+layout: distill
 title: Matrix Exponential Formulas for 2x2 Matrices
 date: 2021-04-26
 description: Who needs eigenvectors?
 comments: true
 importance: 1
 category: systems of differential equations
+authors:  
+  - name: Grant Fisher
+    url: ""
+    affiliations:
+      name: None
+toc:
+  - name: Formulas
+  - name: Proofs
+    subsections:
+      - name: Intro
+      - name: Distinct Eigenvalues
+      - name: Complex Conjugate Eigenvalues
+      - name: One Defective Eigenvalue
+      - name: One Nondefective Eigenvalue
+  - name: Applications
+  - name: Closing Remarks
 ---
 
 **WARNING**: If you are in a differential equations class right now, turn back. This is black magic that your professor _will not_ want you to memorize or use on their tests. These are just cool and/or for the convenience of those who evaluate a lot of matrix exponentials, as I do.
@@ -48,11 +64,17 @@ $$\begin{equation} \label{form3}
 e^{At}=e^{\lambda t}\left(I+t(A-\lambda I)\right)
 \end{equation}$$
 
-# Proof
+And if $$A$$ has only one eigenvalues $$\lambda$$ which is not defective (meaning $$A=\lambda I$$) then
 
-To prove these formulas, we are going to use the Laplace Transforms :eyes:
+$$\begin{equation} \label{form4}
+e^{At}=e^{\lambda t}I
+\end{equation}$$
 
-If solving _systems_ of differential equations with the Laplace Transform seems strange, then the intro is probably worth reading. If this is nothing new to you, you can most likely skim the labeled equations. 
+# Proofs
+
+To prove these formulas, we are going to use the Laplace Transform :eyes:
+
+If solving _systems_ of differential equations with the Laplace Transform seems strange, then the intro is probably worth reading. If this is nothing new to you, you can most likely skim the labeled equations.
 
 ## Intro
 
@@ -91,11 +113,13 @@ And we can see that $$\mathcal{L}^{-1}\{(sI-A)^{-1}\}$$ is in the place of $$e^{
 
 The second fact we use is that for $$2\times2$$ matrices, $$(sI-A)^{-1}$$ is _really_ easy to calculate.
 
+$$(sI-A)^{-1}=\frac{1}{p(s)}\operatorname{adj}(sI-A)$$
+
 $$\begin{equation} \label{firstlaplace}
 (sI-A)^{-1}=\frac{1}{p(s)}(sI+A-\operatorname{tr}(A)I)
 \end{equation}$$
 
-where $$p(s)$$ is the characteristic polynomial. The above can be verified by first seeing that $$\operatorname{adj}(sI-A)=sI-\operatorname{adj}(A)$$, and then using 
+where $$p(s)$$ is the characteristic polynomial. The above can be verified by first seeing that $$\operatorname{adj}(sI-A)=sI-\operatorname{adj}(A)$$, and then using
 
 $$A+\operatorname{adj}(A)=\operatorname{tr}(A)I\implies \operatorname{adj}(A)=\operatorname{tr}(A)I-A$$
 
@@ -234,6 +258,16 @@ The inverse Laplace yields exactly \eqref{form3} when we factor out $$e^{\lambda
 $$\begin{equation}
 e^{At}=e^{\lambda t}\left(I+t(A-\lambda I)\right)\quad \blacksquare
 \end{equation}$$
+
+### One Nondefective Eigenvalue
+
+This only occurs when $$A$$ is a scalar matrix, but it's techinically a case so it's worth mentioning. So let's say that $$A=\lambda I$$. Then
+
+$$e^{At}=\sum_{n=0}^\infty \frac{(\lambda tI)^n}{n!}$$
+
+$$e^{At}=\sum_{n=0}^\infty \frac{(\lambda t)^n}{n!}I^n$$
+
+$$e^{At}=\left(\sum_{n=0}^\infty \frac{(\lambda t)^n}{n!}\right)I=e^{\lambda t}I$$
 
 # Applications
 
