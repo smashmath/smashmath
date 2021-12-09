@@ -82,10 +82,10 @@ $$\begin{equation}
 x+y-\ln(xy)=C
 \end{equation}$$
 
-If we suppose an arbitrary condition such as $$y(x_0)=y_0$$, then
+If we suppose an arbitrary condition such as $$y(x_1)=y_1$$, then
 
 $$\begin{equation}
-(x-x_0)+(y-y_0)-\ln\left(\frac{xy}{x_0y_0}\right)=0
+(x-x_1)+(y-y_1)-\ln\left(\frac{xy}{x_1y_1}\right)=0
 \end{equation}$$
 
 Plotting various solutions with initial points in the first quadrant indeed, as we predicted, shows some cycling around the critical point $$(1,1)$$. Most initial points result in some pretty mishapen ellipse, but initial points very close to the critical point indeed approach something very close to a circle.
