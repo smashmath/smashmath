@@ -1,11 +1,11 @@
 ---
 layout: distill
-title: Matrix Exponential Formulas for 2x2 Matrices
+title: Matrix Exponential Formulas for 2x2 Matrices Using Laplace Transforms
 date: 2021-04-26
-description: Who needs eigenvectors?
+description: this has been rewritten
 comments: true
-importance: 1
-category: systems of differential equations
+importance: 6
+category: archive
 authors:  
   - name: Grant Fisher
     url: ""

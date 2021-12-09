@@ -17,6 +17,8 @@ Yet another impractical way to calculate matrix exponentials found by yours trul
 
 You may wonder why you would ever use this method when finding the eigenvectors requires fewer steps. However, it does somewhat simplify the cases of defective and complex eigenvalues, and changes the computation into one that is more familiar and approachable. In short: more easier steps.
 
+EDIT 12/8/21: This is actually very convinient for $$2\times2$$ matrices. [For more details.](../2x2ezmatrixexp/){:target="_blank"}
+
 ---
 
 Suppose $$A$$ is an $$n\times n$$ matrix and $$p(t)=\det(tI-A)$$ is its minimal polynomial.
@@ -54,6 +56,8 @@ $$\begin{equation}
 p(D)\Psi=0,\quad \Psi(0)=I,\Psi'(0)=A,\ldots,\Psi^{(n-1)}(0)=A^{n-1}
 \end{equation}$$
 
+Essentially, we are talking about $$n^2$$ initial value problems, and just putting all of them into a matrix.
+
 Next we examine $$\Phi(t)=e^{At}$$.
 
 $$\Phi'(t)=Ae^{At}=A\Phi(t)$$. It immediately follows that
@@ -83,6 +87,8 @@ By the Existence and Uniqueness theorem, $$\Phi$$ and $$\Psi$$ must be the same.
 $$\begin{equation}
 e^{At}=\sum_{k=1}^nY_k(t)A^{k-1}\quad \blacksquare
 \end{equation}$$
+
+We can invoke the Existence and Uniqueness theorem for each of the $$n^2$$ intial value problems, so this is valid.
 
 ### Example
 

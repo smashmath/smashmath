@@ -87,7 +87,7 @@ Now there are many different potential subcases of the three main cases of eigen
 
 **Check if your matrix satisfies any of the following cases before you get down and dirty with eigenvectors:**
 
-I will copy the most useful formulas from my post about $$2\times2$$ [matrix exponential formulas](../ezmatrixexp/){:target="_blank"}:
+I will copy the most useful formulas from my post about $$2\times2$$ [matrix exponential formulas](../2x2ezmatrixexp/){:target="_blank"}:
 
 If $$A$$ has a real determinant, $$\operatorname{tr}(A)=0$$, and $$\det(A)<0$$, then an eigenvalue of $$A$$ is $$\lambda=\sqrt{-\det(A)}$$, and
 
@@ -117,7 +117,7 @@ Examples of using each formula will be included at the end.
 
 The columns of these matrices will give you a fundamental set of solutions. So if you are able to just see what the entries will be, it's possible to write down the answers without any scratch work. This applies most to the complex and defective cases. Also, in my opinion, it's a true baller move to casually use a matrix exponential rather than find eigenvectors. :sunglasses:
 
-Knowing *where* these formulas come from makes them *so* much easier to apply. For that reason, I highly recommend reading the derivation of these [matrix exponential formulas](../ezmatrixexp/){:target="_blank"}.
+Knowing *where* these formulas come from makes them *so* much easier to apply. For that reason, I highly recommend reading the derivation of these [matrix exponential formulas](../2x2ezmatrixexp/){:target="_blank"}.
 
 In summary, using $$e^{At}$$ for these cases not only removes the need to find eigenvectors, but also finds you *the* fundamental matrix. And *the* fundamental matrix turns solving initial value problems into calculating a simple matrix product.
 
