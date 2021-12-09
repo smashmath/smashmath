@@ -4,7 +4,7 @@ title: my math stuff
 permalink: /math/
 description: i wrote these
 nav: true
-display_categories: [differential equations, systems of differential equations,linear algebra, calculus, works in progress]
+display_categories: [differential equations, systems of differential equations,linear algebra, calculus, works in progress, archive]
 horizontal: true
 ---
 <div class="projects">
