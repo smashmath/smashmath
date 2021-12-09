@@ -14,3 +14,4 @@ current posts which have been revised / updated:
 4. [The Alpha Method (Generalized Exponential Response Formula)](/math/alphamethod){:target="_blank"} (12/06/21)
 5. [Tricks for Remembering Laplace Transforms](/math/laplacetricks){:target="_blank"} (12/06/21)
 6. [Constructing Systems of Nonlinear First-Order Differential Equations to Model Population Dynamics](/math/nonlinearbuild){:target="_blank"} (12/07/21)
+7. [Matrix Exponential Formulas for 2x2 Matrices](/math/2x2ezmatrixexp){:target="_blank"}. mostly rewritten. old version [here](/math/ezmatrixexp){:target="_blank"}. (12/08/21)
