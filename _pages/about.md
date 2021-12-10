@@ -32,6 +32,6 @@ personal favorites:
 
 [Shortcuts for Finding Eigenvalues and Eigenvectors](./math/eigentricks){:target="_blank"}
 
-[Solving Systems of First Order DE's like a boss](./math/firstordersystemsquick){:target="_blank"}
+[Solving systems of first-order DE's like a boss](./math/firstordersystemsquick){:target="_blank"}
 
 ---
