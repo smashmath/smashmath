@@ -17,10 +17,12 @@ toc:
       - name: General Observations
       - name: Finding Eigenvalues
       - name: How to solve them quickly
-      - name: The Formulas
+      - name: The Fast Formulas
+      - name: Real and Distinct Formulas
   - name: 3x3s
   - name: 2x2 Examples
     subsections:
+      - name: Real and Distinct
       - name: Zero Trace
       - name: Singular
       - name: Complex
@@ -83,7 +85,7 @@ Now there are many different potential subcases of the three main cases of eigen
 \textbf{x}'=A\textbf{x},\quad \textbf{x}(0)=\textbf{x}_0\implies \textbf{x}=e^{At}\textbf{x}_0
 \end{equation}
 
-## The Formulas
+## The Fast Formulas
 
 **Check if your matrix satisfies any of the following cases before you get down and dirty with eigenvectors:**
 
@@ -93,12 +95,6 @@ If $$A$$ has a real determinant, $$\operatorname{tr}(A)=0$$, and $$\det(A)<0$$, 
 
 \begin{equation} \label{form1b}
 e^{At}=\cosh(\lambda t)I+\frac{\sinh(\lambda t)}{\lambda}A
-\end{equation}
-
-If $$A$$ is singular and has a nonzero trace,
-
-\begin{equation}\label{form1c}
-e^{At}=\frac{e^{\operatorname{tr}(A)t}A-(A-\operatorname{tr}(A)I)}{\operatorname{tr}(A)}
 \end{equation}
 
 If $$A$$ is real and has complex conjugate eigenvalues $$a \pm bi$$, then
@@ -113,21 +109,54 @@ If $$A$$ has one defective eigenvalue $$\lambda$$, then
 e^{At}=e^{\lambda t}\bigg(I+t(A-\lambda I)\bigg)
 \end{equation}
 
-Examples of using each formula will be included at the end.
+**Note: this will not be the fastest way for a singular** $$2\times 2$$. But if $$A$$ is any sized singular matrix with a nonzero trace,
 
-The columns of these matrices will give you a fundamental set of solutions. So if you are able to just see what the entries will be, it's possible to write down the answers without any scratch work. This applies most to the complex and defective cases. Also, in my opinion, it's a true baller move to casually use a matrix exponential rather than find eigenvectors. :sunglasses:
-
-Knowing *where* these formulas come from makes them *so* much easier to apply. For that reason, I highly recommend reading the derivation of these [matrix exponential formulas](../2x2ezmatrixexp/){:target="_blank"}.
+\begin{equation}\label{form1c}
+e^{At}=\frac{e^{\operatorname{tr}(A)t}A-(A-\operatorname{tr}(A)I)}{\operatorname{tr}(A)}
+\end{equation}
 
 In summary, using $$e^{At}$$ for these cases not only removes the need to find eigenvectors, but also finds you *the* fundamental matrix. And *the* fundamental matrix turns solving initial value problems into calculating a simple matrix product.
 
-Now, if you do not find yourself in any of these cases, then just find the eigenvectors. The ["Eigenvector Columns Theorem"](https://smashmath.github.io/math/eigentricks/#the-eigenvector-columns-theorem) discussed in the [other post](../eigentricks/){:target="_blank"} makes this  relatively trivial once you find the eigenvalues.
+The columns of these matrices will give you a fundamental set of solutions. So if you are able to just see what the entries will be, it's possible to write down the answers without any scratch work. This applies most to the complex and defective cases. Also, in my opinion, it's a true baller move to casually use a matrix exponential rather than find eigenvectors. :sunglasses:
+
+### Real and Distinct Formulas
+
+Now, if you do not find yourself in any of these cases, i.e. $$A$$ has real and distinct eigenvalues, then a matrix exponential will not be the fastest way to calculate the general solution. We will just find the eigenvectors using the ["Eigenvector Columns Theorem"](https://smashmath.github.io/math/eigentricks/#the-eigenvector-columns-theorem) discussed in the [other post](../eigentricks/){:target="_blank"}.
+
+If $$A$$ is singular and has a nonzero trace, then
+1. Choose any nonzero scalar multiple of a column of $$A$$ and call it $$\textbf{v}_{\operatorname{tr}(A)}$$
+2. Choose any nonzero scalar multiple of a column of $$A-\operatorname{tr}(A)I$$ and call it $$\textbf{v}_0$$
+
+The general solution of $$\textbf{x}'=A\textbf{x}$$ will be
+
+\begin{equation}\label{form40}
+\textbf{x}=c_1\textbf{v}_0+c_2e^{\operatorname{tr}(A)t}\textbf{v} _{\operatorname{tr}(A)}
+\end{equation}
+
+Or more generally, if $$A$$ has real and distinct eigenvalues $$\lambda_1,\lambda_2$$, then
+1. Choose any nonzero scalar multiple of a column of $$A-\lambda_1I$$ and call it $$\textbf{v}_{\lambda_2}$$
+2. Choose any nonzero scalar multiple of a column of $$A-\lambda_2I$$ and call it $$\textbf{v}_{\lambda_1}$$
+
+**Yes, the numbers are flipped, it is not a mistake.**
+The general solution of $$\textbf{x}'=A\textbf{x}$$ will be
+
+\begin{equation}\label{form4a}
+\textbf{x}=c_1e^{\lambda_1t}\textbf{v} _{\lambda_1}+c_2e^{\lambda_2t}\textbf{v} _ {\lambda_2}
+\end{equation}
+
+Examples of using all of these formulas will be included at in a later section.
 
 ---
 
 # 3x3s
 
-With $$3\times3$$s, I recommend using some of the tricks in my [eigen-tricks post](../eigentricks/){:target="_blank"}. The first trick is also using the trace being the sum of the eigenvalues, and the determinant being the product, as this works for any sized square matrix. If the matrix has nice entries and you can find a combination of 3 nice eigenvalues which satisfy the trace and determinant, it is almost surely the case that that combination will be correct. You can always calculate $$A-\lambda I$$ for any of them, and if the result is singular then you know you are correct. If not, or you can't guess, then I'd move on to the characteristic polynomial
+With $$3\times3$$s, I recommend using some of the tricks in my [eigen-tricks post](../eigentricks/){:target="_blank"}. The first trick is also using the trace being the sum of the eigenvalues, and the determinant being the product, as this works for any sized square matrix.
+
+If the matrix has nice entries and you can find a combination of 3 nice eigenvalues which satisfy the trace and determinant, it is almost surely the case that that combination will be correct. You can always calculate $$A-\lambda I$$ for any of them, and if the result is singular then you know you are correct.
+
+For example, if the trace and determinant are both $$6$$, then $$1,2,3$$ are numbers which add up to and multiply to $$6$$, so they are a great guess for the eigenvalues. There was a $$3\times3$$ matrix on my Differential Equations midterm which had a trace and determinant of $$6$$ so I was able to find the eigenvalues by inspection!
+
+If $$A-\lambda I$$ is not singular, or you just can't guess what they could be, then I'd move on to the characteristic polynomial
 
 \begin{equation}
 \lambda^3-\operatorname{tr}(A)\lambda^2+(C_{11}+C_{22}+C_{33})\lambda-\det(A)=0
@@ -135,7 +164,7 @@ With $$3\times3$$s, I recommend using some of the tricks in my [eigen-tricks pos
 
 where we are denoting the Cofactor of the $$ij$$ entry of $$A$$ as $$C_{ij}$$.
 
-A trick that works for any sized square matrix: If $$A$$ is a scalar matrix off from being rank one, $$A=kI+vw^T$$, where $$v\cdot w\neq0$$, then we can use \eqref{form1c}
+A trick that works for any sized square matrix: If $$A$$ is a scalar matrix off from being rank one, $$A=kI+vw^T$$, where $$v\cdot w\neq0$$, then we can use \eqref{form40}
 
 \begin{equation}
 e^{At}=e^{kt}\left(\frac{e^{(v\cdot w)t}vw^T-(vw^T-(v\cdot w)I)}{(v\cdot w)}\right)
@@ -176,29 +205,6 @@ $$\textbf{x}=\cosh(6t)\begin{pmatrix}\pi\\e\end{pmatrix}+\frac{\sinh(6t)}{6}\beg
 $$\textbf{x}=\frac{1}{6}\begin{pmatrix}6\pi\cosh(6t)+(7\pi-13e)\sinh(6t)\\6e\cosh(6t)+(\pi-7e)\sinh(6t)\end{pmatrix}$$
 
 And that's it!
-
----
-
-##### Singular
-
-$$\textbf{x}'=\begin{pmatrix}-1&1\\1&-1\end{pmatrix}\textbf{x},\quad \textbf{x}(0)=\begin{pmatrix}\ln(2)\\1\end{pmatrix}$$
-
-Well, this is clearly a singular matrix since the rows are scalar multiples of each other. If you don't see that right away, that's okay. You would calculate that $$\det(A)=0$$. The trace is $$-2$$, which is nonzero, so we may use \eqref{form1c}
-
-$$e^{At}=\frac{e^{-2t}A-(A-(-2)I)}{-2}$$
-
-$$e^{At}\textbf{x}_0=\frac{1}{2}\left(
--e^{-2t}\begin{pmatrix}-1&1\\1&-1\end{pmatrix}+\begin{pmatrix}-1+2&1\\1&-1+2\end{pmatrix}
-\right)\begin{pmatrix}\ln(2)\\1\end{pmatrix}$$
-
-$$\textbf{x}=\frac{1}{2}\left(
--e^{-2t}\begin{pmatrix}1-\ln(2)\\\ln(2)-1\end{pmatrix}+\begin{pmatrix}\ln(2)+1\\\ln(2)+1\end{pmatrix}
-\right)$$
-
-$$\textbf{x}=\frac{1}{2}
-\begin{pmatrix}e^{-2t}(\ln(2)-1)+\ln(2)+1\\e^{-2t}(1-\ln(2))+\ln(2)+1\end{pmatrix}$$
-
-Done.
 
 ---
 
@@ -256,7 +262,56 @@ $$\textbf{x}=e^{t}\left(\begin{pmatrix}e^{-17}\\\tan(1)\end{pmatrix}+t\begin{pma
 
 $$\textbf{x}=e^{t}\begin{pmatrix}e^{-17}+(3e^{-17}-9\tan(1))t\\\tan(1)+(e^{-17}-3\tan(1))t\end{pmatrix}$$
 
-That's literally it. No eigenvector. No solving $$(A-\lambda I)\eta=\xi$$. This is it. We're done. Q.E.D. motherf̶̡̡̬̻̥̖̤̣͌̉l̴̛̻̊́͝ṳ̶̧͙̠͈̦̫̭̞̗̘́̾̒͘̕͝͠b̷̧͚̲͎̣̞͕̼͙͕̈̎̔̈́̈̐̓́b̵̞͎̗͓̪͓̬̺̥̟͇̱̀̒͌̓͆̏̆̄͝͠e̵̡͇̩͔̭͎̾̓̂͂̐͘͜r̴̺͂̋̀͗̈́̐͝s̶̢̫͖͎͔̪̪̰̅̽̍̚͝
+That's literally it. No eigenvector. No solving $$(A-\lambda I)\eta=\xi$$. This is it. We're done. Q.E.D.
+
+---
+
+Now for the cases for which a matrix exponential is not ideal.
+
+##### Singular
+
+$$\textbf{x}'=\begin{pmatrix}-1&1\\1&-1\end{pmatrix}\textbf{x}$$
+
+Well, this is clearly a singular matrix, since the rows are scalar multiples of each other. If you don't see that right away, that's okay. You would calculate that $$\det(A)=0$$. The trace is $$-2$$, which is nonzero, so we know the eigenvalues will be $$0,-2$$. We may then use \eqref{form40}:
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-0" src="{{ '/assets/img/ECTdiagram0.png' | relative_url }}" alt="ECT" title=""/>
+    </div>
+</div>
+<div class="caption">
+    No, this is not a joke or "troll math". This actually works!
+</div>
+
+Our solution is then
+
+$$\textbf{x}=c_1\begin{pmatrix}1\\1\end{pmatrix}
++c_2e^{-2t}\begin{pmatrix}1\\-1\end{pmatrix}$$
+
+Done.
+
+---
+
+##### Real and Distinct
+
+$$\textbf{x}'=\begin{pmatrix}-3&1\\5&1\end{pmatrix}\textbf{x}$$
+
+We know the drill by now: Trace and determinant are $$-2$$ and $$-8$$. $$-4$$ and $$2$$ add up to $$-2$$ and multiply to $$-8$$, so they are our eigenvalues. Now we obtain the eigenvectors like so:
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-0" src="{{ '/assets/img/ECTdiagram.png' | relative_url }}" alt="ECT" title=""/>
+    </div>
+</div>
+
+Thus the solution is
+
+$$\textbf{x}=c_1e^{2t}\begin{pmatrix}1\\5\end{pmatrix}
++c_2e^{-4t}\begin{pmatrix}1\\-1\end{pmatrix}$$
+
+Absolute black magic, I know.
+
+Quick note: If $$A-\lambda I$$ end up being something like $$\begin{pmatrix}3&-9\\-6&18\end{pmatrix}$$, you don't *have* to choose $$\begin{pmatrix}3\\-6\end{pmatrix}$$ or $$\begin{pmatrix}-9\\18\end{pmatrix}$$. I would just go with $$\begin{pmatrix}1\\-2\end{pmatrix}$$. Nothing necessarily wrong with any of the previous two, though. But I wouldn't use them :unamused:
 
 ---
 
