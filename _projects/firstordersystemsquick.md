@@ -91,25 +91,25 @@ Now there are many different potential subcases of the three main cases of eigen
 
 I will copy the most useful formulas from my post about $$2\times2$$ [matrix exponential formulas](../2x2ezmatrixexp/){:target="_blank"}:
 
-If $$A$$ has a real determinant, $$\operatorname{tr}(A)=0$$, and $$\det(A)<0$$, then an eigenvalue of $$A$$ is $$\lambda=\sqrt{-\det(A)}$$, and
+- If $$A$$ has a real determinant, $$\operatorname{tr}(A)=0$$, and $$\det(A)<0$$, then an eigenvalue of $$A$$ is $$\lambda=\sqrt{-\det(A)}$$, and
 
 \begin{equation} \label{form1b}
 e^{At}=\cosh(\lambda t)I+\frac{\sinh(\lambda t)}{\lambda}A
 \end{equation}
 
-If $$A$$ is real and has complex conjugate eigenvalues $$a \pm bi$$, then
+- If $$A$$ is real and has complex conjugate eigenvalues $$a \pm bi$$, then
 
 \begin{equation} \label{form2}
 e^{At}=\frac{e^{at}}{b}\bigg(b\cos(bt)I+\sin(bt)(A-aI)\bigg)
 \end{equation}
 
-If $$A$$ has one defective eigenvalue $$\lambda$$, then
+- If $$A$$ has one defective eigenvalue $$\lambda$$, then
 
 \begin{equation} \label{form3}
 e^{At}=e^{\lambda t}\bigg(I+t(A-\lambda I)\bigg)
 \end{equation}
 
-**Note: this will not be the fastest way for a singular** $$2\times 2$$. But if $$A$$ is any sized singular matrix with a nonzero trace,
+- **Note: this will not be the fastest way for a singular** $$2\times 2$$. But if $$A$$ is any sized singular matrix with a nonzero trace,
 
 \begin{equation}\label{form1c}
 e^{At}=\frac{e^{\operatorname{tr}(A)t}A-(A-\operatorname{tr}(A)I)}{\operatorname{tr}(A)}
@@ -119,11 +119,11 @@ In summary, using $$e^{At}$$ for these cases not only removes the need to find e
 
 The columns of these matrices will give you a fundamental set of solutions. So if you are able to just see what the entries will be, it's possible to write down the answers without any scratch work. This applies most to the complex and defective cases. Also, in my opinion, it's a true baller move to casually use a matrix exponential rather than find eigenvectors. :sunglasses:
 
-### Real and Distinct Formulas
+## Real and Distinct Formulas
 
-Now, if you do not find yourself in any of these cases, i.e. $$A$$ has real and distinct eigenvalues, then a matrix exponential will not be the fastest way to calculate the general solution. We will just find the eigenvectors using the ["Eigenvector Columns Theorem"](https://smashmath.github.io/math/eigentricks/#the-eigenvector-columns-theorem) discussed in the [other post](../eigentricks/){:target="_blank"}.
+Now, if you do not find yourself in any of these cases, i.e. $$A$$ has real and distinct eigenvalues, then a matrix exponential will not be the fastest way to calculate the general solution. We will just find the eigenvectors using the ["Eigenvector Columns Theorem"](https://smashmath.github.io/math/eigentricks/#the-eigenvector-columns-theorem){:target="_blank"} discussed in the [other post](../eigentricks/){:target="_blank"}.
 
-If $$A$$ is singular and has a nonzero trace, then
+- If $$A$$ is singular and has a nonzero trace, then
 1. Choose any nonzero scalar multiple of a column of $$A$$ and call it $$\textbf{v}_{\operatorname{tr}(A)}$$
 2. Choose any nonzero scalar multiple of a column of $$A-\operatorname{tr}(A)I$$ and call it $$\textbf{v}_0$$
 
@@ -133,7 +133,7 @@ The general solution of $$\textbf{x}'=A\textbf{x}$$ will be
 \textbf{x}=c_1\textbf{v}_0+c_2e^{\operatorname{tr}(A)t}\textbf{v} _{\operatorname{tr}(A)}
 \end{equation}
 
-Or more generally, if $$A$$ has real and distinct eigenvalues $$\lambda_1,\lambda_2$$, then
+- More generally, if $$A$$ has real and distinct eigenvalues $$\lambda_1,\lambda_2$$, then
 1. Choose any nonzero scalar multiple of a column of $$A-\lambda_1I$$ and call it $$\textbf{v}_{\lambda_2}$$
 2. Choose any nonzero scalar multiple of a column of $$A-\lambda_2I$$ and call it $$\textbf{v}_{\lambda_1}$$
 
@@ -144,7 +144,8 @@ The general solution of $$\textbf{x}'=A\textbf{x}$$ will be
 \textbf{x}=c_1e^{\lambda_1t}\textbf{v} _{\lambda_1}+c_2e^{\lambda_2t}\textbf{v} _ {\lambda_2}
 \end{equation}
 
-Examples of using all of these formulas will be included at in a later section.
+Examples of using all of these formulas can be found in a section [below](
+  #2x2-examples).
 
 ---
 
