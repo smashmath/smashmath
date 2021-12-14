@@ -9,3 +9,4 @@ _site
 Gemfile.lock
 vendor
 *.psd
+_includes/footer backup.html
