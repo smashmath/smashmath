@@ -5,7 +5,7 @@ date: 2021-12-14
 description: Like systems of DEs, but discrete 👀
 comments: true
 importance: 3
-category: systems of differential equations
+category: works in progress
 authors:  
   - name: Grant Fisher
     url: ""
