@@ -382,7 +382,7 @@ $$\textbf{x}(n+1)=A\textbf{x}(n)$$
 
 And while $$e^{At}\textbf{x}(0)$$ is the solution to $$\textbf{x}'=A\textbf{x}$$, the solution to the equation above is $$A^n\textbf{x}(0)$$
 
-I may choose to write a post about these in the future...
+I may choose to write a post about these in the future... EDIT: [I totally did. I couldn't wait.](../discretesystems)
 
 ## Closing Remarks
 
