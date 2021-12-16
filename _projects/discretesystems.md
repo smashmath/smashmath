@@ -63,7 +63,7 @@ a
 
 But the similarities don't stop there. The solutions are still generally obtained by finding eigenvectors and eigenvalues, just like with DE systems. But instead of having solutions of the form $$\textbf{x}(t)=ce^{\lambda t}\textbf{v}$$, they are of the form $$\textbf{x}(t)=c\lambda^t\textbf{v}$$.
 
-That said, one type of behavior which does not occur for systems of DE is if $$a=0$$. Solutions of this type start constant, and then immediately disappear after the first iteration. For this reason, it is convenient to explicitly  define the function $$0^x$$ in the following way
+That said, one type of behavior which does not occur for systems of DE's is if $$a=0$$. Solutions of this type start constant, and then immediately disappear after finitely many iterations. For this reason, it is convenient to explicitly  define the function $$0^x$$ in the following way
 
 $$\begin{equation}
 0^x=\begin{cases}1,&x=0\\0,&x\neq0\end{cases}
@@ -95,11 +95,7 @@ $$\textbf{x}(t)=A^t\textbf{x}_0$$
 
 Now this is the coolest part, in my opinion.
 
-There are formulas for $$A^t$$ which look nearly *identical* to the formulas for [Matrix Exponentials](../2x2ezmatrixexp/){:target="_blank"} that I found. I will compare them here, but first! I would like to let you in on how I found them. The method described in [that matrix exponential post](../2x2ezmatrixexp/#another-approach). Basically, solve
-
-$$\begin{equation}
-0^x=\begin{cases}1,&x=0\\0,&x\neq0\end{cases}
-\end{equation}$$
+There are formulas for $$A^t$$ which look nearly *identical* to the formulas for [Matrix Exponentials](../2x2ezmatrixexp/){:target="_blank"} that I found. I will compare them here, but first! I would like to let you in on how I found them. I used the method described in [that matrix exponential post](../2x2ezmatrixexp/#another-approach). Basically, solve
 
 $$
 \begin{pmatrix}
@@ -112,6 +108,9 @@ x(t+1)\\y(t+1)
 x(t)\\y(t)
 \end{pmatrix}\quad
 \textbf{x}(0)=
+\begin{pmatrix}
+1\\0
+\end{pmatrix}
 $$
 
 Then $$A^n=x(t)I+y(t)A$$ (for 2x2s!).
@@ -138,25 +137,21 @@ e^{kIt}&=&e^{kt}I\\
 
 If $$A$$ is any square matrix of rank one that also has a nonzero trace.
 
-$$\begin{align}
-e^{At}=&\frac{e^{\operatorname{tr}(A)t}A-(A-\operatorname{tr}(A)I)}{\operatorname{tr}(A)}\\
-A^t=&\frac{\operatorname{tr}(A)^tA-0^t(A-\operatorname{tr}(A)I)}{\operatorname{tr}(A)}
-\end{align}$$
+$$\begin{array}{ccccc}
+e^{At}&=&\frac{e^{\operatorname{tr}(A)t}A-(A-\operatorname{tr}(A)I)}{\operatorname{tr}(A)}&=&I+\frac{e^{\operatorname{tr}(A)t}-1}{\operatorname{tr}(A)}A\\
+A^t&=&\frac{\operatorname{tr}(A)^tA-0^t(A-\operatorname{tr}(A)I)}{\operatorname{tr}(A)}&=&0^tI+\frac{\operatorname{tr}(A)^t-0^t}{\operatorname{tr}(A)}A
+\end{array}$$
 
-This is the primary motivation for defining $$0^0$$.
+As you can see, defining $$0^t$$ as we did makes things very convenient, and allows us to take advantage of the underlying similarities between the two system types.
 
 ## Defective
 
 If $$A$$ is any $$2\times2$$ matrix with a defective eigenvalue $$k\neq0$$,
 
 $$\begin{array}{ccc}
-
+e^{At}&=&e^{kt}\bigg(I+t\big(A-kI\big)\bigg)\\
+A^t&=&k^t\bigg(I+\frac{t}{k}\big(A-kI\big)\bigg)
 \end{array}$$
-
-$$\begin{align}
-e^{At}&=&e^{kt}&\bigg(I+t\big(A-kI\big)\bigg)\\
-A^t&=&k^t&\left(I+\frac{t}{k}\big(A-kI\big)\right)
-\end{align}$$
 
 If $$k=0$$, then the solution is kind of... horrifying.
 
@@ -165,15 +160,22 @@ e^{At}&=&I+tA\\
 A^t&=&0^tI+0^{t-1}A
 \end{array}$$
 
-But looking at it, it does actually work. At zero it's $$I$$, and at one it's $$A$$, and then its zero ever after. Which is indeed what happens with this kind of matrix (nilpotent). I'm not writing $$0^t(I+0^{-1}A)$$, though. This is clearly not a case where we can use regular exponent rules.
+But looking at it, it does *actually* work. At $$t=0$$ it's $$I$$, and at $$t=1$$ it's $$A$$, and then its zero ever after. Which is indeed what happens with this kind of matrix (nilpotent). I'm not writing $$0^t(I+0^{-1}A)$$, though. This is clearly not a case where we can use regular exponent rules.
 
 ## Complex
 
 If $$A\in\mathbb{R}^{2\times2}$$ has complex eigenvalues $$a\pm bi=re^{\pm i\theta}$$, then
 
-$$\begin{align}
-e^{At}&=&e^{at}\bigg(\cos(bt)I+\frac{\sin(bt)}{b}\big(A-aI\big)\bigg)\\
-A^t&=&r^n\bigg(\cos(n\theta)I+\frac{\sin(n\theta)}{b}\big(A-aI\big)\bigg)
-\end{align}$$
+$$\begin{align*}
+e^{At}=&e^{at}\bigg(\cos(bt)I+\frac{\sin(bt)}{b}\big(A-aI\big)\bigg)\\
+A^t=&r^t\bigg(\cos(\theta t)I+\frac{\sin(\theta t)}{b}\big(A-aI\big)\bigg)
+\end{align*}$$
 
 ## Distinct
+
+If $$A$$ has two distinct eigenvalues $$\lambda_1,\lambda_2$$, then
+
+$$\begin{align*}
+e^{At}=&\frac{e^{\lambda_2t}(A-\lambda_1I)-e^{\lambda_1t}(A-\lambda_2I)}{\lambda_2-\lambda_1}\\
+A^t=&\frac{\lambda_2^t(A-\lambda_1I)-\lambda_1^t(A-\lambda_2I)}{\lambda_2-\lambda_1}
+\end{align*}$$
