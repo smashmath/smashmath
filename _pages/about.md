@@ -6,11 +6,12 @@ description: i am a math student and tutor
 
 profile:
   align: right
-  image: gauss screm.jpg
+  image: barkley.gif
   address: > 
     <p>nix#2718</p>   
     <p>e</p> 
     <p>california CA</p>
+    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1187516174">image background source</a>
 
 news: true  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -23,6 +24,8 @@ local boy does math. "is okay at it" says friends and family.
 
 [here are some math posts ive written if you want to look at them i guess](./math){:target="_blank"}
 
+<a></a>
+
 ---
 
 personal favorites:
@@ -32,5 +35,3 @@ personal favorites:
 [Shortcuts for Finding Eigenvalues and Eigenvectors](./math/eigentricks){:target="_blank"}
 
 [Solving systems of first-order DE's like a boss](./math/firstordersystemsquick){:target="_blank"}
-
----
