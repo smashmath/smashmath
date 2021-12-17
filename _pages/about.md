@@ -11,6 +11,7 @@ profile:
     <p>nix#2718</p>   
     <p>e</p> 
     <p>california CA</p>
+    <p>santa-barkly wishes you a happy holiday</p>  
     <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1187516174">image background source</a>
 
 news: true  # includes a list of news items
