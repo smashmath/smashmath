@@ -15,6 +15,7 @@ toc:
   - name: Intro
     subsections:
       - name: Solution Behavior
+      - name: New Solution Behaviors
   - name: The Best Solution
   - name: Solution Comparison (2x2)
     subsections:
@@ -37,13 +38,13 @@ But here we will discuss the discrete system
 
 $$\textbf{x}(t+1)=A\textbf{x}(t)$$
 
-Where instead of a continuous function, we get a discrete set of points
+Where $$t\in\mathbb{Z}_0^+$$, and instead of a continuous function, we get a discrete set of points
 
 $$\textbf{x}(0),\textbf{x}(1),\ldots,\textbf{x}(t),\ldots$$
 
 ## Solution Behavior
 
-With systems of DEs, its the sign of the eigenvalues which tells you the behavior. Negative is asymptotically stable (going to zero), positive is unstable, and zero is statically stable.
+With systems of DEs, its the sign of the eigenvalues that tells you the behavior. Negative is asymptotically stable (going to zero), positive is unstable, and zero is statically stable.
 
 However, in these discrete systems, it's the *magnitude*. To understand why, we need to know what our solutions even look like!
 
@@ -55,7 +56,7 @@ Which has the solution $$x(t)=ce^{at}$$. Therefore, its the sign of $$a$$ which 
 
 $$x(t+1)=ax(t)$$
 
-the solutions are of the form $$\textbf{x}(t)=ca^t$$. So we still get the behavior of asymptotically stable (going to zero), unstable, and types of static stability, but it's not about the sign. I encourage you to try and think about what it could be before reading on! It's an interesting thought, in my opinion.
+the solutions are of the form $$x(t)=ca^t$$. So we still get the behavior of asymptotically stable (going to zero), unstable, and types of static stability, but it's not about the sign anymore, and there are some new types of behavior. I encourage you to try and think about what the differences could be before reading on! It's an interesting thing to think about, in my opinion.
 
 Repeatedly multiplying a number $$a$$ to some nonzero initial number $$c$$ gets big when $$|
 a
@@ -63,7 +64,13 @@ a
 
 But the similarities don't stop there. The solutions are still generally obtained by finding eigenvectors and eigenvalues, just like with DE systems. But instead of having solutions of the form $$\textbf{x}(t)=ce^{\lambda t}\textbf{v}$$, they are of the form $$\textbf{x}(t)=c\lambda^t\textbf{v}$$.
 
-That said, one type of behavior which does not occur for systems of DE's is if $$a=0$$. Solutions of this type start constant, and then immediately disappear after finitely many iterations. For this reason, it is convenient to explicitly  define the function $$0^x$$ in the following way
+### New Solution Behaviors
+
+That said, there are type of behavior fpr discrete systems which does not occur for systems of DE's. Specifically, if $$a\leq0$$.
+
+When $$a<0$$, our solution is $$(-a)^t=(-1)^ta^t$$, giving us an alternating pattern where each iteration flips its sign. This creates a sense of bouncing back and forth. With $$a<-1$$, it's bouncing back and forth to infinity. With $$-1<a<0$$, it's bouncing back and forth towards the origin. And if $$a=-1$$, it's simply bouncing back and forth without getting closer or further away.
+
+When $$a=0$$, solutions of this type start constant, and then immediately disappear after finitely many iterations. For this reason, it is convenient to explicitly  define the function $$0^x$$ in the following way
 
 $$\begin{equation}
 0^x=\begin{cases}1,&x=0\\0,&x\neq0\end{cases}
@@ -91,18 +98,18 @@ $$\textbf{x}(t+1)=A\textbf{x}(t)$$
 
 the best general solution is
 
-$$\textbf{x}(t)=A^t\textbf{x}_0$$
+$$\textbf{x}(t)=A^t\textbf{x}(0)$$
 
-Now this is the coolest part, in my opinion.
+Now, this is the coolest part, in my opinion.
 
-There are formulas for $$A^t$$ which look nearly *identical* to the formulas for [Matrix Exponentials](../2x2ezmatrixexp/){:target="_blank"} that I found. I will compare them here, but first! I would like to let you in on how I found them. I used the method described in [that matrix exponential post](../2x2ezmatrixexp/#another-approach). Basically, solve
+There are formulas for $$A^t$$ which look nearly *identical* to the formulas for [Matrix Exponentials](../2x2ezmatrixexp/){:target="_blank"} that I found. I will compare them here, but first! I would like to let you in on how I found them. I used the method described in [that matrix exponential post](../2x2ezmatrixexp/#another-approach). Basically, if the characteristic polynomial is $$s^2=p_0+p_1s$$, solve
 
 $$
 \begin{pmatrix}
 x(t+1)\\y(t+1)
 \end{pmatrix}=
 \begin{pmatrix}
-0&-\det(A)\\1&\operatorname{tr}(A)
+0&p_0\\1&p_1
 \end{pmatrix}
 \begin{pmatrix}
 x(t)\\y(t)
@@ -113,7 +120,11 @@ x(t)\\y(t)
 \end{pmatrix}
 $$
 
-Then $$A^n=x(t)I+y(t)A$$ (for 2x2s!).
+Then $$A^n=x(t)I+y(t)A$$ (for 2x2s!). This does generalize, and I will at some point make a post about that.
+
+Theoretically, I'm fairly certain you can achieve the same results by solving for the [normalized solutions](/math/normalized){:target="_blank"} of the linear difference equation
+
+$$a_{n+2}-p_1a_{n+1}-p_0a_n=0$$
 
 # Solution Comparison (2x2)
 
@@ -153,7 +164,7 @@ e^{At}&=&e^{kt}\bigg(I+t\big(A-kI\big)\bigg)\\
 A^t&=&k^t\bigg(I+\frac{t}{k}\big(A-kI\big)\bigg)
 \end{array}$$
 
-If $$k=0$$, then the solution is kind of... horrifying.
+If $$k=0$$, then the solution is kind of... disturbing.
 
 $$\begin{array}{ccc}
 e^{At}&=&I+tA\\
