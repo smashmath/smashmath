@@ -11,8 +11,8 @@ profile:
     <p>nix#2718</p>   
     <p>e</p> 
     <p>california CA</p>
-    <p>santa-barkly wishes you a happy holiday</p>  
-    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1187516174">image background source</a>
+    <p>have a happy holiday</p>  
+    
 
 news: true  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -25,8 +25,6 @@ local boy does math. "is okay at it" says friends and family.
 
 [here are some math posts ive written if you want to look at them i guess](./math){:target="_blank"}
 
-<a></a>
-
 ---
 
 personal favorites:
@@ -36,3 +34,7 @@ personal favorites:
 [Shortcuts for Finding Eigenvalues and Eigenvectors](./math/eigentricks){:target="_blank"}
 
 [Solving systems of first-order DE's like a boss](./math/firstordersystemsquick){:target="_blank"}
+
+<br>
+
+<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1187516174">image background source</a>
