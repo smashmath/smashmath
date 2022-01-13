@@ -40,7 +40,7 @@ my research stuff:
 
 - [Function Interpolation](./math/functioninterp){:target="_blank"}: a method to get a function which satisfies certain conditions using determinants. for example, a determinant which gives the unique polynomial that passes through a certain set of points.
 
-- [A Formula for Some Particular Solutions to certain DE's](./math/exppolynonhomo){:target="_blank"}: a determinant formula which gives a particular solution to any linear constant-coefficient ordinary differential equation which has a forcing function of exponential nature (ex. $$g(t)=t^ne^{\alpha t}$$).
+- [A Formula for Some Particular Solutions to certain DE's](./math/exppolynonhomo){:target="_blank"}: a determinant formula which gives a particular solution to any linear constant-coefficient ordinary differential equation which has a forcing function of exponential nature (ex. $$g(t)=t^ne^{\alpha t}\cos(\beta t)$$).
 
 - [Constructing integer systems of differential equations with integer solutions](./math/firstordersystems){:target="_blank"}: methods to construct nice systems with nice solutions. useful for professors/textbook authors to make good lecture examples or exam problems. Somewhat of a work in progress. i also have a post for [second order systems](./math/secondordersystems){:target="_blank"}.
 
