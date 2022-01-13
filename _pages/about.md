@@ -50,7 +50,7 @@ my research stuff:
 3. [Matrix Exponential Formulas for 2x2 Matrices Using Laplace Transforms](./math/firstordersystems){:target="_blank"}
 4. [Exponentials of Symmetric Matrices Using the Spectral Theorem](./math/firstordersystems){:target="_blank"}
 
-- A New Way to Calculate Normalized Solutions to Linear Constant-Coefficient Differential Equations: Coming soon...
+- [New Ways to Calculate Normalized Solutions to Linear Constant-Coefficient Differential Equations](./math/newnormalized){:target="_blank"}: Solve just *one* set of $$n$$ first-order initial value problem to get $$n$$ normalized solutions to an $$n$$-th order differential equation. Alternatively, find one normalized solution and get the others recursively.
 
 ---
 
