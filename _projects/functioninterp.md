@@ -1,14 +1,31 @@
 ---
-layout: page
+layout: distill
 title: Function Interpolation
 date: 2021-08-16
 description: Find a function that matches your requirements
 comments: true
 importance: 2
 category: linear algebra
+authors:  
+  - name: Grant Fisher
+    url: ""
+    affiliations:
+      name: None
+toc:
+  - name: The Determinant Polynomial
+    subsections:
+      - name: Polynomial Example
+  - name: Applications to polynomials
+    subsections:
+      - name: Evaluating unknown polynomials
+      - name: Synthetic division
+  - name: Generalizing Beyond Polynomials
+    subsections:
+      - name: The System Function
+      - name: A non-polynomial example
 ---
 
-This is a technique that I "discovered" on my own a few years ago. It's a way to find the unique function of a certain form which satisfies given conditions using determinants. The downside of this technique is that it suffers some of the same problems that determinants in general do, in that it can be unwieldy to use and require some substantial computational power. Additionally, it only works if the function you're looking for is unique. It is useless to get you a particular solution if there is more than one possibility. However, it can do a number of neat things which may make it worth the effort. Especially if one is willing to use a program to do the dirty work.
+This is a technique that I "discovered" on my own a few years ago. It's a way to find the unique function of a certain form which satisfies given conditions using determinants. The downside of this technique is that it suffers some of the same problems that determinants in general do, in that it can be unwieldy to use and require some substantial computational power. Additionally, it only works if the function you're looking for is unique. It is useless to get you a particular solution if there is more than one possibility. However, it can do a number of neat things which may make it worth the effort. Especially if one is willing to use a computer to do the dirty work.
 
 ---
 
@@ -287,7 +304,7 @@ $$
 
 Which are much easier determinants to evaluate. There are other row operations you could perform to simplify the evaluating, and indeed I believe they are worth doing. In fact, I will perform a few more simplifications so that the solution is a bit more clear if you wish to view them:
 
-<details><summary>Further evaluation</summary>
+<details style="color: white;"><summary>Further evaluation</summary>
 $$
 p(x)=
 \frac{
@@ -374,6 +391,8 @@ p(-1)=(-1)^{3+1}
 
 And, indeed, if you evaluate these determinants, you will in fact get $$p(-1)=-5$$. Therefore, if you don't know *what* the polynomial is, but you know the constraints it satisfies, you can use the determinant polynomial to evaluate it at any point.
 
+Compare this to solving for the polynomial first, and *then* evaluating it. This is just a simple computation, which can be done very quickly with a computer.
+
 ### Synthetic division
 
 Now if you were viewing some of the simplification steps above, you may have wondered why I didn't subtract the second row from the first row to get a column with only one nonzero entry. The reason is because I didn't want to spoil the surprise. First I want to use synthetic division on $$p(x)=-3x^2+7x+5$$ at the point $$x=1$$.
@@ -423,7 +442,7 @@ $$
 
 Now we can do a few simplification steps.
 
-<details>
+<details style="color: white;">
 We know that $$(-1)^{3+1}=1$$ and $$\begin{vmatrix}
 1&1&1^2\\
 0&1&3\\
@@ -589,7 +608,7 @@ y_1\\\vdots\\y_n
 
 then we can repeat the same process that we did before to get the determinant polynomial, since this too is a function which is a linear combination of functions.
 
-### The System Function
+## The System Function
 
 $$
 \begin{equation}
