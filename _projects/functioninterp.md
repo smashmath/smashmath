@@ -25,7 +25,9 @@ toc:
       - name: A non-polynomial example
 ---
 
-This is a technique that I "discovered" on my own a few years ago. It's a way to find the unique function of a certain form which satisfies given conditions using determinants. The downside of this technique is that it suffers some of the same problems that determinants in general do, in that it can be unwieldy to use and require some substantial computational power. Additionally, it only works if the function you're looking for is unique. It is useless to get you a particular solution if there is more than one possibility. However, it can do a number of neat things which may make it worth the effort. Especially if one is willing to use a computer to do the dirty work.
+This is a technique that I "discovered" on my own a few years ago. It's a way to find the unique function, which is a linear combination of any set of basis functions, which satisfies given conditions, using determinants.
+
+The downside of this technique is that it suffers some of the same problems that determinants in general do, in that it can be unwieldy to use and require some substantial computational power. Additionally, it only works if the function you're looking for is unique. It is useless to get you a particular solution if there is more than one possibility. For example, if you have seven basis functions, but only three conditions, this will not be useful to you. However, it can do a number of neat things which may make it worth the effort. Especially if one is willing to use a computer to do the dirty work.
 
 ---
 
@@ -33,7 +35,9 @@ This is a technique that I "discovered" on my own a few years ago. It's a way to
 
 So let us start where I did when I found this: [Polynomial Interpolation](../polyinterp/){:target="_blank"}.
 
-For the purposes of simplicity, we will assume that the constraints we require on our polynomial $$p(x)$$ will simply be that they pass through a set of points (with distinct $$x$$ values) $$\{(x_1,y_1),\ldots,(x_n,y_n)\}$$ (equivalent to requiring that $$p(x_1)=y_1,\ldots,p(x_n)=y_n$$). However, this process can be generalized to have requirements on the $$k_i$$-th derivative of $$p(x)$$, $$p^{(k_i)}(x_i)=y_i$$, where $$k_i$$ is a nonnegative integer.
+For the purposes of simplicity, we will assume that the constraints we require on our polynomial $$p(x)$$ will simply be that they pass through a set of points (with distinct $$x$$ values) $$\{(x_1,y_1),\ldots,(x_n,y_n)\}$$ (equivalent to requiring that $$p(x_1)=y_1,\ldots,p(x_n)=y_n$$).
+
+However, this process can be generalized to have requirements on the $$k_i$$-th derivative of $$p(x)$$, $$p^{(k_i)}(x_i)=y_i$$, where $$k_i$$ is a nonnegative integer. The input $$x$$ values do not also have to be distinct if the requirements are on the derivatives. For example, you can have a condition on $$p(x_1),p'(x_1),p(x_2)$$.
 
 If we have $$n$$ constraints on our polynomial, we can *usually* safely assume that our polynomial will be of the form
 
