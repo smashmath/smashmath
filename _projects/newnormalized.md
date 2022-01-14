@@ -83,7 +83,7 @@ Y_n(t_0)=0&Y_1'(t_0)=0&\ldots&Y_1^{(n-1)}(t_0)=1\\
 \end{array}
 \end{equation}$$
 
-Note that this is their Wronskian, and at $$t_0$$ its value is the identity matrix!
+Note that these will be the entries of their Wronskian, and at $$t_0$$ the Wronksian is the identity matrix!
 
 Now you may be asking yourself, "why would I want to solve $$n$$ initial value problems to get these solutions?" Apart from the fact that I have just detailed a method to make it solving just one initial value problem, in theory their use is solving multiple initial value problems.
 
@@ -189,7 +189,7 @@ s(Y_1+sY_2+\ldots+s^{n-1}Y_n)=Y_1'+sY_2'+\ldots+s^{n-1}Y_n'
 $$
 
 $$
-sY_1+s^2Y_2+\ldots+s^{n}Y_n)=Y_1'+sY_2'+\ldots+s^{n-1}Y_n'
+sY_1+s^2Y_2+\ldots+s^{n}Y_n=Y_1'+sY_2'+\ldots+s^{n-1}Y_n'
 $$
 
 $$
@@ -256,7 +256,13 @@ $$\begin{equation} \label{proportional}
 Y_1'=p_0Y_n
 \end{equation}$$
 
-Implying that the integral of $$Y_n$$ is proportional to $$Y_1$$. Not going to lie, I am unsure why this is true, but it is. :man_shrugging:
+Implying that the integral of $$Y_n$$ is proportional to $$Y_1$$. Not going to lie, I don't have an intuitive explanation for why this is true, but it is verifiable. :man_shrugging:
+
+One observation to make is that if $$p_0=0$$, then the expression for $$Y_1$$ becomes
+
+$$Y_1'=0,\quad Y_1(0)=1$$
+
+And the solution to that is just $$Y_1(t)=1$$.
 
 Also, we see that for $$1\leq k\leq n-1$$
 
@@ -289,7 +295,9 @@ Now here are all of the ways I know of to calculate normalized solutions. I am g
 3. Solve the one system of initial value problems detailed above \eqref{method}
 4. Get $$Y_n$$ and obtain the others recursively
 
-When discussing using a "computer" I'm generally imagining putting it into Wolfram Alpha or MATLAB.
+You could also take the first row of $$e^{Bt}$$, but that is pretty much equivalent to method 3. Also, $$n\times n$$ matrix exponentials are much harder to obtain than solving one $$n\times n$$ system of first order initial value problems.
+
+When discussing using a "computer" I'm generally imagining putting it into Wolfram Alpha or MATLAB. I usually prefer doing stuff by hand though, to be honest.
 
 Generally, the pattern is that all of these methods are "fine" for the second order case and require *approximately* the same amount of work by hand. Some are better than others for the third order case using certain shortcuts. But for fourth order and higher, doing things by hand gets to be too difficult.
 
@@ -310,7 +318,7 @@ Maybe do this once to see how tedious it can be and why you will never want to d
 
 ### Inverting the Wronskian
 
-This requires inverting an $$n\times n$$ matrix. While this is very manageable for a $$2\times 2$$ and tolerable for a $$3\times 3$$ (using the adjugate) in the second and third order cases respectively, this becomes very tedious for anything larger.
+This requires inverting an $$n\times n$$ matrix. While this is very manageable for a $$2\times 2$$ and tolerable for a $$3\times 3$$ (using the adjugate) in the second and third order cases respectively, this becomes very tedious to do by hand for anything larger.
 
 The general idea is that to solve an initial value problem you get your general solution $$y=c_1y_1+\ldots+c_ny_n$$. Then you solve the system of equations
 
@@ -349,7 +357,7 @@ y_1(0)^{(n-1)}&\ldots&y_n^{(n-1)}(0)&0&\ldots&1\\
 \right)
 $$
 
-Which, if we abbreviate $$W[y_1,\ldots,y_m](0)$$ as $$W$$, can be rewritten as
+The coefficient matrix is our Wronskian, so if we abbreviate $$W[y_1,\ldots,y_m](0)$$ as $$W$$, we can rewrite that system simply as
 
 $$
 \left(
@@ -359,7 +367,7 @@ W&I
 \right)
 $$
 
-And, well, that's just a general method for finding $$W^{-1}$$. Thus, the columns of $$W^{-1}$$ give you the coefficients for each of the normalized solutions.
+And, well, row reducing that is just a general method for finding $$W^{-1}$$. Thus, the columns of $$W^{-1}$$ give you the coefficients for each of the normalized solutions.
 
 Now, this gets difficult quickly because you have to actually find $$y_j^{(i)}(0)$$. Meaning you have to differentiate all $$n$$ of your solutions $$n-1$$ times. For the second order case, it's just one derivative, meaning 2 total. For the third order case, however, it's 6 differentiations. Then it's 12, 20, etc. And differentiation can be kind of tedious, so it is not ideal.
 
@@ -369,7 +377,7 @@ So even if you do the inversion using a Wolfram Alpha, you have to calculate the
 
 This method requires no differentiating, but it requires finding the eigenvectors of an $$n\times n$$ matrix. This is trivial for a computer, and for this reason it is by far the fastest way to compute them that way. This system is very easy to put into Wolfram Alpha, for example.
 
-Doing this by hand, however, is a different story. Even just computing the characteristic polynomial can be tedious to do by hand. That said! The roots of the characteristic polynomial of $$B^T$$ are the same as the roots of the characteristic polynomial of \eqref{prob}. So you already know the characteristic polynomial and eigenvalues going in.
+Doing this by hand, however, is a different story. Even just computing the characteristic polynomial can be tedious to do by hand. That said! The roots of the characteristic polynomial of $$B^T$$ are the same as the roots of the characteristic polynomial of \eqref{prob}. So, assuming you already factored the characteristic polynomial in the process of solving the for the homogeneous solutions, you know the eigenvalues going in.
 
 Furthermore, the matrix is simple enough that finding eigenvectors is not too difficult. In fact, I found a formula for the eigenvectors:
 
@@ -385,13 +393,15 @@ In general, the entries are
 
 $$v_i=\left(\lambda^{n-i}-\sum_{k=i}^{n-1}p_k\lambda^{k-i}\right)v_n$$
 
-Basically $$v_i=\frac{v_{i-1}+p_i}{\lambda}$$. Or, in words, canceling out the constant term and then dividing by lambda.
+Basically $$v_i=\frac{v_{i-1}+p_i}{\lambda}$$. Or, in words, canceling out the constant term of the previous entry and then dividing by $$\lambda$$.
 
 Now, generalized eigenvectors for the repeated case are not quite as easy to find. I have not found a simple general formula, and I don't think it would be worth looking for.
 
-Finding eigenvectors when you already know the eigenvalues is basically equivalent to finding vectors in the null space of $$B^T-\lambda I$$. Of course, generalized eigenvectors complicate things a bit, but overall it's just row reduction. However, once you find all the eigenvectors, you have to solve the initial value problem. Luckily, there is a shortcut which is to calculate the cofactors of the first row of the matrix of eigenvectors (or modal matrix in the general case) and then divide by the determinant.
+Finding eigenvectors when you already know the eigenvalues is basically equivalent to finding vectors in the null space of $$B^T-\lambda I$$. Of course, generalized eigenvectors complicate things a bit, but overall it's just row reduction.
 
-In conclusion, this is not the best way to do it by hand, in my opinion. Choosing between this and inverting the Wronskian, I would probably choose this, though, because I find solving these systems a lot more fun than differentiating and inverting a matrix.
+However, once you find all the eigenvectors, you have to solve the initial value problem. Luckily, there is a shortcut which is to calculate the cofactors of the first row of the matrix of eigenvectors (or modal matrix in the general case) and then divide by the determinant. This is equivalent to using Cramer's rule, which is actually not a bad idea in this case since the $$\textbf{b}$$ vector has only one nonzero entry, making it a good choice to expand the determinant along its column.
+
+In conclusion, this is not the best way to do it by hand, in my opinion. Choosing between this and inverting the Wronskian, I would probably choose this, though, because I find solving these systems a lot more fun than differentiating a bunch of different functions and then inverting a matrix.
 
 ### Using the recursive formula
 
@@ -416,7 +426,7 @@ But by hand, this is not bad.
 
 I would say that, by hand, one $$n$$-th order IVP is better than $$n$$ first order IVPs (as well as $$n$$ $$n$$-th order IVPs of course).
 
-Finally ranking them by which method would be best to use:
+Finally ranking them by which method would be best to use in my opinion:
 
 |                  | $$n$$ $$n$$-th order IVPs | Wronskian inverse | $$n$$ first order IVPs | Recursive Formula |
 |------------------|---------------------------|-------------------|------------------------|-------------------|
