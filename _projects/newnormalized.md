@@ -393,7 +393,7 @@ In general, the entries are
 
 $$v_i=\left(\lambda^{n-i}-\sum_{k=i}^{n-1}p_k\lambda^{k-i}\right)v_n$$
 
-Basically $$v_i=\frac{v_{i-1}+p_i}{\lambda}$$. Or, in words, canceling out the constant term of the previous entry and then dividing by $$\lambda$$.
+Basically $$v_i=\frac{v_{i-1}+p_i}{\lambda}$$. Or, in words, canceling out the constant term of the previous entry and then dividing by $$\lambda$$. The first entry is obtained from doing that process to the original characteristic polynomial.
 
 Now, generalized eigenvectors for the repeated case are not quite as easy to find. I have not found a simple general formula, and I don't think it would be worth looking for.
 
