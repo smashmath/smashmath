@@ -420,7 +420,7 @@ But by hand, this is not bad.
 ## Summary
 
 1. Solving $$n$$ problems individually: Requires solving $$n$$ $$n$$-th order initial value problems. This includes factoring an $$n$$-th degree polynomial, evaluating $$n^2-n$$ derivatives and solving $$n$$ systems of $$n$$ equations with $$n$$ variables.
-2. Inverting the Wronskian requires no initial value problem solving, but instead turns it into a linear algebra problem where one must invert an $$n\times n$$ matrix. You also need to differentiate and evaluate your $$n$$ solutions (making that $$n^2-n$$ derivatives total).
+2. Inverting the Wronskian requires no initial value problem solving, but instead turns it into a linear algebra problem where one must invert an $$n\times n$$ matrix. You, of course first need to factor an $$n$$-th degree polynomial, but then you also need to differentiate and evaluate your $$n$$ solutions (making that $$n^2-n$$ derivatives total).
 3. Solving the one system of first order IVPs unsurprisingly requires solving one system of $$n$$ first order initial value problems. This requires no derivatives but requires solving for a basis of $$n$$ eigenvectors and solving one system of $$n$$ equations with $$n$$ variables.
 4. Using the recursive formula requires solving one $$n$$-th order initial value problem and then differentiating ($$n-1$$ functions total) and linearly combining functions.
 
