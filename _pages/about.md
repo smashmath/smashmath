@@ -43,13 +43,13 @@ things ive ~~discovered~~ independently derived. i think they're all cool, but o
 
 - [A formula for some particular solutions to certain DE's](./math/exppolynonhomo){:target="_blank"}: a determinant formula which gives a particular solution to any linear constant-coefficient ordinary differential equation which has a forcing function of exponential nature (ex. $$g(t)=t^ne^{\alpha t}\cos(\beta t)$$). Uses results from [Function Interpolation](./math/functioninterp){:target="_blank"}.
 
-- [Constructing integer systems of differential equations with integer solutions](./math/firstordersystems){:target="_blank"}: methods to construct nice systems with nice solutions. useful for professors/textbook authors to make good lecture examples or exam problems. Somewhat of a work in progress. i also have a post for [second order systems](./math/secondordersystems){:target="_blank"}.
+- [Constructing integer systems of differential equations with integer solutions](./math/firstordersystems){:target="_blank"}: methods to construct nice systems with nice solutions. useful for professors/textbook authors to make good lecture examples or exam problems. somewhat of a work in progress. i also have a post for [second order systems](./math/secondordersystems){:target="_blank"}.
 
-- Matrix Exponential stuff: i really love matrix exponentials.
+- matrix exponential stuff: i really love matrix exponentials.
 1. [Matrix Exponential Formulas for 2x2 Matrices](./math/firstordersystems){:target="_blank"}
 2. [Matrix Exponentials Using Differential Equations](./math/firstordersystems){:target="_blank"}
-3. [Matrix Exponential Formulas for 2x2 Matrices Using Laplace Transforms](./math/firstordersystems){:target="_blank"}
-4. [Exponentials of Symmetric Matrices Using the Spectral Theorem](./math/firstordersystems){:target="_blank"}
+3. [Exponentials of Symmetric Matrices Using the Spectral Theorem](./math/firstordersystems){:target="_blank"}
+4. [Matrix Exponential Formulas for 2x2 Matrices Using Laplace Transforms](./math/firstordersystems){:target="_blank"}
 5. Another approach to matrix exponential formulas: coming soon...
 
 - [New Ways to Calculate Normalized Solutions to Linear Constant-Coefficient Differential Equations](./math/newnormalized){:target="_blank"}: solve just *one* set of $$n$$ first-order initial value problem to get the $$n$$ normalized solutions to an $$n$$-th order differential equation. this should be the fastest way to find them using a computer. alternatively, find one normalized solution and get the others recursively.
