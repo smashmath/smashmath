@@ -40,7 +40,7 @@ my research stuff:
 
 things ive ~~discovered~~ independently derived. i think they're all cool, but only a few of them are actually useful, in my opinion.
 
-- [Function Interpolation](./math/functioninterp){:target="_blank"}: a method to get a function (which is a linear combination of any given set of basis functions) that satisfies certain conditions using determinants, given that one exists and is unique. for example, a determinant which gives the unique lowest degree polynomial that passes through a certain set of points.
+- [Function Interpolation](./math/functioninterp){:target="_blank"}: a method to get a function (which is a linear combination of some given set of basis functions) that satisfies certain conditions using determinants, given that one exists and is unique. for example, a determinant which gives the unique lowest degree polynomial that passes through a certain set of points.
 
 - [A formula for some particular solutions to certain DE's](./math/exppolynonhomo){:target="_blank"}: a determinant formula which gives a particular solution to any linear constant-coefficient ordinary differential equation which has a forcing function of exponential nature (ex. $$g(t)=t^ne^{\alpha t}\cos(\beta t)$$). Uses results from [Function Interpolation](./math/functioninterp){:target="_blank"}.
 
