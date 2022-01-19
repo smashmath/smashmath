@@ -2,7 +2,7 @@
 layout: distill
 title: New Ways to Calculate Normalized Solutions to Linear Constant-Coefficient Differential Equations
 date: 2022-01-12
-description: The fastest way for a computer, and a fast way by hand.
+description: The fastest way for a computer, and a fast way by hand. Only for constant coefficients, however.
 comments: true
 importance: 3
 category: differential equations
@@ -83,7 +83,7 @@ Y_n(t_0)=0&Y_1'(t_0)=0&\ldots&Y_1^{(n-1)}(t_0)=1\\
 \end{array}
 \end{equation}$$
 
-Note that these will be the entries of their Wronskian, and at $$t_0$$ the Wronksian is the identity matrix!
+Note that these will be the entries of their Wronskian, and at $$t_0$$ the Wronskian is the identity matrix!
 
 Now you may be asking yourself, "why would I want to solve $$n$$ initial value problems to get these solutions?" Apart from the fact that I have just detailed a method to make it solving just one initial value problem, in theory their use is solving multiple initial value problems.
 
@@ -286,6 +286,34 @@ $$
 
 And so on.
 
+One thing to note is that $$Y_n$$ is particularly easy to find using the Laplace Transform. In fact, it turns out to actually be the weight function, giving it even more applications than one (including me) might originally expect. The weight function, briefly, is the inverse Laplace Transform of the transfer function (the reciprocal of the characteristic polynomial),
+
+$$
+\mathscr{L}\{Y_n\}=\frac{1}{s^n-p_{n-1}s^{n-1}-\ldots-p_1s-p_0}
+$$
+
+The weight function's primary application is in solving for particular solutions. As the unique solution to the initial value problem
+
+$$
+y^{(n)}=p_0y+p_1y'+\ldots+p_{n-1}y^{(n-1)}+g(t),\quad y(0)=0,\ldots,y^{(n-1)}(0)=0
+$$
+
+will be the convolution
+
+$$y_p(t)=Y_n(t)*g(t)=\int_0^tY_n(t-\tau)g(\tau)\,d\tau$$
+
+Using superposition, this gives a formula for the solution to the general nonhomogeneous initial value problem
+
+$$
+y^{(n)}=p_0y+p_1y'+\ldots+p_{n-1}y^{(n-1)}+g(t),\quad y(0)=y_0,\ldots,y^{(n-1)}(0)=y^{(n-1)}_0
+$$
+
+$$
+y(t)=y_0Y_1(t)+\ldots+y^{(n-1)}_0Y_n(t)+Y_n(t)*g(t)
+$$
+
+My conjecture is that the reason $$Y_n$$ is so useful/shows up so much in the above formulas is exactly because it is the weight function.
+
 ## Normalized solutions recap
 
 Now here are all of the ways I know of to calculate normalized solutions. I am going to compare and assess each of their uses.
@@ -432,3 +460,5 @@ Finally ranking them by which method would be best to use in my opinion:
 |------------------|---------------------------|-------------------|------------------------|-------------------|
 | By hand          | 4th                       | 3rd               | 2nd                    | 1st               |
 | Using a computer | 4th                       | 2nd               | 1st                    | 3rd               |
+
+For non-constant coefficients, the Wronskian inverse is really your only option.
