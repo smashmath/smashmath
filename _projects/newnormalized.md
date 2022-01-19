@@ -2,7 +2,7 @@
 layout: distill
 title: New Ways to Calculate Normalized Solutions to Linear Constant-Coefficient Differential Equations
 date: 2022-01-12
-description: The fastest way for a computer, and a fast way by hand. Only for constant coefficients, however.
+description: The fastest way for a computer, and a fast way by hand.
 comments: true
 importance: 3
 category: differential equations
