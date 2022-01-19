@@ -262,7 +262,7 @@ One observation to make is that if $$p_0=0$$, then the expression for $$Y_1$$ be
 
 $$Y_1'=0,\quad Y_1(0)=1$$
 
-And the solution to that is just $$Y_1(t)=1$$.
+And the solution to that is just $$Y_1(t)=1$$. Since that function obviously satisfies the conditions, it makes sense that we can just jump right ahead to that being the first normalized solution. Similarly, depending on the multiplicity of the root $$0$$, the first couple of normalized solutions should be $$Y_k=\frac{t^k}{k!}$$.
 
 Also, we see that for $$1\leq k\leq n-1$$
 
