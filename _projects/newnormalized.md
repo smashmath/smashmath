@@ -286,6 +286,8 @@ $$
 
 And so on.
 
+## Some notes on the Laplace Transforms
+
 One thing to note is that $$Y_n$$ is particularly easy to find using the Laplace Transform. In fact, it turns out to actually be the weight function, giving it even more applications than one (including me) might originally expect. The weight function, briefly, is the inverse Laplace Transform of the transfer function (the reciprocal of the characteristic polynomial),
 
 $$
@@ -332,6 +334,24 @@ $$s^kp(s)\mathscr{L}\{Y_k\}=s^{n}-\sum_{i=k}^{n-1}p_{i}s^{i}$$
 
 Viewing normalized solutions this way makes the properties \eqref{proportional} and \eqref{recursive} much easier to see and verify.
 
+Now, when solving a system of initial value problems,
+
+$$\textbf{x}'=A\textbf{x},\quad \textbf{x}(0)=\textbf{x}_0$$
+
+In general, one can use the Laplace Transform to solve it as
+
+$$(sI-A)\mathscr{L}\{\textbf{x}\}=\textbf{x}_0$$
+
+$$\mathscr{L}\{\textbf{x}\}=(sI-A)^{-1}\textbf{x}_0$$
+
+For our system,
+
+$$\mathscr{L}\{\textbf{Y}\}=(sI-B^T)^{-1}\textbf{e}_1$$
+
+Thus, we can see that the Laplace Transforms of our normalized solutions will be the first column of $$(sI-B^T)^{-1}$$. Consequently, the numerators will be the first column of $$(sI-B^T)^{adj}$$, which will also be the cofactors of the first row of $$sI-B^T$$, which will also be the cofactors of the first column of $$sI-B$$. Thankfully, because $$B$$ is relatively simple, the cofactors are not too difficult to calculate.
+
+Of course, why do any of that when I have most *graciously* provided the results for you, already?
+
 ## Normalized solutions recap
 
 Now here are all of the ways I know of to calculate normalized solutions. I am going to compare and assess each of their uses.
@@ -341,7 +361,7 @@ Now here are all of the ways I know of to calculate normalized solutions. I am g
 3. Solve the one system of initial value problems detailed above \eqref{method}
 4. Get $$Y_n$$ and obtain the others recursively
 
-You could also take the first row of $$e^{Bt}$$, but that is pretty much equivalent to method 3. Also, $$n\times n$$ matrix exponentials are much harder to obtain than solving one $$n\times n$$ system of first order initial value problems.
+You could also take the first row of $$e^{Bt}$$ or take the inverse laplace transform of the first column of $$(sI-B^T)^{-1}$$, but these are just longer and more difficult/roundabout ways to do method 3.
 
 When discussing using a "computer" I'm generally imagining putting it into Wolfram Alpha or MATLAB. I usually prefer doing stuff by hand though, to be honest.
 
@@ -413,7 +433,23 @@ W&I
 \right)
 $$
 
-And, well, row reducing that is just a general method for finding $$W^{-1}$$. Thus, the columns of $$W^{-1}$$ give you the coefficients for each of the normalized solutions.
+And, well, putting that augmented matrix into reduced row echelon form is just a general method for finding $$W^{-1}$$.
+
+$$
+\left(
+\begin{array}{c|c}
+W&I
+\end{array}
+\right)
+\to
+\left(
+\begin{array}{c|c}
+I&W^{-1}
+\end{array}
+\right)
+$$
+
+Thus, the columns of $$W^{-1}$$ give you the coefficients for each of the normalized solutions.
 
 Now, this gets difficult quickly because you have to actually find $$y_j^{(i)}(0)$$. Meaning you have to differentiate all $$n$$ of your solutions $$n-1$$ times. For the second order case, it's just one derivative, meaning 2 total. For the third order case, however, it's 6 differentiations. Then it's 12, 20, etc. And differentiation can be kind of tedious, so it is not ideal.
 
@@ -439,7 +475,7 @@ In general, the entries are
 
 $$v_i=\left(\lambda^{n-i}-\sum_{k=i}^{n-1}p_k\lambda^{k-i}\right)v_n$$
 
-Basically $$v_i=\frac{v_{i-1}+p_i}{\lambda}$$. Or, in words, canceling out the constant term of the previous entry and then dividing by $$\lambda$$. The first entry is obtained from doing that process to the original characteristic polynomial.
+Hold on... What??? It's the numerators of the Laplace Transforms evaluated at each of the roots!
 
 Now, generalized eigenvectors for the repeated case are not quite as easy to find. I have not found a simple general formula, and I don't think it would be worth looking for.
 
