@@ -68,7 +68,7 @@ But the similarities don't stop there. The solutions are still generally obtaine
 
 That said, there are type of behavior fpr discrete systems which does not occur for systems of DE's. Specifically, if $$a\leq0$$.
 
-When $$a<0$$, our solution is $$(-a)^n=(-1)^na^n$$, giving us an alternating pattern where each iteration flips its sign. This creates a sense of bouncing back and forth. With $$a<-1$$, it's bouncing back and forth to infinity. With $$-1<a<0$$, it's bouncing back and forth towards the origin. And if $$a=-1$$, it's simply bouncing back and forth without getting closer or further away.
+When $$a<0$$, our solution is $$(-a)^n=(-1)^na^n$$, giving us an alternating pattern where each iteration flips its sign. This creates a sense of bouncing back and forth. With $$a<-1$$, it's bouncing back and forth with ever increasing magnitude. With $$-1<a<0$$, it's bouncing back and forth towards the origin. And if $$a=-1$$, it's simply bouncing back and forth without getting closer or further away.
 
 When $$a=0$$, solutions of this type start constant, and then immediately disappear after finitely many iterations. For this reason, it is convenient to explicitly  define the function $$0^x$$ in the following way
 
