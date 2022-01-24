@@ -123,7 +123,7 @@ In short, if its easy to calculate $$e^{(A+kI)t}$$, then its easy to calculate $
 
 This one happens to be the simplest, in my opinion.
 
-So let us say that $$A$$ is a $$2\times2$$ matrix with one defective eigenvalue $$\lambda$$. Then its characteristic polynomial is $$t^2-2\lambda t+\lambda^2=0$$. Therefore, by the Cayley-Hamilton theorem,
+So let us say that $$A$$ is a $$2\times2$$ matrix with one defective eigenvalue $$\lambda$$. Then its characteristic polynomial is $$s^2-2\lambda s+\lambda^2=0$$. Therefore, by the Cayley-Hamilton theorem,
 
 $$A^2-2\lambda A+\lambda^2I=0$$
 
