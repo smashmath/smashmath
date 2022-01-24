@@ -56,7 +56,7 @@ Which has the solution $$x(t)=ce^{at}$$. Therefore, its the sign of $$a$$ which 
 
 $$x(n+1)=ax(n)$$
 
-the solutions are of the form $$x(t)=ca^n$$. So we still get the behavior of asymptotically stable (going to zero), unstable, and types of static stability, but it's not about the sign anymore, and there are some new types of behavior. I encourage you to try and think about what the differences could be before reading on! It's an interesting thing to think about, in my opinion.
+the solutions are of the form $$x(t)=ca^n$$. So we still get the behavior of asymptotically stable (going to zero), unstable, and types of static stability, but it's not about the sign anymore, and there are some new types of behavior. I encourage you to try and think about what the differences could be before reading on! It's an interesting thing to try to reason out, in my opinion.
 
 Repeatedly multiplying a number $$a$$ to some nonzero initial number $$c$$ gets big when $$|
 a
