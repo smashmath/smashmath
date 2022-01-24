@@ -256,7 +256,7 @@ $$\begin{equation} \label{proportional}
 Y_1'=p_0Y_n
 \end{equation}$$
 
-Implying that the integral of $$Y_n$$ is proportional to $$Y_1$$. Not going to lie, I don't have an intuitive explanation for why this is true, but it is verifiable. :man_shrugging:
+Implying that the integral of $$Y_n$$ is proportional to $$Y_1$$. Not going to lie, I don't have an intuitive explanation for why this is true, but it is verifiable. :man_shrugging: Below I discuss the Laplace Transforms of the normalized solutions, and the properties are more obvious when looking at those.
 
 One observation to make is that if $$p_0=0$$, then the expression for $$Y_1$$ becomes
 
@@ -272,7 +272,7 @@ Y_k=Y_{k+1}'-p_kY_n
 
 Giving a recursive formula for each normalized solution.
 
-Now, both of these equations involve $$Y_n$$. So if you can solve for that, then you can get all of the other solutions. You can get $$Y_1$$ by integrating it, and you can directly get $$Y_{n-1}$$ with
+Now, both of these equations involve $$Y_n$$. So if you can solve for that, then you can get all of the other solutions. You can get $$Y_1$$ by integrating it (or, alternatively, solve for $$Y_1$$ and then differentiate it to get $$Y_n$$, assuming $$p_0\neq0$$), and you can directly get $$Y_{n-1}$$ with
 
 $$Y_{n-1}=Y_n'-p_{n-1}Y_n$$
 
@@ -291,6 +291,8 @@ One thing to note is that $$Y_n$$ is particularly easy to find using the Laplace
 $$
 \mathscr{L}\{Y_n\}=\frac{1}{s^n-p_{n-1}s^{n-1}-\ldots-p_1s-p_0}
 $$
+
+For convenience, we will from now on denote $$p(s)=s^n-p_{n-1}s^{n-1}-\ldots-p_1s-p_0$$
 
 The weight function's primary application is in solving for particular solutions. As the unique solution to the initial value problem
 
@@ -313,6 +315,22 @@ y(t)=y_0Y_1(t)+\ldots+y^{(n-1)}_0Y_n(t)+Y_n(t)*g(t)
 $$
 
 My conjecture is that the reason $$Y_n$$ is so useful/shows up so much in the above formulas is exactly because it is the weight function.
+
+There are similar formulas for the Laplace Transforms of the other normalized solutions.
+
+$$\begin{gather*}
+\mathscr{L}\{Y_n\}=\frac{1}{p(s)}\\
+\mathscr{L}\{Y_{n-1}\}=\frac{s-p_{n-1}}{p(s)}\\
+\mathscr{L}\{Y_{n-2}\}=\frac{s^2-p_{n-1}s-p_{n-2}}{p(s)}\\
+\vdots\\
+\mathscr{L}\{Y_1\}=\frac{s^{n-1}-p_{n-1}s^{n-2}+\ldots-p_2s-p_1}{p(s)}
+\end{gather*}$$
+
+In general, the numerator of $$\mathscr{L}\{Y_k\}$$ is just the characteristic polynomial after lobbing off the first $$k$$ lowest degree terms, and then dividing by the lowest power of $$s$$ ($$s^k$$).
+
+$$s^kp(s)\mathscr{L}\{Y_k\}=s^{n}-\sum_{i=k}^{n-1}p_{i}s^{i}$$
+
+Viewing normalized solutions this way makes the properties \eqref{proportional} and \eqref{recursive} much easier to see and verify.
 
 ## Normalized solutions recap
 
