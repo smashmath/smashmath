@@ -11,7 +11,7 @@ profile:
     <p>nix#2718</p>   
     <p>e</p> 
     <p>california CA</p>
-    <p>have a happy holiday</p>  
+    <p>:)</p>  
     
 
 news: true  # includes a list of news items
