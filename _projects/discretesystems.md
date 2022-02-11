@@ -30,7 +30,7 @@ toc:
 
 # Intro
 
-In differential equations students learn about the system
+In differential equations, students learn about the system
 
 $$\textbf{x}'(t)=A\textbf{x}(t)$$
 
