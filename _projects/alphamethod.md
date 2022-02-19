@@ -233,7 +233,7 @@ Well I have good news: It's absolutely true :smirk:
 
 If $$p^{(k)}(\alpha )$$ keeps equaling zero, you simply have to multiply by $$t$$ and divide by the next derivative instead until it works.
 
-**Pro-tip**: The fastest way to evaluate multiple derivatives at the same point is by synthetic division. Do synthetic division on $$p(x)$$ at $$\alpha$$ until the remainder is nonzero. Multiply the first nonzero remainder by (how many zero remainders there were)$$!$$.
+**Pro-tip**: The fastest way to evaluate multiple derivatives at the same point is by synthetic division. Do synthetic division on $$p(x)$$ at $$\alpha$$ until the remainder is nonzero. Multiply the first nonzero remainder by how many zero remainders there were.
 
 Let's take an example:
 
@@ -274,7 +274,7 @@ $$\begin{gather*}
     p'''(-1)=0&\implies &y_4=t^3e^{-t}
 \end{gather*}$$
 
-And hey wait a minute, we now have four homogeneous solutions to a fourth-order differential equation. That mean's we have our entire homogeneous solution. :eyes:
+And hey wait a minute, we now have four homogeneous solutions to a fourth-order differential equation. That means we have our entire homogeneous solution. :eyes:
 
 $$\begin{equation*}
     y_h=c_1e^{-t}+c_2te^{-t}+c_3t^2e^{-t}+c_4t^3e^{-t}
