@@ -63,7 +63,7 @@ Before we go and find the eigenvalues specifically, here are some things we can 
 3. If $$\det(A)=0$$, then the sign of $$\operatorname{tr}(A)$$ will determine if the system is stable (positive or zero = unstable, negative = stable). There will be infinitely many critical (equilibrium) points. Additionally, the eigenvalues will be $$\lambda=0,\operatorname{tr}(A)$$.
 4. If $$\operatorname{tr}(A)=0$$, then the eigenvalues differ by a sign and the sign of $$\det(A)$$ will determine if the system is stable: positive = stable center, negative = saddle, zero = improperly unstable (I made up that name. I don't know if there's a proper term for it). Also, regardless of the determinant, **it will always be possible to easily solve the problem with one of the formulas which will be presented shortly**.
 5. If $$\det(A)>0$$, then the sign of the trace is the sign of the real parts of the eigenvalues (thus, if the trace is positive then the origin is a source, and if the trace is negative then the origin is a sink).
-6. If the matrix is symmetric, the eigenvalues are real and not defective. If the diagonal entries are zero but $$\det(A)>0$$, the origin is a stable center (the eigenvalues are purely imaginary).
+6. If the matrix is symmetric, the eigenvalues are real and not defective. If the matrix is skew-symmetric ($$A^T=-A$$), then origin is a stable center (and the eigenvalues are purely imaginary).
 
 These are some pretty important things we can say before we even examine the characteristic polynomial. Not all of these are necessary conditions, however. For example, the trace can be negative and the system can still be unstable. These facts are all based on how the signs/values of $$b$$ and $$c$$ affect the roots of the quadratic $$x^2-bx+c$$, as the trace and determinant will be those coefficients in the characteristic polynomial.
 
@@ -338,3 +338,5 @@ So to get $$e^{At}$$, we just need to multiply by $$e^{-3t}$$ (since $$A=-3I+vv^
 
 $$\exp\left(At\right)=
 \frac{e^{-3t}}{3}\begin{pmatrix}e^{3t}+2&e^{3t}-1&e^{3t}-1\\e^{3t}-1&e^{3t}+2&e^{3t}-1\\e^{3t}-1&e^{3t}-1&e^{3t}+2\end{pmatrix}$$
+
+
