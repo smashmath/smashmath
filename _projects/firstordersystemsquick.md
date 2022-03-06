@@ -258,7 +258,7 @@ Now, I don't know about you, but I think this is much easier than finding the ei
 $$\begin{pmatrix}
 3-9i&-6\\15&-3-9i\end{pmatrix}$$
 
-Just looking at that matrix makes me want to switch majors. You *could* use the Eigenvectors Column Theorem or $$(b,\lambda-a)$$, which would make it slightly less awful. But you would still have to multiply by $$e^{(1+9i)t}$$, take the real and imaginary parts as our two solutions, and then solve a difficult complex system of equations for that initial value problem.
+Just looking at that matrix makes me want to switch majors. You *could* use the Eigenvectors Column Theorem or $$(b,\lambda-a)$$, which would make it slightly less awful. But you would still have to multiply by $$e^{(1+9i)t}$$, take the real and imaginary parts as our two solutions, and then solve a difficult system of equations for that initial value problem.
 
 You have to do exactly *none* of that with this matrix exponential method. Work smart, not hard.
 
@@ -353,5 +353,3 @@ So to get $$e^{At}$$, we just need to multiply by $$e^{-3t}$$ (since $$A=-3I+vv^
 
 $$\exp\left(At\right)=
 \frac{e^{-3t}}{3}\begin{pmatrix}e^{3t}+2&e^{3t}-1&e^{3t}-1\\e^{3t}-1&e^{3t}+2&e^{3t}-1\\e^{3t}-1&e^{3t}-1&e^{3t}+2\end{pmatrix}$$
-
-
