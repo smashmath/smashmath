@@ -18,7 +18,7 @@ toc:
       - name: Finding Eigenvalues
       - name: How to solve them quickly
       - name: The Fast Formulas
-      - name: Real and Distinct Formulas
+      - name: Distinct Eigenvalues Formulas
   - name: 3x3s
   - name: 2x2 Examples
     subsections:
@@ -115,13 +115,26 @@ e^{At}=e^{\lambda t}\bigg(I+t(A-\lambda I)\bigg)
 e^{At}=\frac{e^{\operatorname{tr}(A)t}A-(A-\operatorname{tr}(A)I)}{\operatorname{tr}(A)}
 \end{equation}
 
+- **Note: this will usually not be the fastest way for a** $$2\times 2$$ **with distinct eigenvalues**. However, if $$A$$ does have distinct eigenvalues, then
+
+$$\begin{equation} \label{distinct}
+e^{At}=\frac{e^{\lambda_2t}(A-\lambda_1I)-e^{\lambda_1t}(A-\lambda_2I)}{\lambda_2-\lambda_1}
+\end{equation}$$
+
+$$\begin{equation} \label{distinct2}
+e^{At}=\frac{\lambda_2e^{\lambda_1t}-\lambda_1e^{\lambda_2t}}{\lambda_2-\lambda_1}I +
+\frac{e^{\lambda_2t}-e^{\lambda_1t}}{\lambda_2-\lambda_1}A
+\end{equation}$$
+
 In summary, using $$e^{At}$$ for these cases not only removes the need to find eigenvectors, but also finds you *the* fundamental matrix. And *the* fundamental matrix turns solving initial value problems into calculating a simple matrix product.
 
 The columns of these matrices will give you a fundamental set of solutions. So if you are able to just see what the entries will be, it's possible to write down the answers without any scratch work. This applies most to the complex and defective cases. Also, in my opinion, it's a true baller move to casually use a matrix exponential rather than find eigenvectors. :sunglasses:
 
-## Real and Distinct Formulas
+## Distinct Eigenvalues Formulas
 
-Now, if you do not find yourself in any of these cases, i.e. $$A$$ has real and distinct eigenvalues, then a matrix exponential will not be the fastest way to calculate the general solution. We will just find the eigenvectors using the ["Eigenvector Columns Theorem"](https://smashmath.github.io/math/eigentricks/#the-eigenvector-columns-theorem){:target="_blank"} discussed in the [other post](../eigentricks/){:target="_blank"}.
+If $$A$$ has distinct eigenvalues, then a matrix exponential will not be the fastest way to calculate the general solution. It is faster to just find the eigenvectors using the ["Eigenvector Columns Theorem"](https://smashmath.github.io/math/eigentricks/#the-eigenvector-columns-theorem){:target="_blank"} discussed in the [other post](../eigentricks/){:target="_blank"}.
+
+That said, while the ECT is the fastest way for any general solution, if you want the general solution for a general initial value problem, like $$(x_0,y_0)$$, then \eqref{distinct} is actually worth the time, as it is not *too* difficult to calculate.
 
 - If $$A$$ is singular and has a nonzero trace, then
 1. Choose any nonzero scalar multiple of a column of $$A$$ and call it $$\textbf{v}_{\operatorname{tr}(A)}$$
@@ -141,7 +154,7 @@ The general solution of $$\textbf{x}'=A\textbf{x}$$ will be
 The general solution of $$\textbf{x}'=A\textbf{x}$$ will be
 
 \begin{equation}\label{form4a}
-\textbf{x}=c_1e^{\lambda_1t}\textbf{v} _{\lambda_1}+c_2e^{\lambda_2t}\textbf{v} _ {\lambda_2}
+\textbf{x}=c_1e^{\lambda_1t}\textbf{v} _{\lambda_1}+c_2e^{\lambda_2t}\textbf{v}_ {\lambda_2}
 \end{equation}
 
 Examples of using all of these formulas can be found in a section [below](
@@ -189,9 +202,9 @@ As you read these examples, keep in mind that as you become more experienced wit
 
 ##### Zero Trace
 
-$$\textbf{x}'=\begin{pmatrix}7&-13\\1&-7\end{pmatrix}\textbf{x},\quad \textbf{x}(0)=\begin{pmatrix}\pi\\e\end{pmatrix}$$
+$$\textbf{x}'=\begin{pmatrix}7&-13\\1&-7\end{pmatrix}\textbf{x},\quad \textbf{x}(0)=\begin{pmatrix}x_0\\y_0\end{pmatrix}$$
 
-Well, that's a pretty ugly initial condition... Luckily, if we can find $$e^{At}$$, then solving the initial value problem will be no problem at all.
+That initial condition would be relatively hard to solve with a system of equations... Luckily, if we can find $$e^{At}$$, then solving the initial value problem will be no problem at all.
 
 The trace of this matrix is $$0$$ :eyes: so we will be able to use one of the formulas guaranteed. The determinant is $$-7^2+13=-36$$ which is less than zero, so we can use \eqref{form1b} and $$\lambda=\sqrt{-(-36)}=6$$.
 
@@ -199,11 +212,11 @@ $$e^{At}=\cosh(6t)I+\frac{\sinh(6t)}{6}\begin{pmatrix}7&-13\\1&-7\end{pmatrix}$$
 
 The solution to the initial value problem will then be
 
-$$e^{At}\textbf{x}_0=\left(\cosh(6t)I+\frac{\sinh(6t)}{6}\begin{pmatrix}7&-13\\1&-7\end{pmatrix}\right)\begin{pmatrix}\pi\\e\end{pmatrix}$$
+$$e^{At}\textbf{x}_0=\left(\cosh(6t)I+\frac{\sinh(6t)}{6}\begin{pmatrix}7&-13\\1&-7\end{pmatrix}\right)\begin{pmatrix}x_0\\y_0\end{pmatrix}$$
 
-$$\textbf{x}=\cosh(6t)\begin{pmatrix}\pi\\e\end{pmatrix}+\frac{\sinh(6t)}{6}\begin{pmatrix}7\pi-13e\\\pi-7e\end{pmatrix}$$
+$$\textbf{x}=\cosh(6t)\begin{pmatrix}x_0\\y_0\end{pmatrix}+\frac{\sinh(6t)}{6}\begin{pmatrix}7x_0-13y_0\\x_0-7y_0\end{pmatrix}$$
 
-$$\textbf{x}=\frac{1}{6}\begin{pmatrix}6\pi\cosh(6t)+(7\pi-13e)\sinh(6t)\\6e\cosh(6t)+(\pi-7e)\sinh(6t)\end{pmatrix}$$
+$$\textbf{x}=\frac{1}{6}\begin{pmatrix}6x_0\cosh(6t)+(7x_0-13y_0)\sinh(6t)\\6y_0\cosh(6t)+(x_0-7y_0)\sinh(6t)\end{pmatrix}$$
 
 And that's it!
 
@@ -211,7 +224,7 @@ And that's it!
 
 ##### Complex
 
-$$\textbf{x}'=\begin{pmatrix}4&-6\\15&-2\end{pmatrix}\textbf{x},\quad \textbf{x}(0)=\begin{pmatrix}\cos(1)\\\sin(1)\end{pmatrix}$$
+$$\textbf{x}'=\begin{pmatrix}4&-6\\15&-2\end{pmatrix}\textbf{x},\quad \textbf{x}(0)=\begin{pmatrix}x_0\\y_0\end{pmatrix}$$
 
 Alright so trace and determinants are $$2$$ and $$82$$ respectively. Now that's a pretty big determinant and a pretty small trace. If a quadratic has a large constant term and a small linear term then the roots are going to be complex. So let's look at the characteristic polynomial:
 
@@ -225,14 +238,16 @@ Thus our roots are going to be $$1\pm9i$$ (if that isn't clear then just solve f
 
 Since our eigenvalues are complex, we can use \eqref{form2}
 
-$$e^{At}\textbf{x}_0=\frac{e^{t}}{9}\bigg(9\cos(9t)I+\sin(9t)(A-1I)\bigg)\begin{pmatrix}\cos(1)\\\sin(1)\end{pmatrix}$$
+$$e^{At}\textbf{x}_0=\frac{e^{t}}{9}\bigg(9\cos(9t)I+\sin(9t)(A-1I)\bigg)\begin{pmatrix}x_0\\y_0\end{pmatrix}$$
 
-$$\textbf{x}=\frac{e^{t}}{9}\left(9\cos(9t)\begin{pmatrix}\cos(1)\\\sin(1)\end{pmatrix}+\sin(9t)\begin{pmatrix}3&-6\\15&-3\end{pmatrix}\begin{pmatrix}\cos(1)\\\sin(1)\end{pmatrix}\right)$$
+$$\textbf{x}=\frac{e^{t}}{9}\left(9\cos(9t)\begin{pmatrix}x_0\\y_0\end{pmatrix}+\sin(9t)\begin{pmatrix}3&-6\\15&-3\end{pmatrix}\begin{pmatrix}x_0\\y_0\end{pmatrix}\right)$$
 
-$$\textbf{x}=\frac{e^{t}}{9}\left(9\cos(9t)\begin{pmatrix}\cos(1)\\\sin(1)\end{pmatrix}+3\sin(9t)\begin{pmatrix}\cos(1)-2\sin(1)\\5\cos(1)-\sin(1)\end{pmatrix}\right)$$
+$$\textbf{x}=\frac{e^{t}}{9}\left(9\cos(9t)\begin{pmatrix}x_0\\y_0\end{pmatrix}+3\sin(9t)\begin{pmatrix}x_0-2y_0\\5x_0-y_0\end{pmatrix}\right)$$
 
-$$\textbf{x}=\frac{e^{t}}{3}\begin{pmatrix}3\cos(1)\cos(9t)+(\cos(1)-2\sin(1))\sin(9t)\\
-3\sin(1)\cos(9t)+(5\cos(1)-\sin(1))\sin(9t)\end{pmatrix}$$
+$$\textbf{x}=\frac{e^{t}}{3}\begin{pmatrix}3x_0\cos(9t)+(x_0-2y_0)\sin(9t)\\
+3y_0\cos(9t)+(5x_0-y_0)\sin(9t)\end{pmatrix}$$
+
+Which is *very* easy to plug into desmos!
 
 Brief remark: If you want to use this to check if the solution you got through the normal method (let's call it $$\textbf{x}_1(t)$$) is correct, then check if
 
@@ -243,7 +258,7 @@ Now, I don't know about you, but I think this is much easier than finding the ei
 $$\begin{pmatrix}
 3-9i&-6\\15&-3-9i\end{pmatrix}$$
 
-Just looking at that matrix makes me want to switch majors. You *could* use the Eigenvectors Column Theorem or $$(b,\lambda-a)$$, which would make it slightly less awful. But you would still have to multiply by $$e^{(1+9i)t}$$, take the real and imaginary parts as our two solutions, and then solve an abomination of a system of equations for that initial value problem.
+Just looking at that matrix makes me want to switch majors. You *could* use the Eigenvectors Column Theorem or $$(b,\lambda-a)$$, which would make it slightly less awful. But you would still have to multiply by $$e^{(1+9i)t}$$, take the real and imaginary parts as our two solutions, and then solve a difficult complex system of equations for that initial value problem.
 
 You have to do exactly *none* of that with this matrix exponential method. Work smart, not hard.
 
@@ -251,17 +266,17 @@ You have to do exactly *none* of that with this matrix exponential method. Work 
 
 ##### Defective
 
-$$\textbf{x}'=\begin{pmatrix}4&-9\\1&-2\end{pmatrix}\textbf{x},\quad \textbf{x}(0)=\begin{pmatrix}e^{-17}\\\tan(1)\end{pmatrix}$$
+$$\textbf{x}'=\begin{pmatrix}4&-9\\1&-2\end{pmatrix}\textbf{x},\quad \textbf{x}(0)=\begin{pmatrix}x_0\\y_0\end{pmatrix}$$
 
 Trace and determinant are $$2$$ and $$1$$. $$1$$ and $$1$$ add up to $$2$$ and multiply to $$1$$, so it looks like we have a repeated eigenvalue of $$1$$. Thus, we can use \eqref{form3}
 
 $$e^{At}=e^{t}\bigg(I+t(A-I)\bigg)$$
 
-$$e^{At}\textbf{x}_0=e^{t}\left(I+t\begin{pmatrix}4-1&-9\\1&-2-1\end{pmatrix}\right)\begin{pmatrix}e^{-17}\\\tan(1)\end{pmatrix}$$
+$$e^{At}\textbf{x}_0=e^{t}\left(I+t\begin{pmatrix}4-1&-9\\1&-2-1\end{pmatrix}\right)\begin{pmatrix}x_0\\y_0\end{pmatrix}$$
 
-$$\textbf{x}=e^{t}\left(\begin{pmatrix}e^{-17}\\\tan(1)\end{pmatrix}+t\begin{pmatrix}3e^{-17}-9\tan(1)\\e^{-17}-3\tan(1)\end{pmatrix}\right)$$
+$$\textbf{x}=e^{t}\left(\begin{pmatrix}x_0\\y_0\end{pmatrix}+t\begin{pmatrix}3x_0-9y_0\\x_0-3y_0\end{pmatrix}\right)$$
 
-$$\textbf{x}=e^{t}\begin{pmatrix}e^{-17}+(3e^{-17}-9\tan(1))t\\\tan(1)+(e^{-17}-3\tan(1))t\end{pmatrix}$$
+$$\textbf{x}=e^{t}\begin{pmatrix}x_0+(3x_0-9y_0)t\\y_0+(x_0-3y_0)t\end{pmatrix}$$
 
 That's literally it. No eigenvector. No solving $$(A-\lambda I)\eta=\xi$$. This is it. We're done. Q.E.D.
 
