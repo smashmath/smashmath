@@ -53,7 +53,7 @@ things ive ~~discovered~~ independently derived. i think they're all cool, but o
 4. [Matrix Exponential Formulas for 2x2 Matrices Using Laplace Transforms](./math/firstordersystems){:target="_blank"}
 5. Another approach to matrix exponential formulas: coming soon...
 
-- [New Ways to Calculate Normalized Solutions to Linear Constant-Coefficient Differential Equations](./math/newnormalized){:target="_blank"}: solve just *one* set of $$n$$ first-order initial value problem to get the $$n$$ normalized solutions to an $$n$$-th order differential equation. this should be the fastest way to find them using a computer. alternatively, find one normalized solution and get the others recursively.
+- [New Ways to Calculate Normalized Solutions to Linear Constant-Coefficient Differential Equations](./math/newnormalized){:target="_blank"}: solve just *one* set of $$n$$ first-order initial value problems to get the $$n$$ normalized solutions to an $$n$$-th order differential equation. this should be the fastest way to find them using a computer. alternatively, find one normalized solution and get the others recursively.
 
 ---
 
