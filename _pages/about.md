@@ -8,6 +8,7 @@ profile:
   align: right
   image: barkley.gif
   address: > 
+    <p>grant f.</p> 
     <p>nix#2718</p>   
     <p>e</p> 
     <p>california CA</p>
