@@ -66,7 +66,7 @@ But the similarities don't stop there. The solutions are still generally obtaine
 
 ### New Solution Behaviors
 
-That said, there are type of behavior fpr discrete systems which does not occur for systems of DE's. Specifically, if $$a\leq0$$.
+That said, there are type of behavior fpr discrete systems which does not occur for systems of ODEs. Specifically, if $$a\leq0$$.
 
 When $$a<0$$, our solution is $$(-a)^n=(-1)^na^n$$, giving us an alternating pattern where each iteration flips its sign. This creates a sense of bouncing back and forth. With $$a<-1$$, it's bouncing back and forth with ever increasing magnitude. With $$-1<a<0$$, it's bouncing back and forth towards the origin. And if $$a=-1$$, it's simply bouncing back and forth without getting closer or further away.
 
