@@ -118,7 +118,7 @@ We've discussed two questions that the topics of eigenvectors, $$A\vec{v}=\lambd
 
 2\. "What **function** has the property that when I **take the derivative**, it is exactly the same as just multiplying by the constant $$\lambda$$?"
 
-As a reminder, the answer to the second question was $$ce^{\lambda t}$$, since $$\frac{d}{dt}(ce^{\lambda t})=a(ce^{\lambda t})$$. Or to write it another way,
+As a reminder, the answer to the second question was $$ce^{\lambda t}$$, since $$\frac{d}{dt}(ce^{\lambda t})=\lambda(ce^{\lambda t})$$. Or to write it another way,
 
 $$(ce^{\lambda t})'=\lambda(ce^{\lambda t})$$
 
