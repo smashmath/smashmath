@@ -90,28 +90,28 @@ $$\begin{equation}
 M(x,y)+N(x,y)\frac{dy}{dx}=0
 \end{equation}$$
 
-We are hoping that there exists some function $$f(x,y)$$ such that
+We are hoping that there exists some function $$\psi(x,y)$$ such that
 
 $$\begin{equation}
-\frac{d}{dx}f(x,y)=M(x,y)+N(x,y)\frac{dy}{dx}
+\frac{d}{dx}\psi(x,y)=M(x,y)+N(x,y)\frac{dy}{dx}
 \end{equation}$$
 
-Using the multivariable definition of the chain rule to calculate $$\frac{d}{dx}f(x,y)$$,
+Using the multivariable definition of the chain rule to calculate $$\frac{d}{dx}\psi(x,y)$$,
 
 $$\begin{equation}
-\frac{d}{dx}f(x,y)=f_x(x,y)+f_y(x,y)\frac{dy}{dx}
+\frac{d}{dx}\psi(x,y)=\psi_x(x,y)+\psi_y(x,y)\frac{dy}{dx}
 \end{equation}$$
 
 By matching up terms, we see
 
 $$\begin{equation}
-M(x,y)=f_x(x,y),\quad N(x,y)=f_y(x,y)
+M(x,y)=\psi_x(x,y),\quad N(x,y)=\psi_y(x,y)
 \end{equation}$$
 
 We can use a *very* bodacious result of multivariable calculus that
 
 $$\begin{equation}
-f_{xy}(x,y)=f_{yx}(x,y)\implies M_y=N_x
+\psi_{xy}(x,y)=\psi_{yx}(x,y)\implies M_y=N_x
 \end{equation}$$
 
 Therefore, if that is so the equation is exact and we may find $$f$$!
@@ -119,16 +119,16 @@ Therefore, if that is so the equation is exact and we may find $$f$$!
 We have two options now: We can start by integrating $$M$$ with respect to $$x$$, or $$N$$ with respect to $$y$$. We choose whichever integral looks easier, but we'll assume for now that we are choosing $$M$$.
 
 $$\begin{equation}
-f(x,y)=\int M(x,y)\,dx+h(y)
+\psi(x,y)=\int M(x,y)\,dx+h(y)
 \end{equation}$$
 
-If this is to be truly the $$f$$ we want, then its partial derivative with respect to $$y$$ has to be $$N$$ as we defined above. So we set $$f_y=N$$
+If this is to be truly the $$\psi$$ we want, then its partial derivative with respect to $$y$$ has to be $$N$$ as we defined above. So we set $$\psi_y=N$$
 
 $$\begin{equation}
 N(x,y)=\frac{\partial}{\partial y}\left(\int M(x,y)\,dx\right)+h'(y)
 \end{equation}$$
 
-Now we can solve for $$h'(y)$$ and integrate it to get the correct $$h(y)$$ and then we have our answer $$f(x,y)$$.
+Now we can solve for $$h'(y)$$ and integrate it to get the correct $$h(y)$$ and then we have our answer $$\psi(x,y)$$.
 
 We could have instead integrated $$N$$ with respect to $$y$$ to get an $$h(x)$$ and instead find that $$h$$ through the equation
 
@@ -151,13 +151,12 @@ or
 4. Profit
 
 ## Integrating Factors
--
 
-If $$M_y\neq N_x$$, then it is not exact. But we can make it so (most of the time)! 
+If $$M_y\neq N_x$$, then it is not exact. But we can make it so (most of the time)!
 
 As a quick sidenote, if there is a common factor to both $$M$$ and $$N$$, it's possible that that common factor can make it impossible to find an integrating factor using the methods that will be described. Even if the common factor is a simple $$x$$ or $$y$$.
 
-First we suppose there is an integrating factor which is a function of $$x$$, $$\mu(x)$$ giving us
+First we suppose there is an integrating factor which is just a function of $$x$$, $$\mu(x)$$ giving us
 
 $$\begin{equation}
 \mu(x)M(x,y)+\mu(x)N(x,y)\frac{dy}{dx}=0
@@ -185,7 +184,7 @@ $$\begin{equation}
 
 So if $$\frac{M_y-N_x}{N}$$ is a function of only $$x$$, then this is an easy first-order equation we can solve to find $$\mu$$. Then we just execute the process detailed in the previous section.
 
-If $$\frac{M_y-N_x}{N}$$ is not a function of only $$x$$, then we instead seek an integrating factor $$\mu(y)$$. Repeating the process above,
+If $$\frac{M_y-N_x}{N}$$ is not a function of only $$x$$, then we can instead seek an integrating factor $$\mu(y)$$. Repeating the process above,
 
 $$\begin{equation}
 \mu(y)M(x,y)+\mu(y)N(x,y)\frac{dy}{dx}=0
@@ -200,9 +199,11 @@ $$\begin{equation}
 \mu'(y)=\frac{N_x-M_y}{M}\mu(y)
 \end{equation}$$
 
-If $$\frac{N_x-M_y}{M}$$ is a function only $$y$$, then we can again solve for $$\mu$$ and execute the steps in the first section. If neither of those work... maybe try something else...
+If $$\frac{N_x-M_y}{M}$$ is a function only $$y$$, then we can again solve for $$\mu$$ and execute the steps in the first section.
 
-The equations for integrating factors in summary,
+If neither of those work... then the integrating factor is probably a function of both $$x$$ and $$y$$, in which case it is *not* an easy task to find it. There are some specific formulas for particular forms of integrating factors, but in most questions given in a Differential Equations class, these should suffice.
+
+The equations for integrating factors are, in summary,
 
 $$\begin{align}
 \mu'(x)&=\frac{M_y-N_x}{N}\mu(x)\\
