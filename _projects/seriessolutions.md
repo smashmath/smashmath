@@ -116,7 +116,7 @@ To explain the fast way to get the coefficients that sometimes find themselves o
 
 ## The direct way to calculate coefficients
 
-Once you see it, you may think "wait, we can just do that?" And the answer will be a resounding "YES". Also, **this is almost the fastest way to do problems which ask you to find the first few terms of the series solution but not a closed form**!
+Once you see it, you may think "wait, we can just do that?" And the answer will be a resounding "YES". Also, **this is almost the fastest way to do problems which ask you to find the first few terms of the series solution to an initial value problem but not a closed form**!
 
 Basically, for the initial value problem,
 
@@ -126,9 +126,11 @@ y''+p(x)y'+q(x)y=0,\quad y(0)=y_0,\;y'(0)=y'_0
 \end{equation}
 $$
 
-Check out what happens if we just plug in $$x=0$$ to the equation. Note that if $$y=a_0+a_1x+a_2x^2+\ldots$$, then using Taylor's theorem we know that $$a_n=\frac{y^{(n)}(0)}{n!}$$. Which implies that $$y^{(n)}(0)=n!a_n$$.
+First, we know that $$a_0=y_0$$ and $$a_1=y'_0$$. That directly follows from Taylor's theorem.
 
-$$y''(0)+p(0)y'(0)+q(0)y(0)=2!a_2+p(0)y'_0+q(0)y_0=0$$
+Now, check out what happens if we just plug in $$x=0$$ to the equation. Note that if $$y=a_0+a_1x+a_2x^2+\ldots$$, then using Taylor's theorem we know that $$a_n=\frac{y^{(n)}(0)}{n!}$$. Which implies that $$y^{(n)}(0)=n!\,a_n$$.
+
+$$y''(0)+p(0)y'(0)+q(0)y(0)=2!\,a_2+p(0)y'_0+q(0)y_0=0$$
 
 Thus, we can solve for $$a_2$$ directly:
 
