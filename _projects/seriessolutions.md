@@ -34,7 +34,7 @@ y''&=\sum_{n=0}^\infty (n+1)(n+2)a_{n+2}x^{n}&=&\sum_{n=0}^\infty n(n-1)a_{n}x^{
 \end{align}
 $$
 
-Note: For the series with $$x^{n-1}$$ or $$x^{n-2}$$, you may have to have the starting index be $$n=1$$ or $$n=2$$ respectively. However, we can technically start at zero generally, because when $$n=0$$, we get that $$na_{n}x^{n-1}=0$$ too. Try not to worry too much about it, as it really speeds things along when you can just use $$n=0$$.
+Note: For the series with $$x^{n-1}$$ or $$x^{n-2}$$, you may have to have the starting index be $$n=1$$ or $$n=2$$ respectively. However, we can technically start at zero generally, because when $$n=0$$, we get that $$na_{n}x^{n-1}=0$$ too. Try not to worry too much about it, as it really speeds things along when you start them all on $$n=0$$.
 
 ---
 
@@ -50,9 +50,9 @@ p_2x^2y''+p_1xy'+p_0y=0
 
 Where $$p_0,p_1,p_2$$ are constants.
 
-The solutions to these equations are generally of polynomial form (similar to how solutions to constant coefficient linear ODEs are of exponential form), as we multiply by the independent variable with every differentiation, canceling the decreasing power which occurs when differentiating polynomials. We can use this fact to skip reindexing of the series!
+The solutions to these equations are generally of polynomial form (similar to how solutions to constant coefficient linear ODEs are of exponential form), as we multiply by the independent variable with every differentiation, canceling the decreasing power which occurs when differentiating polynomials. We can use this fact to skip reindexing the series!
 
-Suppose we plug in our series solution to this differential equation. Because we have $$xy'$$, we want to use $$y'=\sum_{n=0}^\infty na_{n}x^{n-1}$$, and because wee have $$x^2y''$$, we want to use $$y''=\sum_{n=0}^\infty n(n-1)a_{n}x^{n-2}$$, since that will give us $$x^n$$ on all the terms. Notice how all three terms will also have $$a_n$$! Thus, when we combine it all, we get
+Suppose we plug in our series solution to this differential equation. Because we have $$xy'$$, we want to use $$y'=\sum_{n=0}^\infty na_{n}x^{n-1}$$, and because we have $$x^2y''$$, we want to use $$y''=\sum_{n=0}^\infty n(n-1)a_{n}x^{n-2}$$, since that will give us $$x^n$$ on all the terms. Notice how all three terms will also have $$a_n$$! Thus, when we combine it all, we get
 
 $$\begin{equation}
 \sum_{n=0}^\infty(p_2n(n-1)+p_1n+p_0)a_nx^n=0
