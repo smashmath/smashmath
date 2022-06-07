@@ -136,7 +136,7 @@ Thus, we can solve for $$a_2$$ directly:
 
 $$a_2=-\frac{1}{2}(p(0)y'_0+q(0)y_0)$$
 
-There is really no need to memorize this formula, but just note that you can use this method to directly calculate the coefficients which are left out of the series.
+There is really no need to memorize this formula, but just remember that you can use this method to directly calculate the coefficients which are left out of the series (or cannot be directly computed from the recurrence relation).
 
 But wait, there's more! You can find more than just $$a_2$$, if you differentiate the whole ODE.
 
