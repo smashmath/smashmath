@@ -156,7 +156,7 @@ becomes
 
 $$P(t+x_0)y''+Q(t+x_0)y'+R(t+x_0)y=0,\quad y(0)=y_0,\;y'(0)=y'_0$$
 
-And then you just do as you do normally. No need to write the ugly derivatives of $$y=\sum_{n=0}^\infty a_n(x-x_0)^n$$, or to find the Taylor series of $$P,Q,R$$ centered around $$x_0$$. Do you *want* to do that? Because I don't.
+And then you just do as you do normally. No need to write $$y=\sum_{n=0}^\infty a_n(x-x_0)^n$$, or to find the Taylor series of $$P,Q,R$$ centered around $$x_0$$. Do you *want* to do that? Because I don't.
 
 Instead, just do the normal solution method with $$y=\sum_{n=0}^\infty a_nt^n$$.
 
