@@ -18,7 +18,7 @@ toc:
   - name: The Straggler Coefficients
     subsections:
       - name: The direct way to calculate coefficients
-  - name: When the initial point is not x=0
+  - name: When the IVP is not centered at 0
   - name: More Examples
 
 
@@ -58,7 +58,7 @@ $$\begin{equation}
 \sum_{n=0}^\infty(p_2n(n-1)+p_1n+p_0)a_nx^n=0
 \end{equation}$$
 
-Notice how the term multiplying $$a_nx^n$$ is *almost* the characteristic polynomial if it was constant coefficients. This is actually called the "indicial equation", which is slightly different. For the $$p_my^{(m)}$$ term in the ODE, the corresponding term in the indicial equation is $$p_mn(n-1)\ldots(n-m+1)=p_m\frac{n!}{(n-m)!}$$.
+Notice how the term multiplying $$a_nx^n$$ is *almost* the characteristic polynomial if it was constant coefficients. This is actually called the "indicial equation", which is slightly different. For the $$p_mt^my^{(m)}$$ term in the ODE, the corresponding term in the indicial equation is $$p_mn(n-1)\ldots(n-m+1)=p_m\frac{n!}{(n-m)!}$$.
 
 So, what happens when it isn't exactly an Euler equation? Then you just group them up by shifted powers. For example,
 
@@ -92,6 +92,8 @@ And, well, we actually know the series expansion for both terms. We know that $$
 
 $$x^2y''+2xy'-\alpha(\alpha+1)y=\sum_{n=0}^\infty(n(n-1)+2n-\alpha(\alpha+1))a_nx^n$$
 
+We can factor $$n(n-1)+2n-\alpha(\alpha+1)=(n-\alpha)(n+\alpha+1)$$.
+
 So, plugging in our series will yield us
 
 $$\sum_{n=0}^\infty
@@ -112,17 +114,17 @@ $$a_3=-\frac{(\alpha-1)(\alpha+2)}{3!}a_0$$
 
 # The Straggler Coefficients
 
-To explain the fast way to get the coefficients that sometimes find themselves outside the sum, first I need to explain the direct way to calculate the coefficients of a series solution for an initial value problem.
+When doing series solutions the normal way, often you get stragglers that end up outside of the sum. Rather than worry about them at all, we can skip that entirely by calculating the relationship between the first few coefficients directly from the original ODE itself.
 
 ## The direct way to calculate coefficients
 
-Once you see it, you may think "wait, we can just do that?" And the answer will be a resounding "YES". Also, **this is almost the fastest way to do problems which ask you to find the first few terms of the series solution to an initial value problem but not a closed form**!
+Once you see it, you may think "wait, we can just do that?" And the answer will be a resounding "YES". Also, **this is almost always the fastest way to do problems which ask you to find the first few terms of the series solution to an initial value problem, but not a closed form**!
 
 Basically, for the initial value problem,
 
 $$
 \begin{equation}
-y''+p(x)y'+q(x)y=0,\quad y(0)=y_0,\;y'(0)=y'_0
+y''=p(x)y'+q(x)y,\quad y(0)=y_0,\;y'(0)=y'_0
 \end{equation}
 $$
 
@@ -130,23 +132,23 @@ First, we know that $$a_0=y_0$$ and $$a_1=y'_0$$. That directly follows from Tay
 
 Now, check out what happens if we just plug in $$x=0$$ to the equation. Note that if $$y=a_0+a_1x+a_2x^2+\ldots$$, then using Taylor's theorem we know that $$a_n=\frac{y^{(n)}(0)}{n!}$$. Which implies that $$y^{(n)}(0)=n!\,a_n$$.
 
-$$y''(0)+p(0)y'(0)+q(0)y(0)=2!\,a_2+p(0)y'_0+q(0)y_0=0$$
+$$y''(0)=p(0)y'(0)+q(0)y(0)\implies 2!\,a_2=p(0)y'_0+q(0)y_0$$
 
 Thus, we can solve for $$a_2$$ directly:
 
-$$a_2=-\frac{1}{2}(p(0)y'_0+q(0)y_0)$$
+$$a_2=\frac{1}{2}(p(0)y'_0+q(0)y_0)$$
 
 There is really no need to memorize this formula, but just remember that you can use this method to directly calculate the coefficients which are left out of the series (or cannot be directly computed from the recurrence relation).
 
 But wait, there's more! You can find more than just $$a_2$$, if you differentiate the whole ODE.
 
-$$y'''+p(x)y''+(p'(x)+q(x))y'+q'(x)y=0$$
+$$y'''=p(x)y''+(p'(x)+q(x))y'+q'(x)y$$
 
 Then you can just plug in $$x=0$$ again!
 
-**Important note**: If there is a coefficient on the $$y''$$ term, then it is often advantageous  NOT to divide it out. This usually simplifies the differentiation greatly, since you're doing the product rule and not the quotient rule. And there are tricks for multiple applications of the product rule using Pascal's triangle, but nothing like that for the quotient rule.
+**Important note**: If there is a coefficient on the $$y''$$ term, then it is often advantageous NOT to divide it out. This usually simplifies the differentiation greatly, since you're doing the product rule and not the quotient rule. And there are tricks for multiple applications of the product rule (like using Pascal's triangle), but nothing like that for the quotient rule.
 
-# When the initial point is not x=0
+# When the IVP is not centered at 0
 
 This is actually really great. You can do a quick change of variables and then carry on as if $$x_0=0$$. Just do $$t=x-x_0\implies x=t+x_0$$. So,
 
@@ -233,11 +235,11 @@ We can rearrange it into two EE groups
 
 $$y''+(xy'+2y)=0$$
 
-Once again, $$y''=(n+1)(n+2)a_{n+2}x^n$$, so our recurrence relation is
+$$xy'+2y$$ is fairly straightforward as $$(n+2)a_n$$. And, once again, $$y''\mapsto(n+1)(n+2)a_{n+2}$$. So our recurrence relation is
 
 $$((n+1)(n+2)a_{n+2})+((n+2)a_n)=0$$
 
-Since $$n$$ is a positive integer, we can divide out the $$n+2$$ from the equation to get
+Since $$n\geq0\implies n+2\neq0$$, we can divide out the $$n+2$$ from the equation to get
 
 $$a_{n+2}=-\frac{a_n}{n+1}$$
 
@@ -250,6 +252,8 @@ We can see that every even $$n$$ will result in zero. So we can just focus on th
 $$a_3=-\frac{a_1}{2}=-\frac{1}{2}$$
 
 $$a_5=\frac{1}{2\cdot 4}=\frac{1}{2^2(2!)}$$
+
+Often, it can make it easier to see the pattern when you force a factorial in there.
 
 $$a_7=-\frac{1}{2^2(2!)\cdot 6}=-\frac{1}{2^3(3!)}$$
 
