@@ -1,8 +1,8 @@
 ---
 layout: distill
-title: The Alpha Method (Generalized Exponential Response Formula)
-date: 2021-10-7
-description:
+title: Title
+date: 2022-6-7
+description: desc
 comments: true
 importance: 3
 category:
@@ -17,5 +17,11 @@ toc:
     subsections:
       - name: c22
 ---
+
+$$
+\begin{equation}
+h
+\end{equation}
+$$
 
 [hyperlink](../eigentricks/){:target="_blank"}
