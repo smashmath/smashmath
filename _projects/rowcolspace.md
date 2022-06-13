@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: Bases for the fundamental spaces of a matrix
-date: 2022-6-11
+date: 2022-06-11
 description: a lot of students struggle with this so here. row space, column space, null space, and left null space.
 comments: true
 importance: 2
@@ -279,7 +279,25 @@ $$\operatorname{null}(A)=\operatorname{span}\left\{
 
 ## Left Nullspace
 
-Unfortunately, to do this you will have to kind of start from square one and row reduce $$A^T$$. For our example,
+**PRO TIP**: You don't have to start at square one and row reduce the entirety of $$A^T$$. You can just take the pivot columns, tranpose them, and row reduce that!
+
+For our example,
+
+$$\operatorname{rref}\left(
+\begin{pmatrix}
+1&2&1&0&1\\
+1&2&1&0&1\\
+1&2&3&2&3\\
+1&2&1&0&2
+\end{pmatrix}^T
+  \right)=
+\begin{pmatrix}
+1&1&0&0\\
+0&0&1&0\\
+0&0&0&1\\
+0&0&0&0\\
+0&0&0&0
+\end{pmatrix}$$
 
 $$\operatorname{rref}(A^T)=
 \begin{pmatrix}
@@ -289,6 +307,24 @@ $$\operatorname{rref}(A^T)=
 0&0&0&0\\
 0&0&0&0
 \end{pmatrix}$$
+
+Whilst
+
+$$\operatorname{rref}\left(
+\begin{pmatrix}
+1&1&1\\
+1&1&1\\
+1&3&3\\
+1&1&2
+\end{pmatrix}^T
+  \right)=
+\begin{pmatrix}
+1&1&0&0\\
+0&0&1&0\\
+0&0&0&1\\
+\end{pmatrix}$$
+
+Neat, huh? It's just the nonzero rows! This is because we already know the nonpivot columns are linearly dependent on the pivot columns. So, when row reducing the transpose, those columns (now rows) will end up zeroing out as we row reduce.
 
 From the summary at the beginning, we know that since we have three pivot columns and four rows in $$A$$, the dimension of the left nullspace will be $$4-3=1$$. Thus, we will only get one vector in the left nullspace. The only nonpivot column is column two, and we can see that if we take col1-col2 we will get zero. So our null vector is $$(1,-1,0,0)$$.
 
