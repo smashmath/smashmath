@@ -299,15 +299,6 @@ $$\operatorname{rref}\left(
 0&0&0&0
 \end{pmatrix}$$
 
-$$\operatorname{rref}(A^T)=
-\begin{pmatrix}
-1&1&0&0\\
-0&0&1&0\\
-0&0&0&1\\
-0&0&0&0\\
-0&0&0&0
-\end{pmatrix}$$
-
 Whilst
 
 $$\operatorname{rref}\left(
