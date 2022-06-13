@@ -5,7 +5,7 @@ permalink: /math/
 description: i wrote these
 nav: true
 display_categories: [differential equations, systems of differential equations,linear algebra, calculus, works in progress, archive]
-horizontal: true
+horizontal: false
 ---
 
 <!-- pages/projects.md -->
