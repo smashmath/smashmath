@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Introduction to Least Squares
-date: 2021-10-7
+date: 2021-10-07
 description: How to find the best solution for an inconsistent system
 comments: true
 importance: 3
