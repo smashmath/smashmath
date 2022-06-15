@@ -13,12 +13,16 @@ authors:
       name: None
 toc:
   - name: Preliminary vocab and notation
+    subsections:
+      - name: Dimensions of the spaces
   - name: Row reduction
   - name: Row Space
   - name: Column Space
   - name: Nullspace
   - name: Left Nullspace
 ---
+
+In case you need a refresher on what things like pivots and the column space are. Otherwise, you can just skip to [Row Reduction](#row-reduction).
 
 ## Preliminary vocab and notation
 
@@ -90,6 +94,8 @@ Next, the four fundamental spaces of a matrix $$A$$:
 - **Nullspace**: Every vector $$\textbf{n}$$ such that $$A\textbf{n}=\textbf{0}$$. Also called the kernel of $$A$$.
 - **Row Space**: The range of the rows. Also the column space of $$A^T$$.
 - **Left Nullspace**: Every vector $$\textbf{n}$$ such that $$\textbf{n}^TA=\textbf{0}^T$$. Also the kernel of $$A^T$$.
+
+### Dimensions of the spaces
 
 Finally, a quick summary on the dimensions of the four spaces of an $$m\times n$$ matrix $$A$$ with $$\operatorname{rank}(A)=r$$ using the rank-nullity theorem:
 
@@ -189,7 +195,7 @@ So, we know that column two is linearly dependent on column one, and column four
 
 **This is why we take the pivot columns of the original matrix!** It's because the rref tells us they are *linearly independent*.
 
-So, our pivot columns are columns one, three, and five. So a basis for the column space is
+Then our pivot columns are columns one, three, and five. So a basis for the column space is
 
 $$\operatorname{col}(A)=\operatorname{span}\left\{
   \begin{pmatrix}
@@ -202,6 +208,8 @@ $$\operatorname{col}(A)=\operatorname{span}\left\{
 1\\1\\3\\2
 \end{pmatrix}
   \right\}$$
+
+Note: the nonpivot columns of $$R$$ are the coordinate vectors of the nonpivot columns of $$A$$ with respect to this pivot column basis!
 
 ## Nullspace
 
@@ -259,7 +267,7 @@ $$
 1\\1\\3\\1
 \end{pmatrix}+
 \begin{pmatrix}
-1\\1\\3\\2
+0\\0\\2\\0
 \end{pmatrix}=
 \begin{pmatrix}
 0\\0\\0\\0
