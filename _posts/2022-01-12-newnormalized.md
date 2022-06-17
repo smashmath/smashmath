@@ -20,6 +20,7 @@ toc:
       - name: Proof
       - name: Derivation
   - name: Some Interesting Consequences
+  - name: Some notes on the Laplace Transforms
   - name: Normalized solutions recap
     subsections:
       - name: Solving n problems individually
@@ -78,7 +79,7 @@ Consequently, each of the solutions satisfy the $$n$$ initial value problems
 $$\begin{equation}
 \begin{array}{cccc}
 Y_1(t_0)=1&Y_1'(t_0)=0&\ldots&Y_1^{(n-1)}(t_0)=0\\
-Y_2(t_0)=0&Y_2'(t_0)=1&\ldots&Y_2^{(n-1)}(t_0)=0\\
+Y_2(t_0)=1&Y_2'(t_0)=1&\ldots&Y_2^{(n-1)}(t_0)=0\\
 \vdots&\vdots&\ddots&\vdots&\\
 Y_n(t_0)=0&Y_n'(t_0)=0&\ldots&Y_n^{(n-1)}(t_0)=1\\
 \end{array}
@@ -375,7 +376,7 @@ You could solve the $$n$$ initial value problems with the following initial cond
 $$
 \begin{array}{cccc}
 Y_1(t_0)=1&Y_1'(t_0)=0&\ldots&Y_1^{(n-1)}(t_0)=0\\
-Y_2(t_0)=0&Y_2'(t_0)=1&\ldots&Y_2^{(n-1)}(t_0)=0\\
+Y_2(t_0)=1&Y_2'(t_0)=1&\ldots&Y_2^{(n-1)}(t_0)=0\\
 \vdots&\vdots&\ddots&\vdots&\\
 Y_n(t_0)=0&Y_n'(t_0)=0&\ldots&Y_n^{(n-1)}(t_0)=1\\
 \end{array}

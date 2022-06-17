@@ -19,6 +19,7 @@ toc:
       - name: Proof
       - name: Derivation
   - name: Some Interesting Consequences
+  - name: Some notes on the Laplace Transforms
   - name: Normalized solutions recap
     subsections:
       - name: Solving n problems individually
