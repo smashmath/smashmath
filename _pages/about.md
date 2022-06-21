@@ -6,7 +6,7 @@ description: i am a math student and tutor
 
 profile:
   align: right
-  image: barkley.gif
+  image: epfp.gif
   address: > 
     <p>grant f.</p> 
     <p>nix#2718</p>   
