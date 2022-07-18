@@ -477,7 +477,7 @@ p(x)=x^3-3x-10+t(x^2-2x-3)
 </div>
 <div class="caption">
     $$p(x)=x^3-3x-10-5(x^2-2x-3)$$
-    <a href="https://www.desmos.com/calculator/gtnsl50lx8">Desmos Graph</a><br>
+    <a href="https://www.desmos.com/calculator/gtnsl50lx8" target="_blank">Desmos Graph</a><br>
 </div><br>
 
 If you're wondering how I got that, I just solved the system
@@ -515,7 +515,7 @@ This is the polynomial that I was questing to find when I first learned about po
 </div>
 <div class="caption">
     $$p(x)=\frac{-97x^7+2771x^5-53693x^3-2076975x}{864000}$$
-    <a href="https://www.desmos.com/calculator/wwyqykfi8t">Desmos Graph</a><br>
+    <a href="https://www.desmos.com/calculator/wwyqykfi8t" target="_blank">Desmos Graph</a><br>
 </div>
 
 I had drawn the shape and labeled the four points. And while the graph is quite beautiful, the equation itself is not.
