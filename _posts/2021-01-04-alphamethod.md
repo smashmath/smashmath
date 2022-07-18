@@ -5,7 +5,7 @@ date: 2021-01-04
 description: Easy particular solutions to nonhomoegenous constant coefficient linear differential equations with simple exponential/trigonometric forcing functions.
 comments: true
 importance: 1
-categories: differential-equations
+tags: differential-equations
 authors:  
   - name: Grant F.
     url: ""

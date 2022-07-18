@@ -5,7 +5,7 @@ date: 2021-04-26
 description: this has been rewritten
 comments: true
 importance: 6
-tags: matrixexponentials
+tags: matrix-exponentials
 categories: archive
 authors:  
   - name: Grant F.

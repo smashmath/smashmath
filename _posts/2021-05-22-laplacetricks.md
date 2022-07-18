@@ -1,11 +1,11 @@
 ---
 layout: distill
 title: Tricks for Remembering Laplace Transforms
-date: 2021-05-22 0
+date: 2021-05-22
 description: for students and people who forgot
 comments: true
 importance: 2
-categories: differential-equations
+tags: differential-equations
 authors:  
   - name: Grant F.
     url: ""

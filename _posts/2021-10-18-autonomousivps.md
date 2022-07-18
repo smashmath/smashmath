@@ -5,7 +5,7 @@ date: 2021-10-18 0
 description: Easily solving linear homogeneous constant coefficient initial problems when the initial point is not t=0
 comments: true
 importance: 2
-categories: differential-equations
+tags: differential-equations
 ---
 
 Given constant coefficients $$a_0,a_1,\ldots,a_n$$, with $$a_n\neq0$$, and the $$n$$-th order Initial Value Problem

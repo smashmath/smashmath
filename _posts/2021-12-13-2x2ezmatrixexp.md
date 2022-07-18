@@ -5,8 +5,7 @@ date: 2021-12-13
 description: Who needs eigenvectors?
 comments: true
 importance: 1
-tags: matrixexponentials
-categories: systems-of-differential-equations
+tags: matrix-exponentials systems-of-differential-equations
 authors:  
   - name: Grant F.
     url: ""
@@ -138,7 +137,7 @@ $$e^{(A-\lambda I)t}=I+t(A-\lambda I)$$
 
 $$e^{\lambda t}e^{(A-\lambda I)t}=e^{\lambda t}\bigg(I+t(A-\lambda I)\bigg)$$
 
-$$e^{At}=e^{kt}\bigg(I+t(A-kI)\bigg)\quad\blacksquare$$
+$$e^{At}=e^{\lambda t}\bigg(I+t(A-kI)\bigg)\quad\blacksquare$$
 
 And that's it!
 

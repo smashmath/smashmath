@@ -5,7 +5,7 @@ date: 2021-09-22 0
 description: Yet another obnoxious formula for solutions to constant coefficient nonhomogeneous ODE's with common forcing functions.
 comments: true
 importance: 4
-categories: differential-equations
+tags: differential-equations
 ---
 
 I found this a few days ago, and while I may call it obnoxious, I wouldn't necessarily call it useless (or at least as useless as I thought it was when I originally derived it).

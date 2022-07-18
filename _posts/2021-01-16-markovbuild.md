@@ -5,7 +5,7 @@ date: 2021-01-16
 description: Build a Markov Chain with desired behavior.
 comments: true
 importance: 2
-categories: linear-algebra
+tags: linear-algebra
 ---
 
 What We Want

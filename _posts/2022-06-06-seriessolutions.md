@@ -5,7 +5,7 @@ date: 2022-06-06
 description: the fast way to do series solutions. no reindexing required.
 comments: true
 importance: 1
-categories: differential-equations
+tags: differential-equations
 authors:  
   - name: Grant F.
     url: ""

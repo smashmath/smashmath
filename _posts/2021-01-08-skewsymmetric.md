@@ -5,7 +5,7 @@ date: 2021-01-08
 description: top 10 things YOU didn't know about real skew-symmetric matrices!!! (GONE WRONG) (COPS CALLED)
 comments: true
 importance: 2
-categories: linear-algebra
+tags: linear-algebra
 ---
 
 I was messing around with skew-symmetric matrices and derived some really interesting facts about them. If you have no idea why your Linear Algebra instructor ever mentioned them, perhaps this will convince you that they are arguably just as cool as symmetric matrices.

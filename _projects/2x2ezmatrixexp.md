@@ -137,7 +137,7 @@ $$e^{(A-\lambda I)t}=I+t(A-\lambda I)$$
 
 $$e^{\lambda t}e^{(A-\lambda I)t}=e^{\lambda t}\bigg(I+t(A-\lambda I)\bigg)$$
 
-$$e^{At}=e^{kt}\bigg(I+t(A-kI)\bigg)\quad\blacksquare$$
+$$e^{At}=e^{\lambda t}\bigg(I+t(A-kI)\bigg)\quad\blacksquare$$
 
 And that's it!
 
@@ -382,7 +382,7 @@ $$\textbf{x}(n+1)=A\textbf{x}(n)$$
 
 And while $$e^{At}\textbf{x}(0)$$ is the solution to $$\textbf{x}'=A\textbf{x}$$, the solution to the equation above is $$A^n\textbf{x}(0)$$
 
-I may choose to write a post about these in the future... EDIT: [I totally did. I couldn't wait.](../discretesystems)
+I may choose to write a post about these in the future... EDIT: [I totally did. I couldn't wait.](../discretesystems){:target="_blank"}
 
 ## Closing Remarks
 
