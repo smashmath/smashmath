@@ -5,7 +5,7 @@ date: 2021-05-22 0
 description: skip or simplify integrals involving trig functions multiplied by exponentials
 comments: true
 importance: 2
-categories: calculus
+tags: calculus
 ---
 
 So here I want to use Euler's formula to skip the need to do the annoying recursive Integration by Parts for the following types of integrals
