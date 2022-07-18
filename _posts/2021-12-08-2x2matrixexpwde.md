@@ -5,7 +5,7 @@ date: 2021-12-08
 description:
 comments: true
 importance: 6
-tags: matrixexponentials
+tags: matrix-exponentials
 categories: archive
 authors:  
   - name: Grant F.

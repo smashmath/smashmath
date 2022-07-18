@@ -6,13 +6,13 @@ subtitle: i am a math student and tutor
 
 profile:
   align: right
-  image: epfp.gif
+  image: stock.jpg
   address: > 
     <p>grant f.</p> 
     <p>nix#2718</p>   
     <p>e</p> 
     <p>california CA</p>
-    <p>:)</p>  
+    <p>this is not actually a picture of me (see photo credit below)</p>  
     
 
 news: true  # includes a list of news items
@@ -58,4 +58,6 @@ things ive ~~discovered~~ independently derived. i think they're all cool, but o
 
 ---
 
-<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1187516174">image background source</a>
+the picture is not me. it is a stock photo that i bought and have the license to use.
+
+credit: <a href="https://iStock.com/portfolio/ajr_images">iStock.com/ajr_images</a>

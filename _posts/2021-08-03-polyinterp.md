@@ -5,7 +5,7 @@ date: 2021-08-03 0
 description: Making your own custom polynomial.
 comments: true
 importance: 2
-categories: linear-algebra
+tags: linear-algebra
 ---
 
 This post is separated into sections based on difficulty. While hopefully anyone with some algebra experience can follow along with the first few sections, the later sections use topics from more advanced math courses like Calculus and Linear Algebra.

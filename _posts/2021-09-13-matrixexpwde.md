@@ -5,8 +5,7 @@ date: 2021-09-13 0
 description: ok
 comments: true
 importance: 3
-tags: matrixexponentials normalizedsolutions
-categories: systems-of-differential-equations
+tags: matrix-exponentials normalized-solutions systems-of-differential-equations
 ---
 
 Yet another impractical way to calculate matrix exponentials found by yours truly. This method requires

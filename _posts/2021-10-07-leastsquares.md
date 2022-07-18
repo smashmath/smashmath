@@ -5,7 +5,7 @@ date: 2021-10-7
 description: How to find the best solution for an inconsistent system
 comments: true
 importance: 3
-categories: linear-algebra
+tags: linear-algebra
 ---
 
 Suppose we have two vectors $$\vec{v},\vec{b}\in\mathbb{R}^n$$

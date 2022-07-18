@@ -397,6 +397,8 @@ If rebasing is too complicated, we recommend re-installing the new version of th
 
 ---
 
+---
+
 ### FAQ
 
 Here are some frequently asked questions.
@@ -540,7 +542,9 @@ There are several custom bibtex keywords that you can use to affect how the entr
 You can implement your own buttons by editing the bib.html file.
    
 </details>
-   
+
+---
+
 ### Collections
 
 This Jekyll theme implements `collections` to let you break up your work into categories.
@@ -712,3 +716,4 @@ The theme is available as open source under the terms of the [MIT License](https
 
 Originally, **al-folio** was based on the [\*folio theme](https://github.com/bogoli/-folio) (published by [Lia Bogoev](https://liabogoev.com) and under the MIT license).
 Since then, it got a full re-write of the styles and many additional cool features.
+

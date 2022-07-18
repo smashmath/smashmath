@@ -5,8 +5,7 @@ date: 2020-12-01
 description: yeah
 comments: true
 importance: 5
-tags: matrixexponentials
-categories: linear-algebra
+tags: matrix-exponentials linear-algebra
 ---
 If $$A$$ is an $$n\times n$$ symmetric matrix with eigenvectors $$\{v_1,\ldots,v_n\}$$ which form an orthonormal basis of $$R^n$$ corresponding to eigenvalues $$\lambda_1,\ldots,\lambda_n$$, then
 
