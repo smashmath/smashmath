@@ -26,7 +26,7 @@ toc:
 
 This is one of the first things taught in an intro to differential equations class, and I think it is very accessible to students who have taken basic calculus. The only snag might be that you may not know how to do the integral you inevitably obtain, but the overall idea for the process is straightforward enough, I think.
 
-As usual I kind of go overboard on the additional facts which you don't really *need* to know. So just ignore them if you don't care. I'll put **Aside** in front of those kind of facts.
+As usual I kind of go overboard on the additional facts which you don't really *need* to know. So just ignore them if you don't care. I'll put **Aside** in front of those kind of things.
 
 ## What is a first order linear ODE?
 
