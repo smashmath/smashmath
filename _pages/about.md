@@ -6,7 +6,7 @@ subtitle: i am a math student and tutor
 
 profile:
   align: right
-  image: stock.jpg
+  image: pic.jpg
   address: > 
     <p>grant f.</p> 
     <p>nix#2718</p>   
