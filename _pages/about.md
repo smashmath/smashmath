@@ -60,4 +60,4 @@ things ive ~~discovered~~ independently derived. i think they're all cool, but o
 
 the picture is not me. it is a stock photo that i bought and have the license to use.
 
-credit: <a href="https://iStock.com/portfolio/ajr_images">iStock.com/ajr_images</a>
+credit: <a href="https://iStock.com/portfolio/ajr_images" target="_blank">iStock.com/ajr_images</a>
