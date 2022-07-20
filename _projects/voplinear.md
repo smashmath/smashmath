@@ -21,8 +21,8 @@ We let $$x(t)=(x_1(t),x_2(t))=(y(t),y'(t))$$.
 $$\begin{align}
 x_1(t)=y(t)&&x_2(t)=&y'(t)\\
 x_1'(t)=y'(t)&&x_2'(t)=&y''(t)\\
-&&x_2'(t)=&-q(t)y(t)-p(t)y'(t)\\
-x_1'(t)=x_2(t)&&x_2'(t)=&-q(t)x_1(t)-p(t)x_2(t)
+&&x_2'(t)=&-q(t)y(t)-p(t)y'(t)+f(t)\\
+x_1'(t)=x_2(t)&&x_2'(t)=&-q(t)x_1(t)-p(t)x_2(t)+f(t)
 \end{align}$$
 
 Then we reduce the original differential equation into
