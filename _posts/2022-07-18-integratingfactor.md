@@ -70,7 +70,7 @@ So, the motivating idea is to find some function <a href="https://puu.sh/JbL0d/b
 
 ## Finding the integrating factor
 
-Now, this is the idea behind almost every single technique you learn in a differential equations class: "*the solution probably looks like this, so let's plug it in and solve for it*".
+Now, this is the idea behind almost every single technique you learn in a differential equations class: "*the solution probably looks like this, so let's plug it in and solve for the unknowns*".
 
 When we multiply our original equation by $$\mu$$, we get
 
