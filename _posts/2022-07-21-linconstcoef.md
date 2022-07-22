@@ -230,7 +230,7 @@ As a final note, when a determinant is nonzero, it means that the columns are li
 
 I have not yet explained why only two solutions are sufficient for a second order equation. The short answer is that an $$n$$th order linear equation will have $$n$$ linearly independent solutions. So, for second order, that means two. One way to think about it is "two derivatives means two arbitrary constants". **If that's good enough for you, you can [skip](#repeated-roots) this section**. But if you're like me and you want to know *why*, then continue.
 
-The answer can get pretty technical, so I will leave a relatively simple explanation that cites the all important **Picard–Lindelöf existence and uniqueness theorem**. We don't have to worry at all about when solutions will exist or if the theorem will applies, because constant coefficients guarantees existence everywhere (since it trivially satisfies the requirements of the theorem).
+The answer can get pretty technical, so I will leave a relatively simple explanation that cites the all important **Picard–Lindelöf existence and uniqueness theorem**. We don't have to worry at all about when solutions will exist or if the theorem will apply, because constant coefficients guarantees existence everywhere (since it trivially satisfies the requirements of the theorem).
 
 1. The existence and uniqueness theorem guarantees that a second order initial value problem with two conditions **must** have a **unique** solution.
 2. Since this must be true for any two arbitrary initial conditions, one function is not enough. However, two functions which are linearly independent will be able to satisfy any two arbitrary initial conditions (thanks linear algebra).
