@@ -248,7 +248,7 @@ $$
 \right)
 $$
 
-We can see that if we take the third column as it is (that is to say, taking exactly $$1$$ of it), we can cancel out the nonzero entries by taking $$-3$$ of column one, and $$1$$ of column two. Thus, a solution will be $$(-3,1,1)$$. Since any scalar multiple of this vector will also yield the zero vector, the genral solution will be
+We can see that if we take the third column as it is (that is to say, taking exactly $$1$$ of it), we can cancel out the nonzero entries by taking $$-3$$ of column one, and $$1$$ of column two. Thus, a solution will be $$(-3,1,1)$$. Since any scalar multiple of this vector will also yield the zero vector, the general solution will be
 
 $$\textbf{x}=c\begin{pmatrix}
 -3\\1\\1
