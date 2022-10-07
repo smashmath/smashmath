@@ -240,7 +240,7 @@ $$\begin{equation} \label{badstep}
 
 but that's only easy to apply for inverse Laplace Transforms. Otherwise, you have to go through hoops writing your function in terms of $$t-c$$. Just don't, and instead memorize \eqref{step}.
 
-If it helps, I think of it as changing the lower bound on the Laplace Transform integral, because that's exactly what it is. Doing a probably-not-$$u$$-substitution of $$v=t-c\implies t=v+c$$ has the effect of being a regular Laplace Transform of the function shited by $$c$$ and multiplied by an extra $$e^{-ct}$$, corresponding to how shifting an exponential is just scaling it. \eqref{badstep} is just the case where the *shifted* function is $$f(t)$$, so the only difference is being scaled by the exponential term $$e^{-ct}$$. I assume they do this because the math works out the nicest, but it's an awful rule to use to *evaluate* Laplace Transforms.
+If it helps, I think of it as changing the lower bound on the Laplace Transform integral, because that's exactly what it is. Doing a probably-not-$$u$$-substitution of $$v=t-c\implies t=v+c$$ has the effect of being a regular Laplace Transform of the function shifted by $$c$$ and multiplied by an extra $$e^{-ct}$$, corresponding to how shifting an exponential is just scaling it. \eqref{badstep} is just the case where the *shifted* function is $$f(t)$$, so the only difference is being scaled by the exponential term $$e^{-ct}$$. I assume they do this because the math works out the nicest, but it's an awful rule to use to *evaluate* Laplace Transforms.
 
 ---
 
