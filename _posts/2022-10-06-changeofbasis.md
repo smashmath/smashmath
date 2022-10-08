@@ -279,8 +279,9 @@ Let's find the matrix, for example, which changes from the basis $$\alpha=\left\
 The matrix with the vectors as the columns will give us the matrix which changes from the basis to the standard basis.
 
 $$
-P_{\varepsilon\gets\alpha}=\begin{pmatrix}2&3\\1&2\end{pmatrix},\quad
-P_{\varepsilon\gets\beta}=\begin{pmatrix}1&1\\1&2\end{pmatrix}\implies
+P_{\varepsilon\gets\alpha}=\begin{pmatrix}2&3\\1&2\end{pmatrix}$$
+
+$$P_{\varepsilon\gets\beta}=\begin{pmatrix}1&1\\1&2\end{pmatrix}\implies
 P_{\beta\gets\varepsilon}=\begin{pmatrix}2&-1\\-1&1\end{pmatrix}
 $$
 
