@@ -21,7 +21,7 @@ toc:
 
 $$
 \begin{equation}
-h
+\begin{pmatrix}1\\1\end{pmatrix}
 \end{equation}
 $$
 
