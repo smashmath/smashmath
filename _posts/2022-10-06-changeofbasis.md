@@ -47,11 +47,11 @@ Before you subject yourself to this post, I recommend watching the following two
 - [Change of basis](https://youtu.be/P2LTAUO1TdA){:target="_blank"}
 - I'd also recommend reading my post on [*column perspective*](../columnperspective/){:target="_blank"}. Understanding column perspective is going to make a lot of this much easier, but it's not required.
 
-#### Preface
+### Preface
 
-I just want to establish, with 100% transparency that I don't specifically memorize *any* of these formulas. This topic is so infrequent that every time it comes up in my tutoring practice, I have to rederive it for myself every time as I'm explaining it. Instead, I recommend trying to *understand* where it comes from. In my opinion, if you intuitively understand what a change of basis matrix and a coordinate vector are, and you know *exactly* you're trying to do in a change of basis problem, it all sort of comes together very naturally.
+This topic is so infrequent that when it comes up in my tutoring practice, I have to rederive it for myself as I'm explaining it every single time. I recommend trying to focus on *understanding* where these formulas comes from, rather than memorizing what they are. In my opinion, if you intuitively understand what a change of basis matrix and a coordinate vector are, and how they interact, it all sort of comes together very naturally.
 
-Not to say change of basis is natural, absolutely not. This is possibly the most confounding topic I have had to tutor in my experience. I just mean that once you speak the language of change of basis, then forming sentences is relatively intuitive.
+Not to say change of basis is natural, absolutely not. This is possibly the most confounding topic I have had to consistently tutor. I just mean that once you speak the language of change of basis, then forming sentences is relatively intuitive.
 
 ## Notation
 
