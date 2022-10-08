@@ -23,6 +23,7 @@ toc:
   - name: How coordinates work
     subsections:
       - name: Transformation matrix definition
+      - name: Linear transformation example
       - name: Change of basis matrix properties
       - name: Wait what IS a coordinate vector
       - name: Coordinate vectors with matrices
@@ -101,7 +102,7 @@ Personally, I like the third one because you can easily read it right to left (w
 ### Transformation matrix definition
 
 A change of basis is just another linear transformation. So it is worth at least writing out the general formula for constructing a transformation matrix.
-*Rarely* it is easier to directly compute a change of basis matrix using the following formulation. However, it is slightly more common that computing $$[T]_\alpha^\beta$$ directly is faster, because the systems of equations that come up when finding it may have very obvious solutions (for example, if a transformation just scales or permutes vectors. This happens when using an eigenbasis).
+*Rarely* it is easier to directly compute a change of basis matrix using the following formulation. However, it is slightly more common that computing $$[T]_\alpha^\beta$$ directly is faster, because the systems of equations that come up when finding it may have very obvious solutions (for example, if a transformation just scales or permutes vectors. This happens when using an eigenbasis). For this reason, **it is often worth applying the transformation to the basis vectors of the domain and seeing if there is an obvious relationship between the outputs and the vectors in the basis of the codomain.**
 
 If $$T:V\to W$$ is a linear transformation, and $$\alpha=(v_1,\ldots,v_n)$$ is a basis for $$V$$, then the matrix for the transformation $$T$$ with respect to the bases $$\alpha$$ of $$V$$ and $$\beta$$ of $$W$$ is given by the $$\dim(W)\times n$$ matrix
 
@@ -110,6 +111,36 @@ $$
 [T]_\alpha^\beta=\Big([T(v_1)]_\beta\quad\cdots\quad [T(v_n)]_\beta\Big)
 \end{equation}
 $$
+
+### Linear transformation example
+
+Here is an example where you don't actually need to do change of basis, really.
+
+Consider the transformation $$T:P_2(F)\to F^2$$ defined by
+
+$$T(a_0+a_1x+a_2x^2)=\begin{pmatrix}2a_1-a_2\\a_0+3a_1-3a_2\end{pmatrix}$$
+
+Find the matrix for the transformation with respect to the bases $$\alpha=\{1+x+x^2,1+x^2,2+x+x^2\}$$ and $$\beta=\left\{\begin{pmatrix}1\\1\end{pmatrix},\begin{pmatrix}1\\2\end{pmatrix}\right\}$$.
+
+First, we can apply $$T(\alpha)$$ just to see what happens. You can either directly plug in each basis vector into the transformation, or you could find the matrix for the transformation with respect to the standard bases and apply that to the coordinate vectors. We will do the latter as practice:
+
+$$T(1)=\begin{pmatrix}0\\1\end{pmatrix},\quad T(x)=\begin{pmatrix}2\\3\end{pmatrix},\quad T(x^2)=\begin{pmatrix}-1\\-3\end{pmatrix}$$
+
+Thus, $$[T]_\varepsilon^\varepsilon=\begin{pmatrix}0&2&-1\\1&3&-3\end{pmatrix}$$
+
+Applying that matrix to the coordinate vectors of $$\alpha$$ with respect to the standard basis ($$P_{\varepsilon\gets\alpha}$$)
+
+$$\begin{pmatrix}0&2&-1\\1&3&-3\end{pmatrix}\begin{pmatrix}1&1&2\\1&0&1\\1&1&1\end{pmatrix}=\begin{pmatrix}1&-1&1\\1&-2&2\end{pmatrix}$$
+
+And as it so happens, the columns are just scalar multiples of our $$\beta$$ basis vectors (wow it's almost like this example was designed for that to happen). We can see that
+
+$$T(\alpha_1)=1\beta_1,\quad T(\alpha_2)=-1\beta_2,\quad T(\alpha_3)=1\beta_2$$
+
+Therefore, the matrix $$[T]_\alpha^\beta$$ is just
+
+$$[T]_\alpha^\beta=\begin{pmatrix}1&0&0\\0&-1&1\end{pmatrix}$$
+
+I encourage you to try this example with the tools later outlined in this post. It isn't *that* bad, but the purpose of this example is to let you know that there are often simpler ways to go about these problems. You shouldn't always bust out the formula just because you *can*.
 
 ### Change of basis matrix properties
 
