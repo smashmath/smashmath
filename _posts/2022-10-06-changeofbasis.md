@@ -86,12 +86,12 @@ For "the matrix which changes coordinates from a basis $$\alpha$$ to a basis $$\
 
 $$[I]_\alpha^\beta,\quad P_{\alpha\to\beta},\quad P_{\beta\gets\alpha}$$
 
-We will use the rightmost one for this post $$P_{\beta\gets\alpha}$$, because I like it best. To explain why, I am going to show a formula which will be explained later with all three different versions
+We will use $$P_{\beta\gets\alpha}$$ for this post, because I like it best. To explain why, I am going to show a formula which will be explained later with all three different versions
 
 $$\begin{array}{ccc}
-[T]_\alpha^\beta&=&[I]_\varepsilon^\beta [T]_\varepsilon^\varepsilon [I]_\alpha^\varepsilon\\
-[T]_\alpha^\beta&=&P_{\varepsilon\to\beta} [T]_\varepsilon^\varepsilon P_{\alpha\to\varepsilon}\\
-[T]_\alpha^\beta&=&P_{\beta\gets\varepsilon} [T]_\varepsilon^\varepsilon P_{\varepsilon\gets\alpha}\\
+[I]_\alpha^\beta&=&[I]_\varepsilon^\beta[I]_\alpha^\varepsilon\\
+P_{\alpha\to\beta}&=&P_{\varepsilon\to\beta} P_{\alpha\to\varepsilon}\\
+P_{\beta\gets\alpha}&=&P_{\beta\gets\varepsilon} P_{\varepsilon\gets\alpha}\\
 \end{array}$$
 
 Personally, I like the third one because you can easily read it right to left (which is important because transformations are always applied right to left). The second one is jarring for me because it mixes right to left with left to right. And while the first one isn't that bad, it's a little jumpy and dense, in my opinion. Use whatever you like, but I will use the third.
@@ -217,10 +217,6 @@ So, for example, if the basis is $$B=\{(1,1,1),(1,-1,0),(1,1,-2)\}$$, then the c
 
 $$\begin{pmatrix}1&1&1\\1&-1&1\\1&0&-2\end{pmatrix}$$
 
-In general, you can always think of a coordinate vector $$[v]_\beta$$ as the solution to the matrix equation
-
-$$P_{\varepsilon\gets\beta}[v]_\beta=v$$
-
 ### Computing coordinate vectors
 
 A few sections ago, we stated the following formula for a coordinate vector
@@ -239,7 +235,15 @@ $$
 \end{equation}
 $$
 
-Column perspective makes this formula very intuitive.
+Column perspective makes this formula very intuitive, as the definition of a coordinate vector is essentially to be the solution to the equation
+
+$$c_1v_1+\ldots+c_nv_n=x$$
+
+which can be expressed as the matrix equation
+
+$$
+\Bigg(v_1\quad \cdots\quad v_n\Bigg)\begin{pmatrix}c_1\\\vdots\\c_n\end{pmatrix}=x
+$$
 
 ### Coordinate vector example
 
@@ -258,7 +262,7 @@ $$[v]_\beta=P_{\beta\gets\varepsilon}v=\begin{pmatrix}2&1\\1&1\end{pmatrix}\begi
 
 We will be going into how to directly compute a general change of basis matrix [in a later section](#Finding-change-of-basis-matrices). This is a more practical formulation which works better for two and three dimensional vector spaces.
 
-First, as an analogy, let's say you want to translate something from French into German, but you don't speak either all that well. It would be a lot easier if you could translate the sentence into English first, and then translate that English sentence into German (assuming you are more comfortable with $$\varepsilon$$nglish). That is the fundamental idea behind the following property (which is *incredibly* useful).
+First, as an analogy, let's say you want to translate something from French into German, but you don't speak either all that well. It would be a lot easier if you could translate the sentence into English first, and then translate that English sentence into German (assuming you are more comfortable with $$\varepsilon$$nglish). That is the fundamental idea behind the following corollary to \eqref{basiscombine} (which is *incredibly* useful).
 
 $$
 \begin{equation}\label{ezchange}
@@ -266,7 +270,7 @@ P_{\beta\gets\alpha}=P_{\beta\gets\varepsilon}P_{\varepsilon\gets\alpha}=(P_{\va
 \end{equation}
 $$
 
-Why are these formulas great, you may ask? Well, it's because the matrix $$P_{\varepsilon\gets\alpha}$$ is *really* easy to find (it's just the vectors as the columns!), while $$P_{\beta\gets\alpha}$$ is *really* computationally intensive to find directly if neither $$\alpha$$ or $$\beta$$ are the standard basis. I will explain a method for finding it directly (which is actually reasonable for vector spaces of dimension 4 or higher) in the next section, but for two and three dimensional vector spaces, this is the way to go, in my opinion.
+Why are these formulas great, you may ask? Well, it's because the matrix $$P_{\varepsilon\gets\alpha}$$ is *really* easy to find (it's just the vectors as the columns!), while $$P_{\beta\gets\alpha}$$ is *really* computationally intensive to find directly if neither $$\alpha$$ or $$\beta$$ are the standard basis.
 
 ### Change of basis example
 
@@ -288,6 +292,19 @@ $$P_{\beta\gets\alpha}=
 \begin{pmatrix}3&4\\-1&-1\end{pmatrix}
 $$
 
+How do we know we're right, though? Basically, you just need to ensure that the columns of your resulting matrix $$\begin{pmatrix}3\\-1\end{pmatrix},\begin{pmatrix}4\\-1\end{pmatrix}$$ are the correct coordinates of the old basis ($$\alpha$$) vectors in the new basis ($$\beta$$):
+
+$$
+\begin{array}{cccccc}
+  3\begin{pmatrix}1\\1\end{pmatrix}&-&\begin{pmatrix}1\\2\end{pmatrix}&=&\begin{pmatrix}2\\1\end{pmatrix}\\
+  4\begin{pmatrix}1\\1\end{pmatrix}&-&\begin{pmatrix}1\\2\end{pmatrix}&=&\begin{pmatrix}3\\2\end{pmatrix}
+\end{array}
+$$
+
+And those are indeed the vectors of $$\alpha$$!
+
+Note that (by column perspective) this computation is equivalent to multiplying $$P_{\varepsilon\gets\beta}P_{\beta\gets\alpha}$$ and making sure you get $$P_{\varepsilon\gets\alpha}$$.
+
 ## Transformations on other bases
 
 One of the most common applications of change of basis is to find the matrix of a transformation with respect to other bases.
@@ -302,9 +319,9 @@ $$
 \end{equation}
 $$
 
-The basic idea is this: suppose you cannot speak French, so you are using a translator to speak to your eight-year-old nephew who only speaks French. In the conversation, your nephew says something in French, which the translator has to convey to you in English ($$P_{\text{Eng}\gets\text{Fr}}$$). Then, you can respond in English $$[T]_{\text{Eng}}$$. But, for your nephew to understand what you said, the translator must translate it back into French ($$P_{\text{Fr}\gets\text{Eng}}$$). Giving the full "conversation" as
+The basic idea is this: suppose you cannot speak French, so you are using a translator to speak to your eight-year-old nephew who only speaks French. In the conversation, your nephew says something in French, which the translator has to convey to you in English ($$P{\text{Eng}\gets\text{Fr}}$$). Then, you can respond in English $$[T]{\text{Eng}}$$. But, for your nephew to understand what you said, the translator must translate it back into French ($$P{\text{Fr}\gets\text{Eng}}$$). Giving the full "conversation" as
 
-$$[T]_{\text{Fr}}=P_{\text{Fr}\gets\text{Eng}}[T]_{\text{Eng}}P_{\text{Eng}\gets\text{Fr}}$$
+$$[T]{\text{Fr}}=P{\text{Fr}\gets\text{Eng}}[T]{\text{Eng}}P_{\text{Eng}\gets\text{Fr}}$$
 
 ### Linear operator example
 
@@ -338,9 +355,9 @@ We can confirm that the coordinate vector for $$T(v_1)=\begin{pmatrix}1\\1\end{p
 
 If $$T:V\to W$$ is a linear transformation to a different vector space $$W$$, then you have to deal with two different bases for each space: let's say $$\alpha,\alpha'$$ for $$V$$, and $$\beta,\beta'$$ for $$W$$.
 
-Instead of just writing a general formula for $$[T]_{\alpha'}^{\beta'}$$ given $$[T]_\alpha^\beta$$, I'd rather give you the intuitive direction for how you might construct one:
+Here's the thing... A formula for $$[T]_{\alpha'}^{\beta'}$$ given $$[T]_\alpha^\beta$$ is simply *not* worth memorizing, in my opinion. So, instead of just giving it to you, I'm going to explain the intuition behind what the formula *does*. Hopefully, that can give you the capability to come up with the formula on your own.
 
-We can transform $$\alpha$$ vectors in terms of $$\beta$$ vectors, and we want to transform $$\alpha'$$ vectors in terms of $$\beta'$$ vectors. Thus, we could translate our input of $$\alpha'$$ vectors to $$\alpha$$ vectors first ($$P_{\alpha\gets\alpha'}$$), and apply the transformation which gives us the results in terms of $$\beta$$ vectors ($$[T]_\alpha^\beta$$). Finally, to get things in terms of $$\beta'$$ vectors, we translate one last time from $$\beta$$ to $$\beta'$$ ($$P_{\beta'\gets\beta}$$). Putting it all together:
+We can transform $$\alpha$$ vectors in terms of $$\beta$$ vectors using $$[T]_\alpha^\beta$$, and we want to transform $$\alpha'$$ vectors in terms of $$\beta'$$ vectors. Thus, we could translate our input of $$\alpha'$$ vectors to $$\alpha$$ vectors first ($$P_{\alpha\gets\alpha'}$$), and apply the transformation which gives us the results in terms of $$\beta$$ vectors ($$[T]_\alpha^\beta$$). Finally, to get things in terms of $$\beta'$$ vectors, we translate one last time from $$\beta$$ to $$\beta'$$ ($$P_{\beta'\gets\beta}$$). Putting it all together:
 
 $$
 \begin{equation}
@@ -348,7 +365,9 @@ $$
 \end{equation}
 $$
 
-I do *not* recommend memorizing this. Instead, try to see how you could naturally come up with this on your own. Hopefully, the preceding paragraph makes the formulation make intuitive sense.
+Imagine you have a magical French to German translation machine, and you want to translate English to Spanish. Then you could put the magical machine between intermediary machines that take Swedish to French and German to Spanish.
+
+$$[T]_\text{Eng}^\text{Spa}=P_{\text{Spa}\gets\text{Ger}}[T]_\text{Fr}^\text{Ger} P_{\text{Fr}\gets\text{Eng}}$$
 
 ## Finding change of basis matrices
 
@@ -358,20 +377,20 @@ To find $$P_{\beta\gets\alpha}$$,
 
 $$
 \begin{eqnarray}
-  \bigg[\begin{array}{c|c}
+  \big[\begin{array}{c|c}
   P_{\varepsilon\gets\beta}&P_{\varepsilon\gets\alpha}
-  \end{array}\bigg]
+  \end{array}\big]
   &\quad\underrightarrow{\text{row reduce}}\quad&
-  \bigg[\begin{array}{c|c}
+  \big[\begin{array}{c|c}
   I&P_{\beta\gets\alpha}
-  \end{array}\bigg]\\
-  \bigg[\begin{array}{c|c}
+  \end{array}\big]\\
+  \big[\begin{array}{c|c}
   \text{new basis}&\text{old basis}
-  \end{array}\bigg]
+  \end{array}\big]
   &\quad\underrightarrow{\text{row reduce}}\quad&
-  \bigg[\begin{array}{c|c}
+  \big[\begin{array}{c|c}
   I&\text{old to new basis}
-  \end{array}\bigg]
+  \end{array}\big]
 \end{eqnarray}
 $$
 
@@ -382,26 +401,26 @@ If you want to know why this works, there are two explanations. If you don't, th
 1. You can get to this by solving $$n$$ systems of equations at once: trying to find the coordinate vectors of the vectors in $$\beta$$ with respect to the vectors in $$\alpha$$
 2. Using [*column perspective*](../columnperspective/){:target="_blank"}, you can see that if you multiply the matrix by
 $$(P_{\varepsilon\gets\alpha})^{-1}$$, you get
-$$(P_{\varepsilon\gets\beta})^{-1}\bigg[\begin{array}{c|c}
+$$(P_{\varepsilon\gets\beta})^{-1}\big[\begin{array}{c|c}
   P_{\varepsilon\gets\beta}&P_{\varepsilon\gets\alpha}
-  \end{array}\bigg]=
-  \bigg[\begin{array}{c|c}
+  \end{array}\big]=
+  \big[\begin{array}{c|c}
   (P_{\varepsilon\gets\beta})^{-1}P_{\varepsilon\gets\beta}&P_{\beta\gets\varepsilon}P_{\varepsilon\gets\alpha}
-  \end{array}\bigg]=
-  \bigg[\begin{array}{c|c}
+  \end{array}\big]=
+  \big[\begin{array}{c|c}
   I&P_{\alpha\gets\beta}
-  \end{array}\bigg]$$
+  \end{array}\big]$$
   and, if you didn't know, row reducing an invertible matrix is exactly equivalent to multiplying on the left by the inverse.
 
-  $$A^{-1}\bigg[\begin{array}{c|c}
+  $$A^{-1}\big[\begin{array}{c|c}
   A&I
-  \end{array}\bigg]=
-  \bigg[\begin{array}{c|c}
+  \end{array}\big]=
+  \big[\begin{array}{c|c}
   A^{-1}A&A^{-1}I
-  \end{array}\bigg]=
-  \bigg[\begin{array}{c|c}
+  \end{array}\big]=
+  \big[\begin{array}{c|c}
   I&A^{-1}
-  \end{array}\bigg]$$
+  \end{array}\big]$$
 
 (so that's why that works if you were wondering)
 
