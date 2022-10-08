@@ -24,8 +24,8 @@ toc:
   - name: The Eigenvector Columns Theorem
     subsections:
       - name: Example of Applying the E.C.T.
-      - name: Proof of the The Eigenvector Columns Theorem
   - name: By Inspection
+  - name: Proof of the The Eigenvector Columns Theorem
 ---
 
 # The Characteristic Polynomial
@@ -201,7 +201,7 @@ The trace and determinant are both $$6$$, meaning we need three numbers which ad
 
 At least *most* of the time, mathematics profesors tend to use matrices with nice eigenvalues and eigenvectors. Before jumping straight into the hell that the characteristic polynomial can be, try looking it over and seeing if you can spot any eigenvectors.
 
-### Proof of the The Eigenvector Columns Theorem
+## Proof of the The Eigenvector Columns Theorem
 
 To get a general idea, we start with any $$2\times2$$ diagonalizable matrix $$A$$. By definition we can decompose it into the form $$A=PDP^{-1}$$. The entries of the diagonal matrix $$D$$ will be the eigenvalues $$\lambda_1,\lambda_2$$, and the columns of $$P$$ will be the corresponding eigenvectors $$\textbf{v}_1,\textbf{v}_2$$.
 
