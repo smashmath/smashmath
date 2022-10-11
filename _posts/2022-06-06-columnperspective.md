@@ -14,6 +14,7 @@ authors:
 toc:
   - name: Column Perspective
     subsections:
+      - name: Applying this to general matrix multiplication
       - name: Column Perspective Examples
   - name: Row Perspective
     subsections:
@@ -150,6 +151,10 @@ a_{21}&a_{22}
 b_{11}&b_{12}\\
 b_{21}&b_{22}
 \end{pmatrix}
+$$
+
+$$
+\textbf{A}\textbf{B}
 =\begin{pmatrix}
 a_{11}b_{11}+a_{12}b_{21}&a_{11}b_{12}+a_{12}b_{22}\\
 a_{21}b_{11}+a_{22}b_{21}&a_{21}b_{12}+a_{22}b_{22}
@@ -168,6 +173,10 @@ a_{21}&a_{22}
 \begin{pmatrix}
 b_{11}\\b_{21}
 \end{pmatrix}
+$$
+
+$$
+\textbf{A}\textbf{B}_1
 =\begin{pmatrix}
 a_{11}b_{11}+a_{12}b_{21}\\
 a_{21}b_{11}+a_{22}b_{21}
@@ -185,6 +194,10 @@ a_{21}&a_{22}
 \begin{pmatrix}
 b_{12}\\b_{22}
 \end{pmatrix}
+$$
+
+$$
+\textbf{A}\textbf{B}_2
 =\begin{pmatrix}
 a_{11}b_{12}+a_{12}b_{22}\\
 a_{21}b_{12}+a_{22}b_{22}
@@ -207,11 +220,12 @@ And more generally,
 
 $$
 \begin{equation}
-\textbf{A}\begin{pmatrix}
-\textbf{B}_1&\textbf{B}_2&\cdots&\textbf{B}_n
-\end{pmatrix}=
+\textbf{A}
 \bigg(
-\textbf{A}\textbf{B}_1\quad\textbf{A}\textbf{B}_2\quad\cdots\quad\textbf{A}\textbf{B}_n
+\textbf{B}_1\quad\cdots\quad\textbf{B}_n
+\bigg)=
+\bigg(
+\textbf{A}\textbf{B}_1\quad\cdots\quad\textbf{A}\textbf{B}_n
 \bigg)
 \end{equation}
 $$
@@ -298,6 +312,10 @@ To see this for a $$2\times2$$,
 
 $$
 \begin{pmatrix}
+\textbf{a}_1^T\\
+\textbf{a}_2^T\\
+\end{pmatrix}\textbf{B}
+=\begin{pmatrix}
 a_{11}&a_{12}\\
 a_{21}&a_{22}
 \end{pmatrix}
@@ -305,6 +323,13 @@ a_{21}&a_{22}
 b_{11}&b_{12}\\
 b_{21}&b_{22}
 \end{pmatrix}
+$$
+
+$$
+\begin{pmatrix}
+\textbf{a}_1^T\\
+\textbf{a}_2^T\\
+\end{pmatrix}\textbf{B}
 =\begin{pmatrix}
 a_{11}b_{11}+a_{12}b_{21}&a_{11}b_{12}+a_{12}b_{22}\\
 a_{21}b_{11}+a_{22}b_{21}&a_{21}b_{12}+a_{22}b_{22}
@@ -313,13 +338,9 @@ $$
 
 $$
 \begin{pmatrix}
-a_{11}&a_{12}\\
-a_{21}&a_{22}
-\end{pmatrix}
-\begin{pmatrix}
-b_{11}&b_{12}\\
-b_{21}&b_{22}
-\end{pmatrix}
+\textbf{a}_1^T\\
+\textbf{a}_2^T\\
+\end{pmatrix}\textbf{B}
 =\begin{pmatrix}
 a_{11}(b_{11}\quad b_{12})+a_{12}(b_{21}\quad b_{22})\\
 a_{21}(b_{11}\quad b_{12})+a_{22}(b_{21}\quad b_{22})\\
@@ -328,17 +349,26 @@ $$
 
 $$
 \begin{pmatrix}
-a_{11}&a_{12}\\
-a_{21}&a_{22}
-\end{pmatrix}
-\begin{pmatrix}
+\textbf{a}_1^T\\
+\textbf{a}_2^T\\
+\end{pmatrix}\textbf{B}
+=\begin{pmatrix}
+(a_{11}\quad a_{12})\begin{pmatrix}
 b_{11}&b_{12}\\
 b_{21}&b_{22}
+\end{pmatrix}\\
+(a_{21}\quad a_{22})\begin{pmatrix}
+b_{11}&b_{12}\\
+b_{21}&b_{22}
+\end{pmatrix}\\
 \end{pmatrix}
-=\begin{pmatrix}
-(a_{11}\quad a_{12})\textbf{B}\\
-(a_{21}\quad a_{22})\textbf{B}\\
-\end{pmatrix}
+$$
+
+$$
+\begin{pmatrix}
+\textbf{a}_1^T\\
+\textbf{a}_2^T\\
+\end{pmatrix}\textbf{B}
 =\begin{pmatrix}
 \textbf{a}_1^T\textbf{B}\\
 \textbf{a}_2^T\textbf{B}\\
@@ -387,11 +417,16 @@ $$
 And if we multiply $$\textbf{A}$$ by our row reduction matrix, we get
 
 $$
+\textbf{R}\textbf{A}=
 \begin{pmatrix}
 0&-1&0\\1&1&0\\-2&0&1
 \end{pmatrix}\begin{pmatrix}
 1&1&3&2\\-1&0&-2&-3\\2&2&6&7
-\end{pmatrix}=
+\end{pmatrix}
+$$
+
+$$
+\textbf{R}\textbf{A}=
 \begin{pmatrix}
 1&0&2&3\\
 0&1&1&-1\\
