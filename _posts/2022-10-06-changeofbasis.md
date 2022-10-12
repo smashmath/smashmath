@@ -421,7 +421,7 @@ $$
   \end{array}\big]
   &\quad\underrightarrow{\text{row reduce}}\quad&
   \big[\begin{array}{c|c}
-  I&\text{old to new basis}
+  I&P_{\text{new}\gets\text{old}}
   \end{array}\big]
 \end{eqnarray}
 $$
