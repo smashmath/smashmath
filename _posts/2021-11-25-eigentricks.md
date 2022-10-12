@@ -5,7 +5,7 @@ date: 2021-11-25 0
 description: Bodacious
 comments: true
 importance: 1
-tags: linear-algebra
+tags: best linear-algebra
 authors:  
   - name: Grant F.
     url: ""
