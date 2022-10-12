@@ -6,7 +6,7 @@ description: desc
 comments: true
 importance: 3
 tags:
-categories:
+category:
 authors:  
   - name: Grant F.
     url: ""
