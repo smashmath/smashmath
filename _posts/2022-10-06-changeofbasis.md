@@ -353,7 +353,7 @@ $$
 
 The basic idea is this: suppose you cannot speak French, so you are using a translator to speak to your eight-year-old nephew who only speaks French. In the conversation, your nephew says something in French, which the translator has to convey to you in English ($$P{\text{Eng}\gets\text{Fr}}$$). Then, you can respond in English $$[T]{\text{Eng}}$$. But, for your nephew to understand what you said, the translator must translate it back into French ($$P{\text{Fr}\gets\text{Eng}}$$). Giving the full "conversation" as
 
-$$[T]{\text{Fr}}=P{\text{Fr}\gets\text{Eng}}[T]{\text{Eng}}P_{\text{Eng}\gets\text{Fr}}$$
+$$[T]_{\text{Fr}}=P_{\text{Fr}\gets\text{Eng}}[T]_{\text{Eng}}P_{\text{Eng}\gets\text{Fr}}$$
 
 ### Linear operator example
 
@@ -397,7 +397,7 @@ $$
 \end{equation}
 $$
 
-Imagine you have a magical French to German translation machine, and you want to translate English to Spanish. Then you could put the magical machine between intermediary machines that take Swedish to French and German to Spanish.
+Imagine you have a magical French to German translation machine, and you want to translate English to Spanish. Then you could put the magical machine between intermediary machines that take English to French and German to Spanish. That is, translate English to what your magical machine takes in (French), so that it can take the input. Then, the output of the magical machine will be German. So, we take the magical machine output of German, and translate it to Spanish, which is what we want. The resulting combination of the three machines is something that takes in English, and outputs something in Spanish.
 
 $$[T]_\text{Eng}^\text{Spa}=P_{\text{Spa}\gets\text{Ger}}[T]_\text{Fr}^\text{Ger} P_{\text{Fr}\gets\text{Eng}}$$
 
