@@ -267,7 +267,7 @@ $$e^{Bt}=\frac{e^{(\lambda_2-\lambda_1)t}(A-\lambda_1I)-(A-\lambda_2I)}{\lambda_
 
 And thus we get \eqref{distinct}
 
-$$e^{At}=\frac{e^{\lambda_2t}(A-\lambda_1I)-e^{\lambda_1I}(A-\lambda_2I)}{\lambda_2-\lambda_1}$$
+$$e^{At}=\frac{e^{\lambda_2t}(A-\lambda_1I)-e^{\lambda_1t}(A-\lambda_2I)}{\lambda_2-\lambda_1}$$
 
 You can get \eqref{distinct2} by isolating $$A$$ and $$I$$.
 
