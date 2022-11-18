@@ -153,9 +153,10 @@ The general solution of $$\textbf{x}'=A\textbf{x}$$ will be
 **Yes, the numbers are flipped, it is not a mistake.**
 The general solution of $$\textbf{x}'=A\textbf{x}$$ will be
 
-\begin{equation}\label{form4a}
-\textbf{x}=c_1e^{\lambda_1t}\textbf{v} _{\lambda_1}+c_2e^{\lambda_2t}\textbf{v}_ {\lambda_2}
-\end{equation}
+$$\begin{equation}\label{form4a}
+\textbf{x}=c_1e^{\lambda_1t}\textbf{v} 
+_{\lambda_1}+c_2e^{\lambda_2t}\textbf{v}_ {\lambda_2}
+\end{equation}$$
 
 Examples of using all of these formulas can be found in a section [below](
   #2x2-examples).

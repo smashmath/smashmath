@@ -137,7 +137,7 @@ $$e^{(A-\lambda I)t}=I+t(A-\lambda I)$$
 
 $$e^{\lambda t}e^{(A-\lambda I)t}=e^{\lambda t}\bigg(I+t(A-\lambda I)\bigg)$$
 
-$$e^{At}=e^{\lambda t}\bigg(I+t(A-kI)\bigg)\quad\blacksquare$$
+$$e^{At}=e^{\lambda t}\bigg(I+t(A-\lambda I)\bigg)\quad\blacksquare$$
 
 And that's it!
 
