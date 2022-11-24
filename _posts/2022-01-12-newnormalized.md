@@ -454,7 +454,7 @@ Thus, the columns of $$W^{-1}$$ give you the coefficients for each of the normal
 
 Now, this gets difficult quickly because you have to actually find $$y_j^{(i)}(0)$$. Meaning you have to differentiate all $$n$$ of your solutions $$n-1$$ times. For the second order case, it's just one derivative, meaning 2 total. For the third order case, however, it's 6 differentiations. Then it's 12, 20, etc. And differentiation can be kind of tedious, so it is not ideal.
 
-So even if you do the inversion using a Wolfram Alpha, you have to calculate the entries manually.
+So even if you do the inversion using Wolfram Alpha, you have to calculate the entries manually.
 
 ### Solving the one system of first order IVPs
 
