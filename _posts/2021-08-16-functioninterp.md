@@ -171,7 +171,7 @@ $$
 \begin{equation}\label{Pmatrix1}
 P=
 \begin{bmatrix}
-p_{11}&p_{12}&\dots&p_{1(i-1))}&p_{1i}&p_{1(i+1))}&\dots&p_{1n}&p_{1(n+1)}\\
+p_{11}&p_{12}&\dots&p_{1(i-1)}&p_{1i}&p_{1(i+1)}&\dots&p_{1n}&p_{1(n+1)}\\
 \vec{x}^0&\vec{x}^1&\dots&\vec{x}^{i-1}&\vec{x}^i&\vec{x}^{i+1}&\dots&\vec{x}^{n-1}&\vec{y}
 \end{bmatrix}
 \end{equation}
