@@ -215,7 +215,7 @@ Now our goal is to have the output give us $$b_0+b_1t+\ldots+b_mt^m$$, so we sho
 
 The constant term, we will have
 
-$$b_0=\left(\frac{p^{(s)}(\alpha)D^s}{s!}\right)c_0t^s+\left(\frac{p^{(s+1)}(\alpha)D^{s+1}}{(s+1)!}\right)c_1t^{s+1}+\ldots+\left(\frac{p^{(s+m)}(\alpha)D^m}{(s+m)!}\right)c_mt^{s+m}$$
+$$b_0=\left(\frac{p^{(s)}(\alpha)D^s}{s!}\right)c_0t^s+\left(\frac{p^{(s+1)}(\alpha)D^{s+1}}{(s+1)!}\right)c_1t^{s+1}+\ldots+\left(\frac{p^{(s+m)}(\alpha)D^{s+m}}{(s+m)!}\right)c_mt^{s+m}$$
 
 Consider that $$D^kt^j=\begin{cases}\frac{j!}{(j-k)!}t^{j-k},&k\leq j\\0,&k>j\end{cases}$$.
 
