@@ -705,7 +705,7 @@ Now, before getting your hopes up, the answer for this problem will not be prett
 
 $$
 \begin{equation}
-g(x)=\frac{2e^(x-1)-8e^x+2e^{4-x}-8e^{3-x}+7-e-e^2+7e^3}{(e-1)^2(1+e)}
+g(x)=\frac{2e^{x-1}-8e^x+2e^{4-x}-8e^{3-x}+7-e-e^2+7e^3}{(e-1)^2(1+e)}
 \end{equation}
 $$
 
