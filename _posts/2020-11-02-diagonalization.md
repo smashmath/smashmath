@@ -45,7 +45,7 @@ We could easily repeat this as many times as we wanted. So it is also the case t
 A^n(c_1\textbf{v}_1+c_2\textbf{v}_2)=\lambda_1^nc_1\textbf{v}_1+\lambda_2^nc_2\textbf{v}_2
 \end{equation}
 
-Since for those vectors, the transformation $$A$$ is just simple scaling, in the situation where we hA\textbf{v}e to repeatedly apply $$A$$ to some vector $$w$$, it would clearly be preferable to get that vector in terms of $$\textbf{v}_1$$ and $$\textbf{v}_2$$. This seems like a job for change of basis...
+Since for those vectors, the transformation $$A$$ is just simple scaling, in the situation where we have to repeatedly apply $$A$$ to some vector $$w$$, it would clearly be preferable to get that vector in terms of $$\textbf{v}_1$$ and $$\textbf{v}_2$$. This seems like a job for change of basis...
 
 So let us define the eigenbasis
 $$\begin{equation}
