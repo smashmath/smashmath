@@ -47,10 +47,10 @@ things ive ~~discovered~~ independently derived. i think they're all cool, but o
 - [Constructing integer systems of differential equations with integer solutions](./blog/firstordersystems){:target="_blank"}: methods to construct nice systems with nice solutions. useful for professors/textbook authors to make good lecture examples or exam problems. somewhat of a work in progress. i also have a post for [second order systems](./blog/secondordersystems){:target="_blank"}.
 
 - matrix exponential stuff: i really love matrix exponentials.
-1. [Matrix Exponential Formulas for 2x2 Matrices](./blog/firstordersystems){:target="_blank"}
-2. [Matrix Exponentials Using Differential Equations](./blog/firstordersystems){:target="_blank"}
-3. [Exponentials of Symmetric Matrices Using the Spectral Theorem](./blog/firstordersystems){:target="_blank"}
-4. [Matrix Exponential Formulas for 2x2 Matrices Using Laplace Transforms](./blog/firstordersystems){:target="_blank"}
+1. [Matrix Exponential Formulas for 2x2 Matrices](./blog/2x2ezmatrixexp){:target="_blank"}
+2. [Matrix Exponentials Using Differential Equations](./blog/matrixexpwde){:target="_blank"}
+3. [Exponentials of Symmetric Matrices Using the Spectral Theorem](./blog/symmetric-exp){:target="_blank"}
+4. [Matrix Exponential Formulas for 2x2 Matrices Using Laplace Transforms](./blog/ezmatrixexp){:target="_blank"}
 5. Another approach to matrix exponential formulas: coming soon...
 
 - [New Ways to Calculate Normalized Solutions to Linear Constant-Coefficient Differential Equations](./blog/newnormalized){:target="_blank"}: solve just *one* set of $$n$$ first-order initial value problems to get the $$n$$ normalized solutions to an $$n$$-th order differential equation. this should be the fastest way to find them using a computer. alternatively, find one normalized solution and get the others recursively.
