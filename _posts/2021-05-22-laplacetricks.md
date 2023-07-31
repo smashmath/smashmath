@@ -15,7 +15,11 @@ toc:
   - name: Intro
   - name: The Transforms to Memorize
     subsections:
-      - name: The First Set
+      - name: Linearity
+      - name: Powers of t
+      - name: Exponential Shift
+      - name: Derivatives
+      - name: Multiplied By t
       - name: Polynomials
       - name: Exponentials
       - name: Hyperbolic Trig
@@ -63,20 +67,20 @@ Also I'm going to assume that all the functions $$f(t)$$ satisfy the required co
 
 ---
 
-## The Transforms to Memorize
+# The Transforms to Memorize
 
 In my opinion, these are all the things you really need to get pretty much every Laplace Transform you'll probably use.
 
-$$\begin{align} \label{cis}
-e^{bit}&=\cos(bt)+i\sin(bt)\\ \label{lin}
-\laplace{c_1f_1(t)+c_2f_2(t)}&=c_1\laplace{f_1(t)}+c_2\laplace{f_2(t)} \\ \label{poly}
-\laplace{t^n}&=\frac{n!}{s^{n+1}}\\ \label{exp}
-\laplace{e^{ct}f(t)}&=F(s-c)\\ \label{prime}
-\laplace{f'(t)}&=sF(s)-f(0)\\ \label{ladder1}
-\laplace{tf(t)}&=-F'(s) \\ \label{step}
-\laplace{u(t-c)f(t)}&=e^{-cs}\laplace{f(t+c)} \\  \label{dirac}
-\laplace{\delta(t-c)}&=e^{-cs} \\
-\end{align}$$
+$$\begin{gather} \label{cis}
+e^{bit}=\cos(bt)+i\sin(bt)\\ \label{lin}
+\laplace{c_1f_1(t)+c_2f_2(t)}=c_1\laplace{f_1(t)}+c_2\laplace{f_2(t)} \\ \label{poly}
+\laplace{t^n}=\frac{n!}{s^{n+1}}\\ \label{exp}
+\laplace{e^{ct}f(t)}=F(s-c)\\ \label{prime}
+\laplace{f'(t)}=sF(s)-f(0)\\ \label{ladder1}
+\laplace{tf(t)}=-F'(s) \\ \label{step}
+\laplace{u(t-c)f(t)}=e^{-cs}\laplace{f(t+c)} \\  \label{dirac}
+\laplace{\delta(t-c)}=e^{-cs} \\
+\end{gather}$$
 
 Notice that I only have two explicit Laplace Transforms on here, \eqref{poly} and \eqref{dirac}, with the rest being rules of how common things *affect* Laplace Transforms (and also the illustrious [Euler's Formula](../eulersformula/){:target="_blank"}).
 
@@ -84,10 +88,10 @@ I'll go over some tips for how I remember the other important Laplace Transforms
 
 Also here are some inverse transforms I like to keep handy.
 
-$$\begin{align}
-\lapinv{e^{-cs}\laplace{f(t)}}&=u(t-c)f(t-c)\\\label{conv}
-\lapinv{F(s)G(s)}&=f*g=\int_0^tf(\tau)g(t-\tau)d\tau\\
-\end{align}$$
+$$\begin{gather}
+\lapinv{e^{-cs}\laplace{f(t)}}=u(t-c)f(t-c)\\\label{conv}
+\lapinv{F(s)G(s)}=f*g=\int_0^tf(\tau)g(t-\tau)d\tau\\
+\end{gather}$$
 
 The second equation \eqref{conv} is the Convolution Integral. It's an incredibly useful tool for the generalizations of certain initial value problems, and can turn an inverse Laplace Transform problem into an integration problem. But I would consider it optional.
 
@@ -95,27 +99,42 @@ And finally, there is the "Ladder", as my former professor calls it. This will b
 
 First though, I will give some brief justifications for some of the first couple formulas.
 
-### The First Set
+## The First Set
 
-$$\laplace{c_1f_1(t)+c_2f_2(t)}=c_1\laplace{f_1(t)}+c_2\laplace{f_2(t)}$$
+### Linearity
 
-This comes from the linearity of integration. $$\int c_1f(x)+c_2g(x)\,dx=c_1\int f(x)dx+c_2\int g(x)dx$$.
+$$\begin{gather*}
+\laplace{c_1f_1(t)+c_2f_2(t)}\\
+=c_1\laplace{f_1(t)}+c_2\laplace{f_2(t)}
+\end{gather*}$$
+
+This comes from the linearity of integration.
+
+$$\int c_1f(x)+c_2g(x)dx=c_1\int f(x)dx+c_2\int g(x)dx$$
+
+### Powers of t
 
 $$\laplace{t^n}=\frac{n!}{s^{n+1}}$$
 
 When integrating $$t^ne^{-st}$$, we use integration by parts. Differentiating $$t^n$$ will give us the $$n!$$, and integrating $$e^{-st}$$ will divide by $$s$$.
 
+### Exponential Shift
+
 $$\laplace{e^{ct}f(t)}=F(s-c)$$
 
 Multiplying the integrand by $$e^{ct}$$ will just change $$e^{-st}$$ to $$e^{-(s-c)t}$$. So we need only replace every $$s$$ with an $$s-c$$ in the Laplace transform of $$f(t)$$.
+
+### Derivatives
 
 $$\laplace{f'(t)}=sF(s)-f(0)$$
 
 This is another case of integration by parts, but instead we integrate $$f'(t)$$ and differentiate $$e^{-st}$$ which has the effect of multiplying by $$-s$$. I recommend actualy computing $$\int_0^\infty e^{-st}f'(t)\,dt$$ to see how it all shakes out to \eqref{prime}.
 
+### Multiplied By t
+
 $$\laplace{tf(t)}=-F'(s)$$
 
-For this it's actually easier to go backwards. We can use the Leibniz integral rule to calculate the derivative of $$F(s)$$. 
+For this it's actually easier to go backwards. We can use the Leibniz integral rule to calculate the derivative of $$F(s)$$.
 
 $$\frac{d}{ds}\int_0^\infty e^{-st}f(t)\,dt=\int_0^\infty \frac{\partial}{\partial s} e^{-st}f(t)\,dt$$
 
@@ -137,8 +156,11 @@ $$\begin{equation} \label{1}
 
 And to transform any polynomial, you can just use \eqref{lin} and \eqref{poly}:
 
+$$\begin{equation*}
+\laplace{c_0+c_1t+\ldots+c_nt^n}
+\end{equation*}$$
 $$\begin{equation}
-\laplace{c_0+c_1t+\ldots+c_nt^n}=c_0\frac{1}{s}+c_1\frac{1}{s^2}+\ldots+c_n\frac{n!}{s^{n+1}}
+=c_0\frac{1}{s}+c_1\frac{1}{s^2}+\ldots+c_n\frac{n!}{s^{n+1}}
 \end{equation}$$
 
 ### Exponentials
@@ -162,23 +184,23 @@ You may be unimpressed, but we actually have both the transforms for $$\sin(bt)$
 $$\begin{gather*}
 \laplace{e^{bit}}=\laplace{\cos(bt)+i\sin(bt)}\\
 \laplace{e^{bit}}=\laplace{\cos(bt)}+i\laplace{\sin(bt)}\\
-\laplace{\cos(bt)}=\Re\left(\laplace{e^{bit}}\right),\quad
+\laplace{\cos(bt)}=\Re\left(\laplace{e^{bit}}\right)\\
 \laplace{\sin(bt)}=\Im\left(\laplace{e^{bit}}\right)\\
 \end{gather*}$$
 
-$$\begin{equation}\label{trig}
-\laplace{\cos(bt)}=\frac{s}{s^2+b^2},\quad
+$$\begin{gather}\label{trig}
+\laplace{\cos(bt)}=\frac{s}{s^2+b^2}\\
 \laplace{\sin(bt)}=\frac{b}{s^2+b^2}
-\end{equation}$$
+\end{gather}$$
 
 So instead of memorizing these formulas, I just remember that Euler's Identity leads to multiplying by the conjugate for the imaginary exponential case. Then I use the real part for $$\cos$$ and the imaginary part for $$\sin$$.
 
 And why would we ever memorize *two more* formulas for $$e^{at}\sin(bt)$$ and $$e^{at}\cos(bt)$$ when we have our wonderful '**Exponential Shift**' rule, \eqref{exp}?
 
-$$\begin{equation} \label{triga}
-\laplace{e^{at}\cos(bt)}=\frac{s-a}{(s-a)^2+b^2}\quad
+$$\begin{gather} \label{triga}
+\laplace{e^{at}\cos(bt)}=\frac{s-a}{(s-a)^2+b^2}\\
 \laplace{e^{at}\sin(bt)}=\frac{b}{(s-a)^2+b^2}
-\end{equation}$$
+\end{gather}$$
 
 ### Hyperbolic Trig
 
@@ -193,10 +215,10 @@ You can get the bottom two formulas by solving for $$\sin(bt)$$ and $$\cos(bt)$$
 
 If you know they're not so different, it makes more sense that their Laplace Transforms are almost identical, and can be obtained literally by using \eqref{lin} and plugging in the Laplace Transforms for $$e^{\pm t}$$ and $$e^{\pm it}$$.
 
-$$\begin{equation}
-\laplace{e^{at}\cosh(bt)}=\frac{s-a}{(s-a)^2-b^2},\quad
+$$\begin{gather}
+\laplace{e^{at}\cosh(bt)}=\frac{s-a}{(s-a)^2-b^2}\\
 \laplace{e^{at}\sinh(bt)}=\frac{b}{(s-a)^2-b^2}
-\end{equation}$$
+\end{gather}$$
 
 Just flip the plus to a minus and you're done. And really, that's usually how it works out in the Calculus between the two sets of trig functions, because they are barely different.
 
@@ -277,8 +299,12 @@ The convolution just looks like the continuous version of the sum formula. It ki
 Also, the order of \eqref{conv} really doesn't matter. You can show that they are equal with a simple variable substitution. Just choose the order that makes the integral easiest to evaluate. Make good choices like letting the constant or exponential function take the $$t-\tau$$ argument.
 
 $$\begin{equation}
-f*g=\int_0^tf(\tau)g(t-\tau)d\tau=\int_0^tg(\tau)f(t-\tau)d\tau
+f*g=\int_0^tf(\tau)g(t-\tau)d\tau
 \end{equation}$$
+
+Note that we can also say that
+
+$$f*g=\int_0^tg(\tau)f(t-\tau)d\tau$$
 
 ---
 
@@ -300,8 +326,11 @@ $$\begin{align*}
 
 You could prove by induction that
 
+$$\begin{equation*}
+\laplace{f^{(n)}(t)}
+\end{equation*}$$
 $$\begin{equation}
-\laplace{f^{(n)}(t)}=s^nF(s)-s^{n-1}f(0)-\ldots-f^{(n-1)}(0)
+=s^nF(s)-s^{n-1}f(0)-\ldots-f^{(n-1)}(0)
 \end{equation}$$
 
 You may wonder, will $$\frac{F(s)}{s}$$ correspond to the Laplace Transform of the integral of $$f$$? Yeah, actually, kind of. There are a lot of ways to prove it, but I'm satisfied by viewing $$\frac{F(s)}{s}$$ as a convolution \eqref{conv}.
