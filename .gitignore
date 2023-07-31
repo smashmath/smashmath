@@ -9,3 +9,5 @@ _site
 Gemfile.lock
 vendor
 
+assets/img/inversewhat.png
+_posts/2022-10-13-matrixinv.md
