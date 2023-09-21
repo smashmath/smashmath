@@ -5,7 +5,7 @@ date: 2021-09-27 0
 description: Wait you can do that? YUP
 comments: true
 importance: 3
-categories: calculus
+category: calculus
 ---
 
 Ah... synthetic division. One of the most underrated techniques taught in algebra. For it is not *just* a method of dividing polynomials by linear factors, but has a number of uses beyond that.
