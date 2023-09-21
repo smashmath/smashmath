@@ -1,12 +1,12 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "G. \"Taylor\" F.",
+    "label": "Math Student",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "",
+    "phone": "",
+    "url": "https://smashmath.github.io/",
+    "summary": "Math PhD student and tutor.",
     "location": {
       "address": "2712 Broadway St",
       "postalCode": "CA 94115",
@@ -38,15 +38,15 @@
   "volunteer": [],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
+      "institution": "University of California, Riverside (UCR)",
+      "url": "https://www.ucr.edu/",
+      "area": "Mathematics",
       "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
+      "startDate": "2023-09-25",
+      "endDate": "",
       "score": "",
       "courses": [
-        "Theory of Relativity"
+        
       ]
     }
   ],
@@ -63,12 +63,12 @@
   "skills": [],
   "languages": [
     {
-      "language": "German",
+      "language": "English",
       "fluency": "Native speaker"
     },
     {
-      "language": "English",
-      "fluency": "Fluent"
+      "language": "French",
+      "fluency": "Learning"
     }
   ],
   "interests": [],

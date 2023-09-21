@@ -5,6 +5,7 @@ date: 2021-06-20
 description: ye
 comments: true
 importance: 4
+categories: differential-equations
 categories: systems-of-differential-equations
 ---
 

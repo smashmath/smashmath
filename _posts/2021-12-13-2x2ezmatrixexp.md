@@ -5,9 +5,10 @@ date: 2021-12-13
 description: Who needs eigenvectors?
 comments: true
 importance: 1
+categories: differential-equations
 tags: best matrix-exponentials systems-of-differential-equations
 authors:  
-  - name: Grant F.
+  - name: Taylor F.
     url: ""
     affiliations:
       name: None

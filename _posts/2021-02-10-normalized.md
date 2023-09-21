@@ -5,7 +5,8 @@ date: 2021-02-10
 description: Solve one, solve them all.
 comments: true
 importance: 3
-tags: normalized-solutions differential-equations
+categories: differential-equations
+tags: normalized-solutions
 ---
 
 When would this technique be useful?

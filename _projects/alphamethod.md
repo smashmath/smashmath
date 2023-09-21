@@ -7,7 +7,7 @@ comments: true
 importance: 1
 category: differential equations
 authors:  
-  - name: Grant F.
+  - name: Taylor F.
     url: ""
     affiliations:
       name: None

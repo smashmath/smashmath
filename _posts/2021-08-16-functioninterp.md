@@ -5,9 +5,9 @@ date: 2021-08-16
 description: Find a function that matches your requirements
 comments: true
 importance: 2
-tags: linear-algebra
+categories: linear-algebra
 authors:  
-  - name: Grant F.
+  - name: Taylor F.
     url: ""
     affiliations:
       name: None

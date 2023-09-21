@@ -5,9 +5,10 @@ date: 2021-11-25 0
 description: diagonalization speedrun, let's go
 comments: true
 importance: 1
-tags: best linear-algebra
+categories: linear-algebra
+tags: best 
 authors:  
-  - name: Grant F.
+  - name: Taylor F.
     url: ""
     affiliations:
       name: None

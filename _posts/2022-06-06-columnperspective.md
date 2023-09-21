@@ -5,9 +5,10 @@ date: 2022-6-6
 description: How to simplify matrix multiplication with the best perspectives (and also find certain inverse matrices fast!)
 comments: true
 importance: 1
-tags: best linear-algebra
+categories: linear-algebra
+tags: best 
 authors:  
-  - name: Grant F.
+  - name: Taylor F.
     url: ""
     affiliations:
       name: None

@@ -5,9 +5,10 @@ date: 2020-11-30 0
 description: Build a system with desired behavior.
 comments: true
 importance: 3
+categories: differential-equations
 tags: systems-of-differential-equations
 authors:  
-  - name: Grant F.
+  - name: Taylor F.
     url: ""
     affiliations:
       name: None

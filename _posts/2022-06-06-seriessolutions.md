@@ -5,9 +5,10 @@ date: 2022-06-06
 description: the fast way to do series solutions. no reindexing required.
 comments: true
 importance: 1
-tags: best differential-equations
+categories: differential-equations
+tags: best 
 authors:  
-  - name: Grant F.
+  - name: Taylor F.
     url: ""
     affiliations:
       name: None

@@ -72,7 +72,7 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 
 github_username: # your GitHub user name
 gitlab_username: # your GitLab user name
-twitter_username: smashmath2718 # your Twitter handle
+twitter_username: # your Twitter handle
 mastodon_username: # your mastodon instance+username in the format instance.tld/@username
 linkedin_username: # your LinkedIn user name
 telegram_username: # your Telegram user name
@@ -159,9 +159,9 @@ disqus_shortname: smashmath # put your disqus shortname
 # External sources.
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
-external_sources: false
-  - name: 
-    rss_url: 
+#external_sources: false
+#  - name: 
+#    rss_url: 
 
 # -----------------------------------------------------------------------------
 # Collections
@@ -265,10 +265,10 @@ jekyll-archives:
     tag: '/blog/tag/:name/'
     category: '/blog/category/:name/'
 
-display_tags: ['best', 'differential-equations', 'systems-of-differential-equations','linear-algebra', 'calculus', 'matrix-exponentials', 'normalized-solutions']
+display_tags: ['best', 'systems-of-differential-equations','matrix-exponentials', 'normalized-solutions']
 #, 'works in progress', 'archive']
 #['formatting', 'images', 'links', 'math', 'code'] # this tags will be dispalyed on the front page of your blog
-display_categories: ['blockquotes'] # these categories will be displayed on the front page of your blog
+display_categories: ['differential-equations', 'linear-algebra','calculus' ] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar

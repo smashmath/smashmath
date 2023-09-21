@@ -5,10 +5,9 @@ date: 2022-10-06
 description: the most confusing thing in linear algebra (don't @ me)
 comments: true
 importance: 2
-tags: linear-algebra
-categories: 
+categories: linear-algebra
 authors:  
-  - name: Grant F.
+  - name: Taylor F.
     url: ""
     affiliations:
       name: None

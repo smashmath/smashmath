@@ -5,7 +5,7 @@ date: 2021-04-20
 description: An attempt at an intuitive derivation.
 comments: true
 importance: 5
-tags: linear-algebra
+categories: linear-algebra
 ---
 
 This works for any real square matrix with dimension 2 or greater, but we will focus on the $$2\times 2$$ case first. Then we will look at how to apply that case to matrices of higher dimension using block matrices.

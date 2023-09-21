@@ -5,9 +5,10 @@ date: 2021-05-22
 description: for students and people who forgot
 comments: true
 importance: 2
-tags: best differential-equations
+categories: differential-equations
+tags: best 
 authors:  
-  - name: Grant F.
+  - name: Taylor F.
     url: ""
     affiliations:
       name: None

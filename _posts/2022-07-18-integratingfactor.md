@@ -5,10 +5,9 @@ date: 2022-07-18 0
 description: the most common way to solve first order linear ODE's
 comments: true
 importance: 3
-tags: differential-equations
-categories:
+categories: differential-equations
 authors:  
-  - name: Grant F.
+  - name: Taylor F.
     url: ""
     affiliations:
       name: None

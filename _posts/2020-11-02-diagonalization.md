@@ -5,9 +5,9 @@ date: 2020-11-02
 description: An (atttempt at an) intuitive approach to similar matrix decomposition.
 comments: true
 importance: 5
-tags: linear-algebra
+categories: linear-algebra
 authors:
-  - name: Grant F.
+  - name: Taylor F.
     url: ""
     affiliations:
       name: None

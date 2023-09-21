@@ -5,10 +5,9 @@ date: 2022-07-21 0
 description: the most important topic in an ODE class
 comments: true
 importance: 3
-tags: differential-equations
-categories:
+categories: differential-equations
 authors:  
-  - name: Grant F.
+  - name: Taylor F.
     url: ""
     affiliations:
       name: None

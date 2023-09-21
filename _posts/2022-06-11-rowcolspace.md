@@ -5,9 +5,9 @@ date: 2022-6-11
 description: a lot of students struggle with this so here. row space, column space, null space, and left null space.
 comments: true
 importance: 2
-tags: linear-algebra
+categories: linear-algebra
 authors:  
-  - name: Grant F.
+  - name: Taylor F.
     url: ""
     affiliations:
       name: None

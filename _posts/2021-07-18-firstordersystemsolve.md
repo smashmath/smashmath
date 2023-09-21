@@ -5,7 +5,8 @@ date: 2021-07-18 0
 description: An attempt at an intuitive derivation
 comments: true
 importance: 4
-categories: systems-of-differential-equations
+categories: differential-equations
+tags: systems-of-differential-equations
 ---
 
 Because this topic is usually taught pretty late in a differential equations course and requires some linear algebra, this post is aimed towards people who either already have some differential equations and/or linear algebra experience.

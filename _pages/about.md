@@ -8,7 +8,7 @@ profile:
   align: right
   image: pic.jpg
   address: > 
-    <p>grant f.</p> 
+    <p>Taylor F.</p> 
     <p>discord: nilpotentnix</p>   
     <p>e</p> 
     <p>california CA</p>

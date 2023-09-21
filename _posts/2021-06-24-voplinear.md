@@ -5,7 +5,7 @@ date: 2021-06-24 0
 description: linear is best frend :)
 comments: true
 importance: 4
-tags: differential-equations
+categories: differential-equations
 ---
 
 Consider the differential equation

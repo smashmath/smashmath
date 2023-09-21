@@ -5,9 +5,10 @@ date: 2022-01-12
 description: The fastest way for a computer, and a fast way by hand.
 comments: true
 importance: 3
-tags: normalized-solutions differential-equations
+categories: differential-equations
+tags: normalized-solutions 
 authors:  
-  - name: Grant F.
+  - name: Taylor F.
     url: ""
     affiliations:
       name: None
