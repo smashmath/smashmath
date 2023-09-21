@@ -1,9 +1,12 @@
+name: Docker Image CI
 
 on:
   push:
     branches: [ master ]
 
+jobs: 
 
+  build:
 
     runs-on: ubuntu-latest
     if: github.repository_owner == 'alshedivat'
